@@ -11,8 +11,8 @@ email: m.harry.owen@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Following additional setup, this is to be a profile and portfolio website.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
+url: "http://mharryowen.com" # the base hostname & protocol for your site
+twitter_username: mharryowen
 github_username:  mhowen
 
 # Build settings
