@@ -16,9 +16,9 @@ function doSearch(urlInput) {
 	});
 	
 	console.log(storedQuery);
-	
+var x;
 	storedQuery.map(function(item) {
-		var x = item.fields;
+		x = item.fields;
 		returnHolder = x;
 		console.log(returnHolder);
 		$('.resultContainer').append('<div class="itemBar">'
@@ -26,9 +26,6 @@ function doSearch(urlInput) {
 				+ '<h3> Brand: ' + x.brand_name + '</h3>'
 				+ '<button id="myBtn" class="pure-button show-complete" onclick=\'nutritionHandler("' + x.item_id + '")\'>'
 				+ 'Display Nutrition Information</button> '
-				+ '<button id="builderButton" class="pure-button show-complete"'
-				+ 'onclick="playSound(); addToBuilder();">'
-				+ 'Add to Recipe Builder</button> '
 				+ '</div>');
 	});
 }
@@ -44,6 +41,12 @@ var cholesterol;
 var sodium;
 var carbs;
 var protein;
+var bcal = 0;
+var bfat = 0;
+var bcholesterol = 0;
+var bsodium = 0;
+var bcarbs = 0;
+var bprotein = 0;
 
 function getNutrition(queryID) {
 	returnHolder = queryID;
@@ -68,10 +71,18 @@ function getNutrition(queryID) {
 			sodium = d.nf_sodium;
 			carbs = d.nf_total_carbohydrate;
 			protein = d.nf_protein;
+			console.log(cal);
+			console.log(bcal);
 		}
 	});
 	
-	$('.resultContainer').append('<div class="facts"> <p>'
+	$('.resultContainer').append('<div class="utility-buttons">'
+			+ '<button id=viewBuilder" class="pure-button show-complete"'
+			+ 'onclick="playSound(); viewRecipeBuilder()">Show Recipe Builder</button>'
+			+ '<button id="builderButton" class="pure-button show-complete"'
+			+ 'onclick="playSound(); addToBuilder();">'
+			+ 'Add to Recipe Builder</button> </div>'
+			+ '<div class="facts"> <p>'
 			+ '<h2 id="NF_head">Nutrition Facts</h2> <br>'
 			+ 'Serving Size ' + serveQty + ' ' + serveUnit + '<br>'
 			+ 'Servings Per Container ' + servePer + '<br>'
@@ -84,23 +95,25 @@ function getNutrition(queryID) {
 			+ '</p> </div>');
 }
 
-var bcal = 0;
-var bfat = 0;
-var bcholesterol = 0;
-var bsodium = 0;
-var bcarbs = 0;
-var bprotein = 0;
-
 function addToBuilder() {
-	bcal = bcal + cal;
+	console.log(bcal);
+	console.log(bprotein);
+	console.log("Routine ran");
+	bcal = bcal + parseInt(cal);
+	bfat = bfat + parseInt(fat);
+	bcholesterol = bcholesterol + parseInt(cholesterol);
+	bsodium = bsodium + parseInt(sodium);
+	bcarbs = bcarbs + parseInt(carbs);
+	bprotein = bprotein + parseInt(protein);
+	console.log(bcal);
+	console.log(bprotein);
 }
 
 function viewRecipeBuilder() {
-	console.log(bcal);
 	$('.searchOptions').html('');
 	$('.resultContainer').html('');
 	$('.resultContainer').append('<div class="facts"> <p>'
-			+ '<h2 id="NF_head">Nutrition Facts</h2> <br>'
+			+ '<h2>Total Recipe Nutrition</h2> <br>'
 			+ 'Calories ' + bcal + '<br>'
 			+ 'Total Fat ' + bfat + 'g <br>'
 			+ 'Cholesterol ' + bcholesterol + 'mg <br>'
@@ -124,6 +137,12 @@ function nutritionHandler(searchID) {
 $('#searchForm').submit(function(e) {
 	e.preventDefault();
 });
+
+function killBG() {
+	var BG = document.getElementById("BG");
+	BG.style.background = 0;
+	BG.style.backgroundColor = "aquamarine";
+}
 
 function playSound () {
     document.getElementById('play').play();
