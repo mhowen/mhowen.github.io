@@ -1,9 +1,9 @@
 function doSearch(urlInput) {
 	var storedQuery;
 	$('.searchOptions').html('');
-	$('.searchOptions').append('<button id="viewBuilder" class="pure-button show-complete"');
-			//+ 'onclick="playSound(); viewRecipeBuilder()">Show Recipe Builder'
-			//+ '</button>');
+	$('.searchOptions').append('<button id="viewBuilder" class="pure-button show-complete"'
+			+ 'onclick="playSound(); viewRecipeBuilder()">Show Recipe Builder'
+			+ '</button>');
 	$('.resultContainer').html('');	
 	$.ajax({
 		type: 'GET',
@@ -24,8 +24,8 @@ var x;
 		$('.resultContainer').append('<div class="itemBar">'
 				+ '<h2> Name: ' + x.item_name + '</h2>'
 				+ '<h3> Brand: ' + x.brand_name + '</h3>'
-				+ //'<button id="myBtn" class="pure-button show-complete" onclick=\'nutritionHandler("' + x.item_id + '")\'>'
-				+ //'Display Nutrition Information</button> '
+				+ '<button id="myBtn" class="pure-button show-complete" onclick=\'nutritionHandler("' + x.item_id + '")\'>'
+				+ 'Display Nutrition Information</button> '
 				+ '</div>');
 	});
 }
@@ -51,9 +51,9 @@ var bprotein = 0;
 function getNutrition(queryID) {
 	returnHolder = queryID;
 	$('.searchOptions').html('');
-	//$('.searchOptions').append('<button id="viewBuilder" class="pure-button show-complete"'
-	//		+ ' onclick=\'getNutrition("' + returnHolder + '")\'>Return to Search Results'
-	//		+ '</button>');
+	$('.searchOptions').append('<button id="viewBuilder" class="pure-button show-complete"'
+			+ ' onclick=\'getNutrition("' + returnHolder + '")\'>Return to Search Results'
+			+ '</button>');
 	$('.resultContainer').html('');
 	$.ajax({
 		type: 'GET',
