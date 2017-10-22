@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Nutritionix-tend</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="BG">
+	<div class="front-matter">
+	<h1 class="main-header">Nutritionix-tend</h1>
+	<!--  <h3 class = "confirm-add">Added Successfully!</h3> -->
+	
+	<audio id="play" src="beep.wav"></audio>
+	
+	<form class="pure-form" id='searchForm'>
+    <input type="text" class="pure-input-rounded" id="formInput">
+    <button type="submit" class="pure-button" id="search" onclick="searchHandler(); playSound(); killBG()">
+    Search<img src="logo.png" width="20px" id="logo"></button>
+	</form>
+	
+	<div class="searchOptions"></div>
+	</div>
+	
+	<div class="resultContainer">
+	<h2 class="landing">Nutritionix-tend makes it easy to know what you're eating, even without a label.</h2>
+	<h3 class="landing">By taking advantage of the powerful Nutritionix API, Nutritionix-tend can fetch nutritional 
+						information from nearly a million branded retail foods and restaurant menu offerings. Even
+						without a label, your dietary information is just a couple seconds away.
+						<br><br>
+						And if what you're eating isn't already indexed, Nutritionix-tend's integrated recipe builder
+						and knowledge of over 25,000 generic ingredients can help you keep a tally on the
+						nutrition of any novel meal, ingredient by ingredient.</h3>
+	</div>
+	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='javascript.js'></script>
+
+
+<footer>
+<img src="https://d2eawub7utcl6.cloudfront.net/images/poweredby_nutritionix_api.png" id="attribution">
+</footer>
+</body>
+</html>
