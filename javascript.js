@@ -51,9 +51,6 @@ var bprotein = 0;
 function getNutrition(queryID) {
 	returnHolder = queryID;
 	$('.searchOptions').html('');
-	$('.searchOptions').append('<button id="viewBuilder" class="pure-button show-complete"'
-			+ ' onclick=\'getNutrition("' + returnHolder + '")\'>Return to Search Results'
-			+ '</button>');
 	$('.resultContainer').html('');
 	$.ajax({
 		type: 'GET',
