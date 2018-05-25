@@ -1,0 +1,129 @@
+@charset "ISO-8859-1";
+
+body {
+	text-align: center;
+	background-image: url("bg.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+@keyframes fadeout {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes fadein {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.front-matter {
+	background-color: none;
+}
+
+.landing {
+	color: white;
+}
+
+.main-header {
+	font-family: Verdana;
+	color: white;
+	padding-bottom: 25px;
+  	text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+.resultContainer {
+	background-color: rgba(78, 229, 149, 0.7);
+}
+
+.itemBar {
+	font-family: Verdana;
+	font-size: 12px;
+	color: white;
+	background-color: rgba(159, 229, 78, .6);
+	text-align: left;
+	border-bottom: dotted 3px white;
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+
+.show-complete {
+	font-size: 14px;
+	position: relative;
+	bottom: 50px;
+	float: right;
+}
+
+.pure-button {
+	background-color: #4ee595;
+	border: outset;
+	border-radius: 20px;
+	font-family: fantasy;
+	color: white;
+}
+
+.facts {
+	margin: auto;
+	width: 50%;
+	display: table;
+	text-align: center;
+	font-family: Helvetica;
+	line-height: 40px;
+	background-color: white;
+	border: solid 1px black;
+	box-shadow: 3px 3px 5px black;
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+
+.utility-buttons {
+	position: absolute;
+}
+
+
+#logo {
+	float: right;
+	position: relative;
+	padding-left: 5px;
+}
+
+#NF_head {
+	font-family: impact;
+	letter-spacing: 2px;
+	font-weight: bolder;
+}
+
+#searchForm {
+	padding-bottom: 20px;
+}
+
+#formInput {
+	width: 50%;
+}
+
+#viewBuilder {
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+
+#builderButton {
+	padding-right: 10px;
+}
+
+#attribution {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
