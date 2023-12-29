@@ -1,0 +1,149 @@
+/* Site-Wide Element Rules */
+body {
+  background-color: var(--c-primary);
+  color: var(--c-text);
+  font-size: var(--step-0);
+  transition: background-color 1000ms ease-in;
+}
+h1 {
+  font-size: var(--step-5);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--step-4);
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--step-3);
+}
+h4 {
+  font-size: var(--step-2);
+}
+a {
+  color: var(--c-text);
+}
+strong {
+  font-weight: bold;
+}
+:focus:not(.no-focus) {
+  color: var(--c-accent);
+}
+/* Typography */
+.fs--2 { font-size: var(--step--2); }
+.fs--1 { font-size: var(--step--1); }
+.fs-0 { font-size: var(--step-0); }
+.fs-1 { font-size: var(--step-1); }
+.fs-2 { font-size: var(--step-2); }
+.fs-3 { font-size: var(--step-3); }
+.fs-4 { font-size: var(--step-4); }
+.fs-5 { font-size: var(--step-5); }
+.fs-6 { font-size: var(--step-6); }
+
+/* Backgrounds & Borders */
+.inner-grad {
+  --g-color: var(--c-accent);
+  --g-weight: 1rem;
+  position: relative;
+}
+.inner-grad::after {
+  border: var(--g-weight) solid var(--g-color);
+  clip-path: inset(0); /* prevents blur from spilling outside box */
+  content: '';
+  filter: blur(var(--g-weight));
+  inset: 0;
+  position: absolute;
+}
+.lin-grad {
+  --g-color: color-mix(in srgb, var(--c-accent), transparent 85%);
+  --g-dir: 0deg;
+  background-image: linear-gradient(var(--g-dir), var(--g-color), transparent 75%);
+}
+.rad-grad {
+  --g-color: color-mix(in srgb, var(--c-accent), transparent 85%);
+  --g-pos: 50% 50%;
+  background-image: radial-gradient(circle at var(--g-pos), var(--g-color), transparent 75%);
+}
+.lin-grad-lr { --g-dir: 90deg }
+.lin-grad-rl { --g-dir: 270deg }
+.rad-grad-tl { --g-pos: 0% 0% }
+.rad-grad-br { --g-pos: 100% 100% }
+
+/* Semantics */
+.btn {
+  background-color: var(--c-white);
+  border: none;
+  border-radius: 0.5em;
+  color: var(--c-antitext);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.25em 0.5em;
+  transition: 150ms ease-in-out;
+}
+.btn:hover:not(.no-hover) {
+  border-radius: 0.25em;
+  transform: scale(1.1);
+}
+.btn-accent {
+  background-color: var(--c-accent);
+  font-weight: 700;
+}
+.card {
+  background-color: var(--c-secondary);
+  box-shadow: var(--bs);
+  padding: 0.5em 1em;
+}
+.card-list,
+.card-grid {
+  list-style: none;
+  padding-inline-start: 0;
+}
+.card-list > li,
+.card-grid > * {
+  background-color: color-mix(in srgb, var(--c-secondary), var(--c-white) 10%);
+  box-shadow: var(--bs);
+  border-left: 0.25rem solid color-mix(in srgb, var(--c-white), var(--c-black) 25%);
+  padding: 0.5em 1em;
+}
+.card-grid { align-self: center }
+.card-list > li:not(:last-child) { margin-bottom: 0.5em }
+.dark-mode .card {
+  box-shadow: none;
+}
+.card > .card-heading {
+  margin-bottom: 0.5em;
+}
+p,
+.card ul {
+  max-width: 70ch;
+}
+.dynamic-ul::after {
+  background-color: currentColor;
+  content: '';
+  display: block;
+  width: 20%;
+  margin: 0.5rem auto 1rem;
+  height: 2px;
+  opacity: 0.75;
+}
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Anchors and Links */
+a {
+  transition: color 250ms ease-in;
+}
+a:hover {
+  color: var(--c-accent);
+}
+a.no-deco:not(.router-link-exact-active) {
+  /* i.e., only the active router link gets an underline in the navbar */
+  text-decoration: none;
+}
+a.router-link-exact-active {
+  color: var(--c-accent);
+}
