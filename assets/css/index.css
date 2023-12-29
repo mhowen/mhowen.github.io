@@ -65,6 +65,9 @@ ul, ol {
   /* Dimensions */
   --d-header-height: 6rem;
   --d-content-max: 1376px;
+  --dw-content: 90rem; /* 1440px */
+  --dw-content-wide: 100rem; /* 1600px */
+
   --d-app-sidebar-width: 320px;
   --d-container-width-max: 1280px;
 

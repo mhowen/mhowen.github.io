@@ -52,7 +52,7 @@ const nav_expanded = ref(false);
   justify-content: space-between;
   margin: 0 auto;
   max-height: var(--d-header-height);
-  max-width: var(--d-content-max);
+  max-width: var(--dw-content-wide);
   padding-inline: 0.5rem;
   position: relative;
   overflow: hidden;

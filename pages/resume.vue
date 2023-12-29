@@ -382,7 +382,6 @@
 .page-resume {
   --card-bg: color-mix(in srgb, var(--c-secondary), transparent 20%);
   --card-br: 1rem;
-  --card-gradient-tracks: transparent 5%, var(--c-secondary) 20%, var(--c-accent), var(--c-secondary 80%), transparent 95%;
 }
 .inline-card,
 .inline-cards > * {
@@ -394,12 +393,12 @@
   margin-top: clamp(2em, 10vh - 2em, 6em);
   margin-inline: auto;
   padding-inline: 1em;
-  max-width: 1440px;
+  max-width: var(--dw-content);
 }
 .section-heading { margin-bottom: 4rem }
 .section-intro {
   margin-top: 2rem;
-  max-width: 1600px;
+  max-width: var(--dw-content-wide);
 }
 .intro-heading { text-shadow: 0.25rem 0 var(--c-accent) }
 .intro-graphic {
@@ -531,7 +530,7 @@
   }
 }
 .section-skills {
-  max-width: 1800px;
+  max-width: var(--dw-content-wide);
   margin-bottom: clamp(2em, 10vh - 2em, 6em);
 }
 .subskills-wrapper {
@@ -633,7 +632,7 @@
 @media(min-width: 900px) {
   .intro-graphic__text { min-height: 70% }
 }
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .intro-graphic__text { min-height: 100% }
   .intro-graphic__img { padding-top: 0 }
   .links-wrapper > .link { flex-basis: 30% }
