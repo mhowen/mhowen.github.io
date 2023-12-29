@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
+  nitro: {
+    preset: 'github_pages',
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -25,10 +29,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'system',
     fallback: 'dark',
-  },
-  routeRules: {
-    '/about': { ssr: false },
-    '/resume': { ssr: false },
   },
   googleFonts: {
     families: {
