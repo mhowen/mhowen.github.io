@@ -25,9 +25,7 @@ a {
 strong {
   font-weight: bold;
 }
-:focus:not(.no-focus) {
-  color: var(--c-accent);
-}
+
 /* Typography */
 .fs--2 { font-size: var(--step--2); }
 .fs--1 { font-size: var(--step--1); }
