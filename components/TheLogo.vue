@@ -1,9 +1,9 @@
 <template>
   <svg
     class="logo-vector"
-    width="200"
-    height="200"
-    viewBox="0 0 60 60"
+    width="228.5"
+    height="228.5"
+    viewBox="0 0 60.45729 60.45729"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:svg="http://www.w3.org/2000/svg">
