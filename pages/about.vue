@@ -46,7 +46,7 @@ function switchToTab(nextIndex) {
 
       <img
         class="intro-img"
-        src="about_0.png"
+        src="~/assets/img/about_0.png"
         alt="A smiling man in a fitted, charcoal-grey suit"
       />
     </section>
@@ -219,7 +219,7 @@ function switchToTab(nextIndex) {
 
       <div class="outro-main grid">
         <img
-          src="/about_1.png"
+          src="~/assets/img/about_1.png"
           alt="Contemplative man in suit looking out of frame"
           class="outro-img"
         />

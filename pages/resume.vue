@@ -15,7 +15,7 @@
   
         <img
           class="intro-graphic__img"
-          src="/resume_0.png">
+          src="~/assets/img/resume_0.png">
       </div>
 
       <p class="intro-summary fs-1">Analytical, detail-oriented, and multidisciplinary developer and designer with over ten years of scholastic and professional experience in software development, web design, and data science. Intrinsically motivated computer scientist with continuously broadening expertise in major frameworks, design patterns, and analysis techniques inherent to modern practices. Available for competitively priced contract work for suitable clients.</p>
