@@ -11,11 +11,7 @@
 
 <style scoped>
   .app-footer {
-    border-top: 2px solid var(--c-accent);
-
-    position: absolute;
-    left: 0;
-    
+    border-top: 0.125rem solid var(--c-accent);
     min-width: 100%;
     padding: 1rem;
   }

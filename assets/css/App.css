@@ -126,12 +126,6 @@ p,
   height: 2px;
   opacity: 0.75;
 }
-.layout-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
 
 /* Anchors and Links */
 a {

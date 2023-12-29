@@ -14,10 +14,13 @@
 
 <style scoped>
 .layout-default {
-  /* background-image: var(--g-highlight); */
+  animation: layout-bg 10s infinite alternate;
   background-image: var(--g-matching);
   background-size: 200%;
-  animation: layout-bg 10s infinite alternate;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 @keyframes layout-bg {
   0% { background-position: left }
