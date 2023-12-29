@@ -24,19 +24,18 @@ router.options.scrollBehavior = (to) => {
 
 <style>
   .page-enter-active,
-  .page-leave-active,
-  .layout-enter-active,
-  .layout-leave-active {
+  .page-leave-active {
     transition: all 400ms;
   }
-  .page-enter-from,
-  .page-leave-to {
-    opacity: 0;
-    filter: blur(1rem);
+  .layout-enter-active,
+  .layout-leave-active {
+    transition: all 1000ms;
   }
+  .page-enter-from,
+  .page-leave-to,
   .layout-enter-from,
   .layout-leave-to {
     opacity: 0;
-    filter: grayscale(1);
+    filter: blur(1rem);
   }
 </style>

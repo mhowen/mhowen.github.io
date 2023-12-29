@@ -92,7 +92,6 @@ ul, ol {
   );
   --g-highlight: linear-gradient(to right top, #0A0A14, #1D2035);
   --g-matching: linear-gradient(to right top, #0A0A14, #2E2B37);
-  --g-gangshit: linear-gradient(to right top, #0A0A14, #1D2035, #2E2B37);
 }
 
 /* Typography */

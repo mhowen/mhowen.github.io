@@ -1,104 +1,58 @@
 <script setup>
-definePageMeta({ layout: false }); // no need for Header and Footer on this page
+definePageMeta({ layout: false });
 
-const labelFadeTimer = ref(1.0); // bound to inline opacity of the label span
+const navigation_delay = 1000; // time in ms between clicking ENTER and navigating to site
 
-// fade out label, then enter site proper after waiting long enough for animations to finish
+const is_entering = ref(false); // used for animating transitional elements
+
 function enter() {
-  if (labelFadeTimer.value < 1.0) return; // prevent more than one from existing at a time
-
-  const interval = setInterval(() => {
-    labelFadeTimer.value -= 0.02;
-
-    if (labelFadeTimer.value <= 0) {
-      clearInterval(interval);
-      delayedNav();
-    }
-  }, 10);
-}
-
-function delayedNav() {
-  const delay = 1000; // in ms; should match transition duration in the css rules
-
-  setTimeout(() => navigateTo('/about'), delay);
+  is_entering.value = true;
+  setTimeout(() => navigateTo('/about'), navigation_delay);
 }
 </script>
 
 <template>
   <div class="landing">
-    <div
-    class="landing-graphic"
-    :class="{ animating: labelFadeTimer <= 0 }"
-    role="button"
-    @click="enter">
-      <TheLogo class="logo" />
-      <span
-        class="label"
-        :style="{ opacity: labelFadeTimer }"
-      >ENTER</span>
-    </div>
-
-    <div class="landing-a11y">
-      <TheThemeToggle />
-      <div class="motion-toggle">
-        <label for="reduced-motion">Reduced Motion</label>
-        <input id="reduced-motion" type="checkbox" />
-      </div>
+    <div class="entry" :class="{ entering: is_entering }" @click="enter">
+      <TheLogo class="entry-logo" width="288" height="288" />
+      <p class="entry-label">ENTER</p>
     </div>
   </div>
 </template>
 
 <style scoped>
-.landing-graphic {
-  --d-max: calc(var(--d-app-header-height) * var(--logo-scalar));
-  --d-min: var(--d-app-header-height);
-  --logo-scalar: 4;
+.landing {
+  background-image: var(--g-matching);
+  background-size: 200%;
+  animation: layout-bg 10s infinite alternate;
 
-  cursor: pointer;
-  aspect-ratio: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 1000ms;
-}
-.landing-a11y {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.landing-graphic:hover {
-  color: var(--c-accent);
-}
-.landing-graphic:hover .logo {
-  stroke: var(--c-accent);
-}
-.landing-graphic.animating {
-  top: 0;
-  left: 1rem;
-  transform: initial;
-}
-.landing-graphic.animating .logo {
-  width: var(--d-min);
-  height: var(--d-min);
-}
-.label {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--ff-mono);
-  font-size: var(--fs-h1);
-  font-weight: var(--fw-bold);
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-content: center;
+  position: relative;
   user-select: none;
 }
-.logo {
-  padding: 0.25rem;
-  width: var(--d-max);
-  height: var(--d-max);
-  transition: all 1000ms;
+.entry {
+  cursor: pointer;
+  font-size: 5rem;
+  opacity: 1;
+  stroke: initial;
+  text-align: center;
+}
+.entry:hover { color: var(--c-accent) }
+.entry:hover > .entry-logo { stroke: var(--c-accent) }
+.entry-label {
+  opacity: 1;
+  transition: all 500ms ease-out;
+}
+.entry.entering > * { opacity: 0 }
+.entry-logo {
+  opacity: 1;
+  transition: all 1000ms ease-out;
+}
+@keyframes layout-bg {
+  0% { background-position: left }
+  100% { background-position: right }
 }
 </style>
