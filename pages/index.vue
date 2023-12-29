@@ -17,6 +17,16 @@ function enter() {
       <TheLogo class="entry-logo" width="288" height="288" />
       <p class="entry-label">ENTER</p>
     </div>
+    <div class="a11y">
+      <div class="a11y-ctrl">
+        <input id="toggle-theme" type="checkbox" :checked="$colorMode.preference === 'dark'"/>
+        <label for="toggle-theme">DARK THEME</label>
+      </div>
+      <div class="a11y-ctrl">
+        <input id="toggle-motion" type="checkbox" />
+        <label for="toggle-motion">REDUCED MOTION</label>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,9 +43,25 @@ function enter() {
   position: relative;
   user-select: none;
 }
+.a11y {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 2rem;
+}
+.a11y-ctrl {
+  display: flex;
+  flex-direction: column;
+  min-height: 5rem;
+  text-align: center;
+}
+.a11y-ctrl > input {
+  flex: 1;
+  margin-bottom: 0.5rem;
+}
 .entry {
   cursor: pointer;
   font-size: 5rem;
+  font-weight: 200;
   opacity: 1;
   stroke: initial;
   text-align: center;
@@ -48,6 +74,7 @@ function enter() {
 }
 .entry.entering > * { opacity: 0 }
 .entry-logo {
+  margin-inline: auto;
   opacity: 1;
   transition: all 1000ms ease-out;
 }
