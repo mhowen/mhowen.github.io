@@ -16,7 +16,7 @@ const nav_expanded = ref(false);
         <NuxtLink class="no-deco" to="/resume">RÉSUMÉ</NuxtLink>
         <NuxtLink class="no-deco" to="/projects">PORTFOLIO</NuxtLink>
         <NuxtLink class="no-deco" to="/contact">CONTACT</NuxtLink>
-        <TheThemeToggle v-if="!is_wide" />
+        <!-- <TheThemeToggle v-if="!is_wide" /> -->
       </nav>
       
       <Icon
@@ -25,7 +25,7 @@ const nav_expanded = ref(false);
         name="material-symbols:menu-rounded"
         @click="nav_expanded = !nav_expanded"
       />
-      <TheThemeToggle v-else />
+      <!-- <TheThemeToggle v-else /> -->
     </div>
   </header>
 </template>

@@ -17,7 +17,7 @@ function enter() {
       <TheLogo class="entry-logo" width="288" height="288" />
       <p class="entry-label">ENTER</p>
     </div>
-    <div class="a11y">
+    <!-- <div class="a11y">
       <div class="a11y-ctrl">
         <input id="toggle-theme" type="checkbox" :checked="$colorMode.preference === 'dark'"/>
         <label for="toggle-theme">DARK THEME</label>
@@ -26,7 +26,7 @@ function enter() {
         <input id="toggle-motion" type="checkbox" />
         <label for="toggle-motion">REDUCED MOTION</label>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

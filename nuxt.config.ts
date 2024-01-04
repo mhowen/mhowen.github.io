@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     composables: true,
   },
   colorMode: {
-    preference: 'system',
+    preference: 'dark',
     fallback: 'dark',
   },
   googleFonts: {
