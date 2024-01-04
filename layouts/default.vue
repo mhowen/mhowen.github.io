@@ -1,17 +1,23 @@
 <script setup>
 const warningDate = ref('December 2023');
-const warningDismissed = ref(false);
+const is_fading = ref(false);
+const is_cleared = ref(false);
+
+function clearWarning() {
+  is_fading.value = true;
+  setTimeout(() => is_cleared.value = true, 1000);
+}
 
 </script>
 
 <template>
   <div class="layout-default">
-    <div class="warning" :class="{ displayed: !warningDismissed }">
+    <div class="warning" :class="{ fading: is_fading && !is_cleared, cleared: is_cleared }">
       <div class="warning-contents">
         <p>
           Hey there! If you're reading this, you're early—this site remains under construction as of <span style="color: var(--c-accent); font-weight: 700">{{ warningDate }}</span>. Some things aren't yet fully implemented or bug-tested, so proceed at your own risk for now.
         </p>
-        <button class="btn btn-accent" @click="warningDismissed = true">Gotcha</button>
+        <button class="btn btn-accent" @click="clearWarning">Gotcha</button>
       </div>
     </div>
 
@@ -33,12 +39,11 @@ const warningDismissed = ref(false);
   top: 6rem;
   z-index: 999;
 
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-.warning.displayed {
   opacity: 1;
+  transition: opacity 1000ms;
 }
+.warning.fading { opacity: 0 }
+.warning.cleared { display: none }
 .warning-contents {
   display: flex;
   flex-wrap: wrap;
