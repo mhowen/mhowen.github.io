@@ -1,13 +1,15 @@
 <script setup>
-const warningDate = ref('December 2023');
-const is_fading = ref(false);
-const is_cleared = ref(false);
+const is_fading = ref(false); // while true, warning transitions to opacity 0
+const is_cleared = ref(false); // once true, warning ceases to render altogether
 
 function clearWarning() {
   is_fading.value = true;
   setTimeout(() => is_cleared.value = true, 1000);
 }
 
+const date = new Date();
+const formatter = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' });
+const warningDate = ref(formatter.format(date) || 'January 2024'); // incl. emergency hardcoded fallback
 </script>
 
 <template>
