@@ -71,16 +71,15 @@ function switchToTab(nextIndex) {
 
       <DirectionalTransition :direction="tabDirection">
         <div class="service-grid service-grid__web" v-if="serviceIndex === 0">
-          <div class="service-grid__section card inner-grad rad-grad rad-grad-tl">
+          <div class="service-grid__section inner-grad rad-grad rad-grad-tl">
             <h3 class="fw-bold">WEB DEVELOPMENT</h3>
             <p class="fs-1">
               Contemporary Web Technology turns fanciful ideas into standard practice almost every week. Keeping apprised of and reactive to it all can be overwhelming, but anyone who's ever tried to pay their taxes online can tell you why it mustn't be neglected. I can help you modernize your project and ensure that it stays ready for the next big thing.
             </p>
           </div>
-
           <div class="service-grid__section grid">
-            <h4 class="card fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid">
+            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
+            <ul class="grid auto-columns card-grid inline-cards">
               <li>Bespoke Websites</li>
               <li>Single-Page Apps</li>
               <li>API Consumption</li>
@@ -93,26 +92,27 @@ function switchToTab(nextIndex) {
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Anything else in mind?</span>
-              <button class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
+              <button
+                @click="() => navigateTo('/contact')"
+                class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
             </div>
           </div>
-
-
           <div class="service-grid__section flex flex-col">
-            <h4 class="card fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list">
+            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
+            <ul class="card-list inline-cards">
               <li>Custom data scraping and validation tools</li>
               <li>Frontend logic for enterprise data viz</li>
               <li>Web server for coordinating academic research</li>
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Want more details?</span>
-              <button class="service-c2a__to-action btn btn-accent">My Résumé</button>
+              <button
+                @click="() => navigateTo('/resume')"
+                class="service-c2a__to-action btn btn-accent">My Résumé</button>
             </div>
           </div>
-          
           <div class="service-grid__section icon-grid icon-grid__stack grid">
-            <h4 class="card flex flex-center fw-bold inner-grad rad-grad rad-grad-tl text-center">This Site's Stack</h4>
+            <h4 class="flex flex-center fw-bold inner-grad rad-grad rad-grad-tl text-center">This Site's Stack</h4>
             <IconCard icon="vscode-icons:file-type-nuxt"/>
             <IconCard icon="vscode-icons:file-type-typescript-official"/>
             <IconCard icon="vscode-icons:file-type-node"/>
@@ -122,18 +122,16 @@ function switchToTab(nextIndex) {
           </div>
         </div>
 
-
-
         <div class="service-grid service-grid__design" v-else-if="serviceIndex === 1">
-          <div class="service-grid__section card grid inner-grad rad-grad rad-grad-tl">
+          <div class="service-grid__section grid inner-grad rad-grad rad-grad-tl">
             <h3 class="fw-bold">UI/UX DESIGN</h3>
             <p class="fs-1">
               My approach to User Experience design is unapologetically human-first. Users of all backgrounds and abilities expect and deserve an experience that makes them feel valued as more than just conduits for someone else's revenue—I can help you deliver it without falling back on hackneyed shortcuts or clichéd templates.
             </p>
           </div>
           <div class="service-grid__section grid">
-            <h4 class="card fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid">
+            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
+            <ul class="grid auto-columns card-grid inline-cards">
               <li>Accessibility</li>
               <li>Custom CMS Styling</li>
               <li>Image Manipulation</li>
@@ -145,24 +143,27 @@ function switchToTab(nextIndex) {
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Anything else in mind?</span>
-              <button class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
+              <button
+                @click="() => navigateTo('/contact')"
+                class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
             </div>
           </div>
-
           <div class="service-grid__section flex flex-col flex-sandwich">
-            <h4 class="card fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list">
+            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
+            <ul class="card-list inline-cards">
               <li>Interface for ad-hoc configuration of D3.js visualizations</li>
               <li>Ground-up redesign of employee data collection forms</li>
               <li>Extensible frontend for microcontroller manuals used in university classes</li>
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Want more details?</span>
-              <button class="service-c2a__to-action btn btn-accent">My Résumé</button>
+              <button
+                @click="() => navigateTo('/resume')"
+                class="service-c2a__to-action btn btn-accent">My Résumé</button>
             </div>
           </div>
           <div class="service-grid__section icon-grid icon-grid__design grid">
-            <h4 class="card fw-bold inner-grad lin-grad lin-grad-lr">My Toolset</h4>
+            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">My Toolset</h4>
             <IconCard icon="devicon:figma" />
             <IconCard icon="devicon:inkscape" />
             <IconCard icon="simple-icons:gimp" />
@@ -172,17 +173,17 @@ function switchToTab(nextIndex) {
             <IconCard icon="simple-icons:audacity" />
             <IconCard icon="simple-icons:aseprite" />
           </div>
-          </div>
+        </div>
         <div class="service-grid service-grid__data" v-else-if="serviceIndex === 2">
-          <div class="service-grid__section card grid inner-grad rad-grad rad-grad-tl">
+          <div class="service-grid__section grid inner-grad rad-grad rad-grad-tl">
             <h3 class="fw-bold">DATA SERVICES</h3>
             <p class="fs-1">
               I work with data every day and am tragically used to hearing from folks who tell me about how helplessly remote and inaccessible their data apparatus feels, whether because it was outsourced to strangers or hastily cobbled together by IT. I can help you streamline your data infrastructure so that it works best for your specific needs.
             </p>
           </div>
           <div class="service-grid__section grid">
-            <h4 class="service-tab__inline-heading card inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid">
+            <h4 class="service-tab__inline-heading inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
+            <ul class="grid auto-columns card-grid inline-cards">
               <li>Data Modeling</li>
               <li>Database Design</li>
               <li>Custom Dashboards</li>
@@ -192,22 +193,25 @@ function switchToTab(nextIndex) {
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Anything else in mind?</span>
-              <button class="service-c2a__to-action btn btn-accent">Let's talk!</button>
+              <button
+                @click="() => navigateTo('/contact')"
+                class="service-c2a__to-action btn btn-accent">Let's talk!</button>
             </div>
           </div>
           <div class="service-grid__section flex flex-col flex-sandwich">
-            <h4 class="service-tab__inline-heading card inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list">
+            <h4 class="service-tab__inline-heading inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
+            <ul class="card-list inline-cards">
               <li>Complete remodel of a large corporate Access database</li>
               <li>Star schema for extremely variable granularity requirements</li>
               <li>Custom middleware to leverage inventory data in decision support</li>
             </ul>
             <div class="service-c2a flex">
               <span class="service-c2a__call card">Want more details?</span>
-              <button class="service-c2a__to-action btn btn-accent">My Résumé</button>
+              <button
+                @click="() => navigateTo('/resume')"
+                class="service-c2a__to-action btn btn-accent">My Résumé</button>
             </div>
           </div>
-      
           <div class="todo">
           </div>
         </div>
@@ -237,6 +241,18 @@ function switchToTab(nextIndex) {
 </template>
 
 <style scoped>
+.page-about {
+  --card-bg: color-mix(in srgb, var(--c-secondary), transparent 20%);
+  --card-br: 1rem;
+}
+.inline-card,
+.inline-cards > * {
+  background-color: var(--card-bg);
+  border-radius: var(--card-br);
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 .service-grid {
   align-self: center;
   grid-area: content;
@@ -323,7 +339,7 @@ function switchToTab(nextIndex) {
 }
 .services-nav { grid-area: nav }
 .services-nav > .btn {
-  background-color: var(--c-secondary);
+  background-color: transparent;
   border: 0.25rem solid var(--c-accent);
   border-radius: 0;
   color: color-mix(in srgb, var(--c-text), var(--c-primary) 25%);
@@ -342,7 +358,7 @@ function switchToTab(nextIndex) {
   transition: opacity 500ms ease-in-out;
 }
 .services-nav > .btn.selected {
-  background-color: var(--c-secondary);
+  background-color: transparent;
   color: var(--c-accent);
   flex: 3;
 }
@@ -424,7 +440,13 @@ function switchToTab(nextIndex) {
       [text-end c1-end c2-start c3-start] auto [c2-end c3-end];
     max-width: none;
   }
-  .service-grid > .service-grid__section:first-of-type { grid-area: text }
+  .service-grid__section > h4 {
+    padding: 0.5em 1em;
+  }
+  .service-grid > .service-grid__section:first-of-type {
+    padding: 0.5em 1em;
+    grid-area: text;
+  }
   .service-grid > .service-grid__section:nth-of-type(2) { grid-area: c1 }
   .service-grid > .service-grid__section:nth-of-type(3) { grid-area: c2 }
   .service-grid > .service-grid__section:nth-of-type(4) { grid-area: c3 }
