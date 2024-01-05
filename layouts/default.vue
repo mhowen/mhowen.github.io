@@ -60,13 +60,20 @@ const warningDate = ref(formatter.format(date) || 'January 2024'); // incl. emer
 }
 
 .layout-default {
-  animation: layout-bg 10s infinite alternate;
-  background-image: var(--g-matching);
-  background-size: 200%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   min-height: 100dvh;
+  position: relative;
+}
+.layout-default::before {
+  animation: layout-bg 10s infinite alternate;
+  background-image: var(--g-matching);
+  background-size: 200%;
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: -9999;
 }
 @keyframes layout-bg {
   0% { background-position: left }
