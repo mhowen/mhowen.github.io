@@ -56,67 +56,55 @@ function switchToTab(nextIndex) {
     </section>
 
     <div class="testsvc">
-      <div class="testsvc-main">
-        <div class="testsvc-intro">
-          <h3 class="tcard-block glowing">WEB DEVELOPMENT</h3>
-          <p class="tcard-block">
-            Contemporary Web Technology turns fanciful ideas into standard practice almost every week. Keeping apprised of and reactive to it all can be overwhelming, but anyone who's ever tried to pay their taxes online can tell you why it mustn't be neglected. I can help you modernize your project and ensure that it stays ready for the next big thing.
-          </p>
-          <div class="testsvc-intro__links">
-            <button class="tcard-inline btn-logical">Demos</button>
-            <button class="tcard-inline btn-logical">Experience</button>
-            <button class="tcard-inline btn-logical">Get More Info</button>
-          </div>
-        </div>
-  
-        <div class="svc-pitch tcard-block">
-          <p class="svc-pitch__text tcard-inline garish">Every major framework and methodology...</p>
+      <div class="testsvc-intro">
+        <h3 class="tcard-block glowing">WEB DEVELOPMENT</h3>
+        <p class="tcard-block">
+          Contemporary Web Technology turns fanciful ideas into standard practice almost every week. Keeping apprised of and reactive to it all can be overwhelming, but anyone who's ever tried to pay their taxes online can tell you why it mustn't be neglected. I can help you modernize your project and ensure that it stays ready for the next big thing.
+        </p>
+        <div class="testsvc-intro__links">
+          <button class="tcard-inline btn btn-logical">Demos</button>
+          <button class="tcard-inline btn btn-logical">My Work</button>
+          <button class="tcard-inline btn btn-logical">Get More Info</button>
         </div>
       </div>
 
       <div class="services">
-        <h4 class="services-heading tcard-inline">SERVICES</h4>
+        <h4 class="services-heading">SERVICES</h4>
         <div class="services-cards">
           <div class="tcard tcard-service">
-            <h5>Bespoke Websites</h5>
+            <h5 class="tcard-service__heading">Bespoke Websites</h5>
             <p class="tcard-service__summary">
               Modern, responsive, and accessible web presences for any use case.
               Designed and built according to your visions, not trends or templates.
             </p>
-            <div class="tcard-service__c2a">
-              <p class="tcard-service__price">
-                From <span class="testcard-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent">Get a Free Quote</button>
-            </div>
+            <p>
+              From <span class="testcard-c2a__price">$00.01</span>
+            </p>
+            <button class="btn btn-primary bg-accent">Get a Free Quote</button>
           </div>
   
           <div class="tcard tcard-service">
-            <h5>Custom Styling</h5>
+            <h5 class="tcard-service__heading">Custom Styling</h5>
             <p class="tcard-service__summary">
               Take advantage of your blog or storefront's true potential.
               Brilliant and engaging (re)designs for WordPress, Wix, Drupal, Joomla, and more.
             </p>
-            <div class="tcard-service__c2a">
-              <p>
-                From <span class="testcard-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent">Get a Free Quote</button>
-            </div>
+            <p>
+              From <span class="testcard-c2a__price">$00.01</span>
+            </p>
+            <button class="btn btn-primary bg-accent">Get a Free Quote</button>
           </div>
   
           <div class="tcard tcard-service">
-            <h5>Custom Web Servers</h5>
+            <h5 class="tcard-service__heading">Custom Web Servers</h5>
             <p class="tcard-service__summary">
               Automate your mailing list, telemetry reports, or an entire application.
               Consult for free, then never worry about your operations' fitness or timeliness again.
             </p>
-            <div class="tcard-service__c2a">
-              <p>
-                From <span class="testcard-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent">Get a Free Quote</button>
-            </div>
+            <p>
+              From <span class="testcard-c2a__price">$00.01</span>
+            </p>
+            <button class="btn btn-primary bg-accent">Get a Free Quote</button>
           </div>
         </div>
       </div>
