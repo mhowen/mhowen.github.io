@@ -29,14 +29,18 @@ function switchToTab(nextIndex) {
         <strong class="no-wrap ts-accent">Harry Owen</strong>
       </h1>
 
-      <Vue3Marquee class="intro-banner fw-bold font-mono" :clone="true">
-        <span class="px-4">WEB DEVELOPMENT</span>
-        <span class="px-4">UI/UX DESIGN</span>
-        <span class="px-4">DATA SCIENCE</span>
+      <Vue3Marquee class="intro-banner" :clone="true">
+        <span class="intro-banner__span">WEB DEVELOPMENT</span>
+        <span class="intro-banner__span">UI/UX DESIGN</span>
+        <span class="intro-banner__span">DATA SCIENCE</span>
       </Vue3Marquee>
 
-      <div class="intro-text flex flex-col flex-center gap-4">
-        <p>I'm an independent developer and designer with a broad, multidisciplinary skillset honed over many years of study and work in just about every sector of the informatics industry. I help folks who want systems that prioritize their users over their vendors. If that sounds like you, <NuxtLink to="/contact" class="font-bold">drop me a line</NuxtLink> and let's build something neat!</p>
+      <div class="intro-text">
+        <p>
+          I'm an independent developer and designer with a broad, multidisciplinary skillset honed over many years of study and work in just about every sector of the informatics industry. I help folks who want systems that prioritize their users over their vendors. If that sounds like you,
+          <NuxtLink to="/contact" class="inline-link">drop me a line</NuxtLink>
+          and let's build something neat!
+        </p>
 
         <button
           class="btn btn-accent"
@@ -51,20 +55,87 @@ function switchToTab(nextIndex) {
       />
     </section>
 
+    <div class="testsvc">
+      <div class="testsvc-main">
+        <div class="testsvc-intro">
+          <h3 class="tcard-block glowing">WEB DEVELOPMENT</h3>
+          <p class="tcard-block">
+            Contemporary Web Technology turns fanciful ideas into standard practice almost every week. Keeping apprised of and reactive to it all can be overwhelming, but anyone who's ever tried to pay their taxes online can tell you why it mustn't be neglected. I can help you modernize your project and ensure that it stays ready for the next big thing.
+          </p>
+          <div class="testsvc-intro__links">
+            <button class="tcard-inline btn-logical">Demos</button>
+            <button class="tcard-inline btn-logical">Experience</button>
+            <button class="tcard-inline btn-logical">Get More Info</button>
+          </div>
+        </div>
+  
+        <div class="svc-pitch tcard-block">
+          <p class="svc-pitch__text tcard-inline garish">Every major framework and methodology...</p>
+        </div>
+      </div>
+
+      <div class="services">
+        <h4 class="services-heading tcard-inline">SERVICES</h4>
+        <div class="services-cards">
+          <div class="tcard tcard-service">
+            <h5>Bespoke Websites</h5>
+            <p class="tcard-service__summary">
+              Modern, responsive, and accessible web presences for any use case.
+              Designed and built according to your visions, not trends or templates.
+            </p>
+            <div class="tcard-service__c2a">
+              <p class="tcard-service__price">
+                From <span class="testcard-c2a__price">$00.01</span>
+              </p>
+              <button class="btn btn-accent">Get a Free Quote</button>
+            </div>
+          </div>
+  
+          <div class="tcard tcard-service">
+            <h5>Custom Styling</h5>
+            <p class="tcard-service__summary">
+              Take advantage of your blog or storefront's true potential.
+              Brilliant and engaging (re)designs for WordPress, Wix, Drupal, Joomla, and more.
+            </p>
+            <div class="tcard-service__c2a">
+              <p>
+                From <span class="testcard-c2a__price">$00.01</span>
+              </p>
+              <button class="btn btn-accent">Get a Free Quote</button>
+            </div>
+          </div>
+  
+          <div class="tcard tcard-service">
+            <h5>Custom Web Servers</h5>
+            <p class="tcard-service__summary">
+              Automate your mailing list, telemetry reports, or an entire application.
+              Consult for free, then never worry about your operations' fitness or timeliness again.
+            </p>
+            <div class="tcard-service__c2a">
+              <p>
+                From <span class="testcard-c2a__price">$00.01</span>
+              </p>
+              <button class="btn btn-accent">Get a Free Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="section section-expertise grid">
       <h2 id="My_Expertise" class="section-expertise__heading">My Expertise</h2>
-        
+
       <div class="services-nav flex fs-2">
         <button
-          class="btn no-hover" :class="{ selected: serviceIndex === 0 }"
+          class="btn" :class="{ selected: serviceIndex === 0 }"
           @click="() => switchToTab(0)">WEB
         </button>
         <button
-          class="btn no-hover" :class="{ selected: serviceIndex === 1 }"
+          class="btn" :class="{ selected: serviceIndex === 1 }"
           @click="() => switchToTab(1)">UI/UX
         </button>
         <button
-          class="btn no-hover" :class="{ selected: serviceIndex === 2 }"
+          class="btn" :class="{ selected: serviceIndex === 2 }"
           @click="() => switchToTab(2)">DATA
         </button>
       </div>
@@ -79,7 +150,7 @@ function switchToTab(nextIndex) {
           </div>
           <div class="service-grid__section grid">
             <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid inline-cards">
+            <ul class="grid auto-columns-temp card-grid inline-cards">
               <li>Bespoke Websites</li>
               <li>Single-Page Apps</li>
               <li>API Consumption</li>
@@ -244,6 +315,7 @@ function switchToTab(nextIndex) {
 .page-about {
   --card-bg: color-mix(in srgb, var(--c-secondary), transparent 20%);
   --card-br: 1rem;
+  --padding-inline: 1rem;
 }
 .inline-card,
 .inline-cards > * {
@@ -264,7 +336,6 @@ function switchToTab(nextIndex) {
 }
 
 .section {
-  --padding-inline: 1rem;
   margin-inline: auto;
   padding-inline: var(--padding-inline);
 }
@@ -298,18 +369,25 @@ function switchToTab(nextIndex) {
   background-color: var(--c-accent);
   color: var(--c-primary);
   font-size: var(--step-3);
+  font-weight: 200;
   grid-column: full-width;
   grid-row: banner;
   min-height: min(4em, 10rem);
   user-select: none;
   z-index: 0;
 }
+.intro-banner__span {
+  padding-inline: 1em;
+}
 .intro-text {
   align-self: flex-start;
   box-shadow: var(--bs);
   backdrop-filter: blur(0.25em);
   background-color: color-mix(in srgb, var(--c-antitext), transparent 15%);
+  display: flex;
+  flex-direction: column;
   font-size: var(--step-1);
+  gap: 1rem;
   grid-column: 2 / 5;
   grid-row: banner-end / image-end;
   margin-bottom: var(--padding-inline);
@@ -343,43 +421,20 @@ function switchToTab(nextIndex) {
   border: 0.25rem solid var(--c-accent);
   border-radius: 0;
   color: color-mix(in srgb, var(--c-text), var(--c-primary) 25%);
+  font-weight: 200;
   position: relative;
   transition: 1000ms ease-out;
   user-select: none;
 }
-.services-nav > .btn::after {
-  border: 0.25rem solid var(--c-accent);
-  clip-path: inset(0);
-  content: '';
-  filter: blur(0.5rem);
-  inset: 0;
-  opacity: 0;
-  position: absolute;
-  transition: opacity 500ms ease-in-out;
-}
 .services-nav > .btn.selected {
-  background-color: transparent;
   color: var(--c-accent);
   flex: 3;
 }
-.services-nav > .btn.selected::after { opacity: 1 }
 .service-c2a__call {
-  border-left: 0.25rem solid;
-  border-bottom: 0.25rem solid;
-  border-image-source: radial-gradient(circle at bottom left, var(--c-white), transparent 75%);
-  border-image-slice: 1;
-  flex: 1;
+  flex-grow: 1;
   font-style: italic;
   font-weight: 700;
   text-align: right;
-  position: relative;
-}
-.service-c2a__call::before {
-  background-image: linear-gradient(270deg, var(--c-secondary), transparent 90%);
-  content: '';
-  inset: 0;
-  position: absolute;
-  z-index: -1;
 }
 .service-c2a__to-action {
   border-top-left-radius: 0;

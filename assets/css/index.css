@@ -56,11 +56,11 @@ ul, ol {
   --c-black: #141414;
   --c-primary: #FFEDDB;
   --c-secondary: #D5BEC2;
-  /* --c-accent: #007A6A; */
   --c-accent: #A55709;
-  /* --c-accent2: #A55709; */
+  --c-accent-alt: #007A6A;
   --c-text: var(--c-black);
   --c-antitext: var(--c-white);
+  --c-card: color-mix(in srgb, var(--c-secondary), transparent 20%);
   
   /* Dimensions */
   --d-header-height: 6rem;
@@ -81,6 +81,7 @@ ul, ol {
   --c-primary: #0A0A14;
   --c-secondary: var(--c-black);
   --c-accent: #00C9AE;
+  --c-accent-alt: #F28210;
 
   --gradient-2: linear-gradient(
     to right top,

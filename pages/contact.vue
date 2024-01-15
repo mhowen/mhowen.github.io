@@ -1,9 +1,24 @@
 <script setup>
+const form_name = ref('Testboi');
+const form_mail = ref('test@boi.net');
+const form_tel  = ref('');
+const form_svc  = ref('');
+const form_msg  = ref('Temporary comment string!');
 
+function submitForm() {
+  const rawInputs = {
+    name: form_name.value,
+    mail: form_mail.value,
+    tel:  form_tel.value,
+    svc:  form_svc.value,
+    msg:  form_msg.value,
+  }
+  console.log('raw inputs:', rawInputs);
+}
 </script>
 
 <template>
-  <div class="page-contact">
+  <div class="page-contact">    
     <h1>Get in Touch</h1>
 
     <div class="contact">
@@ -12,28 +27,49 @@
         and I'll get back to you inside 24–48 hours. I look forward to hearing from you!
       </p>
 
-      <form class="form">
+      <form class="form" @submit.prevent="submitForm">
         <div class="form-input inline">
           <label for="name" class="label">Your Name</label>
-          <input id="name" type="text" placeholder="What should I call you?" class="input text-center" required />
+          <input
+            id="name"
+            type="text"
+            placeholder="What should I call you?"
+            class="input text-center"
+            v-model="form_name"
+            required />
         </div>
         <div class="form-input inline">
           <label for="email" class="label">Your Email</label>
-          <input id="email" type="email" placeholder="you@site.com" class="input text-center" required />
+          <input
+            id="email"
+            type="email"
+            placeholder="you@site.com"
+            class="input text-center"
+            v-model="form_mail"
+            required/>
         </div>
         <div class="form-input inline">
           <label for="phone" class="label">Daytime Phone (optional)</label>
-          <input id="phone" type="tel" placeholder="+1 (123) 555-5555" class="input text-center" />
+          <input
+            id="phone"
+            type="tel"
+            placeholder="+1 (123) 555-5555"
+            class="input text-center"
+            v-model="form_tel" />
         </div>
         
         <div class="form-input inline">
           <label for="service_select" class="label">Service of Interest</label>
-          <select id="service_select" name="service" class="input text-center">
-            <option>--Choose an Option--</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-            <option>Not sure -- details below!</option>
+          <select
+            id="service_select"
+            name="service"
+            class="input text-center"
+            v-model="form_svc">
+            <option disabled value="">--Choose an Option--</option>
+            <option value="test option 1">Option 1</option>
+            <option value="test option 2">Option 2</option>
+            <option value="test option 3">Option 3</option>
+            <option value="">Not sure -- details below!</option>
           </select>
         </div>
         <div class="form-input">
@@ -48,17 +84,24 @@
             class="input"
             rows="6"
             placeholder="Your remit here..."
+            v-model="form_msg"
             required></textarea>
         </div>
-        <button
-          @click.prevent
-          class="btn btn-accent">Submit</button>        
+        <input
+          type="submit"
+          class="btn btn-accent"
+        />
       </form>
     </div>
   </div>
 </template>
 
 <style scoped>
+.testman {
+  position: absolute;
+  left: 60%;
+  top: 10%;
+}
 .page-contact {
   --form-max-inline: 50rem;
   --leftover: calc((100vw - var(--dw-content-wide)) / 2);

@@ -1,6 +1,13 @@
 <script setup>
 const is_wide = useScreenWidth(900);
 const nav_expanded = ref(false);
+
+// configure inline nav guard to control mobile nav state
+const router = useRouter();
+router.beforeEach(() => {
+  // mobile navbar slides closed before executing navigation
+  nav_expanded.value = false;
+});
 </script>
 
 <template>
@@ -12,11 +19,15 @@ const nav_expanded = ref(false);
         class="navbar"
         :class="{ expanded: nav_expanded, 'navbar-wide': is_wide }"
       >
-        <NuxtLink class="no-deco" to="/about">ABOUT</NuxtLink>
-        <NuxtLink class="no-deco" to="/resume">RÉSUMÉ</NuxtLink>
-        <NuxtLink class="no-deco" to="/projects">PORTFOLIO</NuxtLink>
-        <NuxtLink class="no-deco" to="/contact">CONTACT</NuxtLink>
-        <!-- <TheThemeToggle v-if="!is_wide" /> -->
+        <NuxtLink class="inline-link" to="/about">ABOUT</NuxtLink>
+        <NuxtLink class="inline-link" to="/resume">RÉSUMÉ</NuxtLink>
+        <NuxtLink class="inline-link" to="/projects">PORTFOLIO</NuxtLink>
+        <NuxtLink
+          class="inline-link btn-contact"
+          :class="{ activeRoute: $route.fullPath === '/contact' }"
+          to="/contact">CONTACT</NuxtLink>
+
+        <TheThemeToggle />
       </nav>
       
       <Icon
@@ -25,7 +36,6 @@ const nav_expanded = ref(false);
         name="material-symbols:menu-rounded"
         @click="nav_expanded = !nav_expanded"
       />
-      <!-- <TheThemeToggle v-else /> -->
     </div>
   </header>
 </template>
@@ -88,6 +98,27 @@ const nav_expanded = ref(false);
 
   position: relative;
   inset: initial;
+}
+.inline-link:not(.router-link-exact-active) { text-decoration: none }
+.btn-contact {
+  color: var(--c-text);
+  position: relative;
+}
+.btn-contact::before {
+  --track2: transparent 75%;
+  background-image: linear-gradient(0deg, var(--c-accent-alt), var(--track2));
+  border-radius: 0.25rem;
+  content: '';
+  inset: -0.25rem -0.5rem;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  transition: all 150ms ease-in-out;
+}
+.btn-contact:hover::before,
+.btn-contact.activeRoute::before {
+  --track2: transparent;
+  opacity: 1;
 }
 .logo {
   min-height: 96px;

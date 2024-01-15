@@ -14,11 +14,17 @@ export default defineNuxtConfig({
       extensions: ['.vue'],
     },
   ],
-  css: ['~/assets/css/index.css', '~/assets/css/App.css', '~/assets/css/utility.css'],
+  css: [
+    '~/assets/css/index.css',
+    '~/assets/css/App.css',
+    '~/assets/css/utility.css',
+    '~/assets/css/temp.css',
+  ],
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/supabase',
     'nuxt-icon',
     '@hypernym/nuxt-anime',
     '@vueuse/nuxt',
@@ -34,5 +40,8 @@ export default defineNuxtConfig({
     families: {
       Inter: '200..900',
     }
+  },
+  supabase: {
+    redirect: false,
   },
 });
