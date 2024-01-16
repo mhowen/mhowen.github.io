@@ -1,11 +1,17 @@
 <script setup>
+import { createClient } from '@supabase/supabase-js';
+
+const env = useRuntimeConfig();
+const [sb_url, sb_key] = [env.public.supabase_url, env.public.supabase_anon_key];
+const supabase = createClient(sb_url, sb_key);
+
 const form_name = ref('Testboi');
 const form_mail = ref('test@boi.net');
 const form_tel  = ref('');
 const form_svc  = ref('');
 const form_msg  = ref('Temporary comment string!');
 
-function submitForm() {
+async function submitForm() {
   const rawInputs = {
     name: form_name.value,
     mail: form_mail.value,
@@ -13,7 +19,35 @@ function submitForm() {
     svc:  form_svc.value,
     msg:  form_msg.value,
   }
-  console.log('raw inputs:', rawInputs);
+
+  // TODO: this for real
+  const validatedFormData = { ...rawInputs };
+
+  // this will be replaced with sb_key once local dev is done and EF is deployed
+  const dev_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0'
+
+  const url = 'http://127.0.0.1:54321/functions/v1/parse-form';
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(validatedFormData),
+      headers: {
+        "Authorization": dev_token,
+      }
+    });
+
+    if (response.status !== 200) {
+      console.log('got a bad response:', response)
+      // const data = await response.json();
+      // TODO: write helper function to handle bad responses
+    }
+
+    console.log('posted with 200!')
+
+  } catch (error) {
+    console.log('caught an error, which is below')
+    console.error(error)
+  }
 }
 </script>
 

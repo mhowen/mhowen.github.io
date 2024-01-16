@@ -8,6 +8,9 @@ dist
 # Node dependencies
 node_modules
 
+# Supabase backend logic
+supabase
+
 # Logs
 logs
 *.log
