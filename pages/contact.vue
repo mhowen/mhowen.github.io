@@ -1,9 +1,6 @@
 <script setup>
-import { createClient } from '@supabase/supabase-js';
-
 const env = useRuntimeConfig();
 const [sb_url, sb_key] = [env.public.supabase_url, env.public.supabase_anon_key];
-const supabase = createClient(sb_url, sb_key);
 
 const form_name = ref('Testboi');
 const form_mail = ref('test@boi.net');
