@@ -19,6 +19,9 @@ h3 {
 h4 {
   font-size: var(--step-2);
 }
+h5 {
+  font-size: var(--step-1);
+}
 a {
   color: var(--c-text);
 }
@@ -78,14 +81,13 @@ strong {
 }
 
 /* Buttons */
-.btn,
-.btn-logical {
+.btn {
   border: none;
   cursor: pointer;
   display: inline-block;
   user-select: none;
 }
-.btn {
+.btn-primary {
   background-color: var(--c-white);
   border-radius: 0.5em;
   color: var(--c-antitext);
@@ -93,7 +95,7 @@ strong {
   padding: 0.25em 0.5em;
   transition: 150ms ease-in-out;
 }
-.btn:hover {
+.btn:not(.btn-logical):hover {
   border-radius: 0.25em;
   transform: scale(1.1);
 }
