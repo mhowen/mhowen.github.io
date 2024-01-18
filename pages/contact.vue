@@ -13,37 +13,33 @@ async function submitForm() {
     name: form_name.value,
     mail: form_mail.value,
     tel:  form_tel.value,
-    svc:  form_svc.value,
-    msg:  form_msg.value,
+    type: 'contact',
+    interest:  form_svc.value,
+    message:  form_msg.value,
   }
 
   // TODO: this for real
   const validatedFormData = { ...rawInputs };
 
-  // this will be replaced with sb_key once local dev is done and EF is deployed
-  const dev_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0'
-
-  const url = 'http://127.0.0.1:54321/functions/v1/parse-form';
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`${sb_url}/functions/v1/parse-form`, {
       method: 'POST',
       body: JSON.stringify(validatedFormData),
       headers: {
-        "Authorization": dev_token,
+        "Authorization": `Bearer ${sb_key}`,
       }
     });
 
-    if (response.status !== 200) {
+    if (response.status !== 200 && response.status !== 201) {
       console.log('got a bad response:', response)
-      // const data = await response.json();
       // TODO: write helper function to handle bad responses
+      return;
     }
 
+    // TODO: reactive frontend element to indicate success/failure state
     console.log('posted with 200!')
-
   } catch (error) {
-    console.log('caught an error, which is below')
-    console.error(error)
+    console.error('found this:', error)
   }
 }
 </script>
@@ -67,7 +63,8 @@ async function submitForm() {
             placeholder="What should I call you?"
             class="input text-center"
             v-model="form_name"
-            required />
+            required
+             />
         </div>
         <div class="form-input inline">
           <label for="email" class="label">Your Email</label>
