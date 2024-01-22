@@ -87,15 +87,21 @@ strong {
   display: inline-block;
   user-select: none;
 }
+.btn:not(.btn-logical) {
+  transition: 150ms ease-in-out;
+}
+.btn[disabled] {
+  background-color: #404040;
+  cursor: initial;
+}
 .btn-primary {
   background-color: var(--c-white);
   border-radius: 0.5em;
   color: var(--c-antitext);
   font-weight: 700;
   padding: 0.25em 0.5em;
-  transition: 150ms ease-in-out;
 }
-.btn:not(.btn-logical):hover {
+.btn:not(.btn-logical):not([disabled]):hover {
   border-radius: 0.25em;
   transform: scale(1.1);
 }
@@ -143,4 +149,25 @@ p,
   opacity: 0.75;
 }
 
-
+/* Inputs */
+.styled-input > input[type="radio"] {
+  appearance: none;
+  border: 2px solid var(--c-accent);
+  border-radius: 100vw;
+  height: 2em;
+  width: 2em;
+  position: relative;
+}
+.styled-input > input[type="radio"]::before {
+  color: var(--c-text);
+  content: "✔";
+  font-size: 2.5em;
+  position: absolute;
+  top: -0.5em;
+  right: -0.125em;
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.styled-input > input[type="radio"]:checked::before {
+  opacity: 1;
+}
