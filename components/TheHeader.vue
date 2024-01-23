@@ -27,7 +27,7 @@ router.beforeEach(() => {
           :class="{ activeRoute: $route.fullPath === '/contact' }"
           to="/contact">CONTACT</NuxtLink>
 
-        <TheThemeToggle />
+        <!-- <TheThemeToggle /> -->
       </nav>
       
       <Icon
