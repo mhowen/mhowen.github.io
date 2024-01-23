@@ -5,14 +5,16 @@
   </footer>
 </template>
 
-<script lang="ts" setup>
-
-</script>
-
 <style scoped>
   .app-footer {
-    border-top: 0.125rem solid var(--c-accent);
+    position: absolute;
+    bottom: 0;
+    height: 4rem;
     min-width: 100%;
-    padding: 1rem;
+    padding-inline: 1rem;
+    border-top: 0.125rem solid var(--c-accent);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
   }
 </style>

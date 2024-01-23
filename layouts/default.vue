@@ -65,6 +65,7 @@ const warningDate = ref(formatter.format(date) || 'January 2024'); // incl. emer
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
+  padding-bottom: 4rem;
 }
 .layout-default::before {
   animation: layout-bg 10s infinite alternate;
