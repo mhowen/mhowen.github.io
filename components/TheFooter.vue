@@ -1,7 +1,7 @@
 <template>
   <footer class="app-footer">
-    &#169; 2023–2024 M. H. Owen
-    <a href="mailto:m.harry.owen@gmail.com" class="footer-link">m.harry.owen@gmail.com</a>
+    &#169; 2024 M. H. Owen
+    <a href="mailto:mho@mharryowen.com" class="footer-link">mho@mharryowen.com</a>
   </footer>
 </template>
 

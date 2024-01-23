@@ -47,7 +47,7 @@
           </WithIcon>
   
           <WithIcon class="inline-card link" icon="ic:outline-alternate-email">
-            <NuxtLink to="mailto:m.harry.owen@gmail.com">m.harry.owen@gmail.com</NuxtLink>
+            <NuxtLink to="mailto:mho@mharryowen.com">mho@mharryowen.com</NuxtLink>
           </WithIcon>
         </div>
       </div>
