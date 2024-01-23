@@ -1,9 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
+    // no worries about exposing these -- RLS is configured to prevent server access without svc key 
     public: {
-      supabase_url: process.env.SUPABASE_URL,
-      supabase_anon_key: process.env.SUPABASE_KEY,
+      supabase_url: 'https://vjzqxjnkmuizcoxluegn.supabase.co',
+      supabase_anon_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqenF4am5rbXVpemNveGx1ZWduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ5ODUwMjAsImV4cCI6MjAyMDU2MTAyMH0.zzR8zDW0ebGcAGr-c7IdzU7O7fraOjHdkw0yXYLYyx4',
     },
   },
   ssr: false,
