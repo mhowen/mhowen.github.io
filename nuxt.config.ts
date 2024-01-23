@@ -49,6 +49,8 @@ export default defineNuxtConfig({
     }
   },
   supabase: {
+    url: 'https://vjzqxjnkmuizcoxluegn.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqenF4am5rbXVpemNveGx1ZWduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ5ODUwMjAsImV4cCI6MjAyMDU2MTAyMH0.zzR8zDW0ebGcAGr-c7IdzU7O7fraOjHdkw0yXYLYyx4',
     redirect: false,
   },
 });
