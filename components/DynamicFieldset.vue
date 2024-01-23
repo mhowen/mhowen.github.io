@@ -11,22 +11,27 @@ defineProps({
   default_option: {
     type: String,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const selection = defineModel();
 </script>
 
 <template>
-  <fieldset class="dfs">
+  <fieldset class="dfs" :class="{ disabled: disabled }">
     <legend class="dfs-legend"> {{ legend }} </legend>
 
     <ul class="dfs-options">
       <li v-for="opt in options" :key="opt" class="styled-input option">
         <label :for="opt" class="option-label"> {{ opt }} </label>
         <input
-          type="radio" 
           :id="opt"
           :value="opt"
+          :disabled="disabled"
+          type="radio" 
           v-model="selection" 
           class="option-radio" />
       </li>
@@ -34,6 +39,7 @@ const selection = defineModel();
       <li v-if="default_option" class="styled-input option">
         <label for="uncategorized" class="option-label"> {{ default_option }} </label>
         <input
+          :disabled="disabled"
           type="radio" 
           id="uncategorized" 
           value="uncategorized" 
@@ -68,6 +74,10 @@ const selection = defineModel();
   align-items: center;
   justify-self: flex-start;
   padding-inline: 1em;
+}
+.dfs.disabled {
+  filter: grayscale();
+  opacity: 0.25;
 }
 
 @media (min-width: 30rem) {
