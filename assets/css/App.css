@@ -82,7 +82,11 @@ strong {
 
 /* Buttons */
 .btn {
-  border: none;
+  --clr-fill: transparent;
+  --clr-text: var(--c-text);
+  background-color: var(--clr-fill);
+  border: 0.125em solid var(--clr-fill);
+  color: var(--clr-text);
   cursor: pointer;
   display: inline-block;
   user-select: none;
@@ -91,29 +95,27 @@ strong {
   border-radius: 0.5em;
   font-weight: 700;
   padding: 0.25em 0.5em;
-  transition: 150ms ease-in-out;
 }
 .btn[disabled] {
   background-color: #404040;
   cursor: initial;
 }
-.btn-primary {
-  background-color: var(--c-white);
-  color: var(--c-antitext);
-}
-.btn:not(.btn-logical):not([disabled]):hover {
-  border-radius: 0.25em;
-  transform: scale(1.1);
-}
+.btn:not([disabled]) { transition: 250ms ease-in-out }
+.btn.hover-fill { background-color: transparent }
+.btn.hover-fill:hover { background-color: var(--clr-fill) }
+.btn.hover-scale { transform: scale(1.0) }
+.btn.hover-scale:hover { transform: scale(1.1) }
 .btn-accent {
-  background-color: var(--c-accent);
+  --clr-fill: var(--c-accent);
+  --clr-text: var(--c-text);
 }
 
 /* Cards */
 .card {
-  background-color: var(--c-secondary);
+  --hs-card: 0 0%;
+  background-color: hsl(var(--hs-card) 8% / .8);
   box-shadow: var(--bs);
-  padding: 0.5em 1em;
+  padding: clamp(1rem, 2vw + 0.125rem, 2rem);
 }
 .card-list,
 .card-grid {
@@ -129,12 +131,12 @@ strong {
 }
 .card-grid { align-self: center }
 .card-list > li:not(:last-child) { margin-bottom: 0.5em }
-.dark-mode .card {
-  box-shadow: none;
-}
-.card > .card-heading {
-  margin-bottom: 0.5em;
-}
+/* .dark-mode .card { */
+/*   box-shadow: none; */
+/* } */
+/* .card > .card-heading { */
+/*   margin-bottom: 0.5em; */
+/* } */
 p,
 .card ul {
   max-width: 70ch;

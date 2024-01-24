@@ -19,7 +19,7 @@ const warningDate = ref(formatter.format(date) || 'January 2024'); // incl. emer
         <p>
           Hey there! If you're reading this, you're early—this site remains under construction as of <span style="color: var(--c-accent); font-weight: 700">{{ warningDate }}</span>. Some things aren't yet fully implemented or bug-tested, so proceed at your own risk for now.
         </p>
-        <button class="btn btn-accent" @click="clearWarning">Gotcha</button>
+        <button class="btn btn-accent hover-fill hover-scale" @click="clearWarning">Gotcha</button>
       </div>
     </div>
 
