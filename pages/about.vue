@@ -110,173 +110,6 @@ function switchToTab(nextIndex) {
       </div>
     </div>
 
-    <section class="section section-expertise grid">
-      <h2 id="My_Expertise" class="section-expertise__heading">My Expertise</h2>
-
-      <div class="services-nav flex fs-2">
-        <button
-          class="btn" :class="{ selected: serviceIndex === 0 }"
-          @click="() => switchToTab(0)">WEB
-        </button>
-        <button
-          class="btn" :class="{ selected: serviceIndex === 1 }"
-          @click="() => switchToTab(1)">UI/UX
-        </button>
-        <button
-          class="btn" :class="{ selected: serviceIndex === 2 }"
-          @click="() => switchToTab(2)">DATA
-        </button>
-      </div>
-
-      <DirectionalTransition :direction="tabDirection">
-        <div class="service-grid service-grid__web" v-if="serviceIndex === 0">
-          <div class="service-grid__section inner-grad rad-grad rad-grad-tl">
-            <h3 class="fw-bold">WEB DEVELOPMENT</h3>
-            <p class="fs-1">
-              Contemporary Web Technology turns fanciful ideas into standard practice almost every week. Keeping apprised of and reactive to it all can be overwhelming, but anyone who's ever tried to pay their taxes online can tell you why it mustn't be neglected. I can help you modernize your project and ensure that it stays ready for the next big thing.
-            </p>
-          </div>
-          <div class="service-grid__section grid">
-            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns-temp card-grid inline-cards">
-              <li>Bespoke Websites</li>
-              <li>Single-Page Apps</li>
-              <li>API Consumption</li>
-              <li>Responsive Design</li>
-              <li>Database Integration</li>
-              <li>Cryptography</li>
-              <li>Systems Design</li>
-              <li>SEO</li>
-              <li>User Authentication</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Anything else in mind?</span>
-              <button
-                @click="() => navigateTo('/contact')"
-                class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
-            </div>
-          </div>
-          <div class="service-grid__section flex flex-col">
-            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list inline-cards">
-              <li>Custom data scraping and validation tools</li>
-              <li>Frontend logic for enterprise data viz</li>
-              <li>Web server for coordinating academic research</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Want more details?</span>
-              <button
-                @click="() => navigateTo('/resume')"
-                class="service-c2a__to-action btn btn-accent">My Résumé</button>
-            </div>
-          </div>
-          <div class="service-grid__section icon-grid icon-grid__stack grid">
-            <h4 class="flex flex-center fw-bold inner-grad rad-grad rad-grad-tl text-center">This Site's Stack</h4>
-            <IconCard icon="vscode-icons:file-type-nuxt"/>
-            <IconCard icon="vscode-icons:file-type-typescript-official"/>
-            <IconCard icon="vscode-icons:file-type-node"/>
-            <IconCard icon="devicon:postgresql"/>
-            <IconCard icon="vscode-icons:file-type-vite"/>
-            <IconCard icon="vscode-icons:file-type-css"/>
-          </div>
-        </div>
-
-        <div class="service-grid service-grid__design" v-else-if="serviceIndex === 1">
-          <div class="service-grid__section grid inner-grad rad-grad rad-grad-tl">
-            <h3 class="fw-bold">UI/UX DESIGN</h3>
-            <p class="fs-1">
-              My approach to User Experience design is unapologetically human-first. Users of all backgrounds and abilities expect and deserve an experience that makes them feel valued as more than just conduits for someone else's revenue—I can help you deliver it without falling back on hackneyed shortcuts or clichéd templates.
-            </p>
-          </div>
-          <div class="service-grid__section grid">
-            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid inline-cards">
-              <li>Accessibility</li>
-              <li>Custom CMS Styling</li>
-              <li>Image Manipulation</li>
-              <li>Internationalization</li>
-              <li>Progressive Enhancement</li>
-              <li>Vector Graphics</li>
-              <li>Video Editing</li>
-              <li>Visualizations</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Anything else in mind?</span>
-              <button
-                @click="() => navigateTo('/contact')"
-                class="service-c2a__to-action btn btn-accent">Let's Talk!</button>
-            </div>
-          </div>
-          <div class="service-grid__section flex flex-col flex-sandwich">
-            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list inline-cards">
-              <li>Interface for ad-hoc configuration of D3.js visualizations</li>
-              <li>Ground-up redesign of employee data collection forms</li>
-              <li>Extensible frontend for microcontroller manuals used in university classes</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Want more details?</span>
-              <button
-                @click="() => navigateTo('/resume')"
-                class="service-c2a__to-action btn btn-accent">My Résumé</button>
-            </div>
-          </div>
-          <div class="service-grid__section icon-grid icon-grid__design grid">
-            <h4 class="fw-bold inner-grad lin-grad lin-grad-lr">My Toolset</h4>
-            <IconCard icon="devicon:figma" />
-            <IconCard icon="devicon:inkscape" />
-            <IconCard icon="simple-icons:gimp" />
-            <IconCard icon="devicon:d3js" />
-            <IconCard icon="devicon:aftereffects" />
-            <IconCard icon="simple-icons:kdenlive" />
-            <IconCard icon="simple-icons:audacity" />
-            <IconCard icon="simple-icons:aseprite" />
-          </div>
-        </div>
-        <div class="service-grid service-grid__data" v-else-if="serviceIndex === 2">
-          <div class="service-grid__section grid inner-grad rad-grad rad-grad-tl">
-            <h3 class="fw-bold">DATA SERVICES</h3>
-            <p class="fs-1">
-              I work with data every day and am tragically used to hearing from folks who tell me about how helplessly remote and inaccessible their data apparatus feels, whether because it was outsourced to strangers or hastily cobbled together by IT. I can help you streamline your data infrastructure so that it works best for your specific needs.
-            </p>
-          </div>
-          <div class="service-grid__section grid">
-            <h4 class="service-tab__inline-heading inner-grad lin-grad lin-grad-lr">Things I'm Great At</h4>
-            <ul class="grid auto-columns card-grid inline-cards">
-              <li>Data Modeling</li>
-              <li>Database Design</li>
-              <li>Custom Dashboards</li>
-              <li>Custom Visualizations</li>
-              <li>Systems Integration</li>
-              <li>Web Connectivity</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Anything else in mind?</span>
-              <button
-                @click="() => navigateTo('/contact')"
-                class="service-c2a__to-action btn btn-accent">Let's talk!</button>
-            </div>
-          </div>
-          <div class="service-grid__section flex flex-col flex-sandwich">
-            <h4 class="service-tab__inline-heading inner-grad lin-grad lin-grad-lr">Professional Highlights</h4>
-            <ul class="card-list inline-cards">
-              <li>Complete remodel of a large corporate Access database</li>
-              <li>Star schema for extremely variable granularity requirements</li>
-              <li>Custom middleware to leverage inventory data in decision support</li>
-            </ul>
-            <div class="service-c2a flex">
-              <span class="service-c2a__call card">Want more details?</span>
-              <button
-                @click="() => navigateTo('/resume')"
-                class="service-c2a__to-action btn btn-accent">My Résumé</button>
-            </div>
-          </div>
-          <div class="todo">
-          </div>
-        </div>
-      </DirectionalTransition>
-    </section>
-
     <section class="section section-outro">
       <h2 class="section-outro__heading">More About Me</h2>
 
@@ -312,15 +145,6 @@ function switchToTab(nextIndex) {
   padding: 0.5rem 1rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-}
-.service-grid {
-  align-self: center;
-  grid-area: content;
-  justify-self: center;
-  max-width: 60ch;
-
-  display: grid;
-  gap: 2rem;
 }
 
 .section {
@@ -392,16 +216,6 @@ function switchToTab(nextIndex) {
   object-position: top;
   position: relative;
   right: -20vw;
-}
-.section-expertise {
-  gap: 2rem;
-  grid-template-areas: "heading" "nav" "content";
-  margin-bottom: 10rem;
-}
-.section-expertise__heading {
-  grid-area: heading;
-  padding-top: 10rem;
-  z-index: 1;
 }
 .services-nav { grid-area: nav }
 .services-nav > .btn {
@@ -477,41 +291,6 @@ function switchToTab(nextIndex) {
   }
 }
 @media (min-width: 900px) {
-  .service-grid {
-    grid-template-columns:
-      [text-start c1-start] auto
-      [text-end c1-end c2-start c3-start] auto [c2-end c3-end];
-    max-width: none;
-  }
-  .service-grid__section > h4 {
-    padding: 0.5em 1em;
-  }
-  .service-grid > .service-grid__section:first-of-type {
-    padding: 0.5em 1em;
-    grid-area: text;
-  }
-  .service-grid > .service-grid__section:nth-of-type(2) { grid-area: c1 }
-  .service-grid > .service-grid__section:nth-of-type(3) { grid-area: c2 }
-  .service-grid > .service-grid__section:nth-of-type(4) { grid-area: c3 }
-  .service-grid__web,
-  .service-grid__design {
-    grid-template-rows:
-      [text-start c2-start] auto
-      [c2-end c3-start] auto
-      [text-end c1-start] auto [c1-end c3-end];
-  }
-  .service-grid__design {
-    grid-template-columns:
-      [text-start c1-start] auto
-      [text-end c2-start] auto
-      [c1-end c3-start] auto [c2-end c3-end];
-  }
-  .service-grid__data {
-    grid-template-rows:
-      [text-start c2-start] auto
-      [c2-end c3-start] auto
-      [text-end c1-start] auto [c1-end c3-end];
-  }
   .outro-main {
     grid-template-columns: auto auto;
     font-size: var(--step-1);
@@ -519,11 +298,6 @@ function switchToTab(nextIndex) {
   .outro-img { min-height: 100%; }
 }
 @media (min-width: 100rem) {
-  .section-expertise {
-    grid-template-areas: ". heading" "nav content";
-    grid-template-columns: 1fr var(--dw-content) 1fr;
-    max-width: none;
-  }
   .services-nav {
     flex-direction: column;
     gap: 2rem;
@@ -532,3 +306,4 @@ function switchToTab(nextIndex) {
   .section-outro { padding-inline: 0 }
 }
 </style>
+
