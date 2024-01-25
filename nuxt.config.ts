@@ -25,7 +25,6 @@ export default defineNuxtConfig({
     '~/assets/css/index.css',
     '~/assets/css/App.css',
     '~/assets/css/utility.css',
-    '~/assets/css/temp.css',
   ],
   devtools: { enabled: true },
   modules: [

@@ -60,7 +60,10 @@ ul, ol {
   --c-accent-alt: #007A6A;
   --c-text: var(--c-black);
   --c-antitext: var(--c-white);
-  --c-card: color-mix(in srgb, var(--c-secondary), transparent 20%);
+  --hs-card: 0 0%;
+  --c-card: hsl(var(--hs-card) 8% / .8);
+
+  --gtrax-accent: #00C9AE, #00AEAA, #00949E;
   
   /* Dimensions */
   --d-header-height: 6rem;

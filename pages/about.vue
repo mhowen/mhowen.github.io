@@ -17,7 +17,10 @@
 
       <div class="intro-text">
         <p>
-          I'm an independent developer and designer with a broad, multidisciplinary skillset honed over many years of study and work in just about every sector of the informatics industry. I help folks who want systems that prioritize their users over their vendors. If that sounds like you,
+          I'm an independent developer and designer with a broad, multidisciplinary
+          skillset honed over many years of study and work in just about every sector
+          of the informatics industry. I help folks who want systems that prioritize
+          their users over their vendors. If that sounds like you,
           <NuxtLink to="/contact" class="inline-link">drop me a line</NuxtLink>
           and let's build something neat!
         </p>
@@ -35,24 +38,16 @@
       />
     </section>
 
-    <section class="section section-services testsvc" id="My_Expertise">
-      <div class="testsvc-intro">
-        <h3 class="tcard-block glowing">WEB DEVELOPMENT</h3>
-        <p class="tcard-block">
-          Contemporary Web Technology turns fanciful ideas into standard practice
-          almost every week. Keeping apprised of and reactive to it all can be overwhelming,
-          but anyone who's ever tried to pay their taxes online can tell you why it mustn't
-          be neglected. I can help you modernize your project and ensure that it stays ready 
-          for the next big thing.
-        </p>
-        <div class="testsvc-intro__links">
-          <button class="tcard-inline btn btn-logical">Demos</button>
-          <button class="tcard-inline btn btn-logical">My Work</button>
-          <button class="tcard-inline btn btn-logical">Get More Info</button>
-        </div>
-      </div>
+    <section class="section section-services" id="My_Expertise">
+      <ExpertiseView title="Web Development" class="mi-auto">
+        Contemporary Web Technology turns fanciful ideas into standard practice
+        almost every week. Keeping apprised of and reactive to it all can be overwhelming,
+        but anyone who's ever tried to pay their taxes online can tell you why it mustn't
+        be neglected. I can help you modernize your project and ensure that it stays ready 
+        for the next big thing.
+      </ExpertiseView>
 
-      <div class="services">
+      <div class="services relative">
         <h4 class="services-heading">FEATURED SERVICES</h4>
         <div class="services-cards">
           <div class="card">
@@ -114,7 +109,17 @@
         />
     
         <p class="outro-text">
-          When I'm not practicing or studying the information sciences, you'll tend to find me tinkering, playing strategy games, or enjoying a panel show with my wife. I was born and raised in Chicago, so feel free to ask me about Riccardo Muti's stewardship of the CSO, what does and does not belong on a Vienna Beef frank, or how to cope with loss as a lifelong Bears fan. I was a fairly accomplished policy debater back in the day and am accordingly thrilled by clever rhetoric and quality journalism. I find my greatest satisfactions are the result of leveraging my talents to make other people's lives easier and better, and I'd be delighted by any opportunity to do so for you! Thanks a million for reading this far down, and I hope to <NuxtLink to="contact" class="fw-bold">hear from you</NuxtLink> soon.
+          When I'm not practicing or studying the information sciences, you'll tend
+          to find me tinkering, playing strategy games, or enjoying a panel show with
+          my wife. I was born and raised in Chicago, so feel free to ask me about
+          Riccardo Muti's stewardship of the CSO, what does and does not belong on a
+          Vienna Beef frank, or how to cope with loss as a lifelong Bears fan. I was a
+          fairly accomplished policy debater back in the day and am accordingly thrilled
+          by clever rhetoric and quality journalism. I find my greatest satisfactions
+          are the result of leveraging my talents to make other people's lives easier
+          and better, and I'd be delighted by any opportunity to do so for you! Thanks
+          a million for reading this far down, and I hope to
+          <NuxtLink to="contact" class="inline-link">hear from you</NuxtLink> soon.
         </p>
       </div>
 
@@ -207,9 +212,19 @@
 .section-services {
   padding-inline: 0;
 }
+.services::before {
+  background-image: linear-gradient(transparent, var(--gtrax-accent), transparent);
+  content: '';
+  filter: blur(1rem);
+  inset: 2rem 0 -2rem 0;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+}
 .services-heading {
   font-weight: 200;
   margin-inline: auto;
+  max-width: max-content;
   padding-block: 4rem 2rem;
 }
 .services-cards {
@@ -217,6 +232,7 @@
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
+  position: relative;
 }
 .services-cards > .card {
   display: flex;
