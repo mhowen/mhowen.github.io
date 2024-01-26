@@ -8,24 +8,29 @@ defineProps({
 </script>
 
 <template>
-  <div class="expview">
-    <h3 class="expview-heading c-accent uppercase"> {{ title }} </h3>
-    
-    <p class="expview-body fs-1">
-      <slot />
-    </p>
+  <div class="expview-wrapper">
+    <div class="expview">
+      <h3 class="expview-heading c-accent uppercase"> {{ title }} </h3>
 
-    <div class="expview-controls fs-1">
-      <button class="btn hover-glow">Demos</button>
-      <button class="btn hover-glow">My Work</button>
-      <button class="btn hover-glow">Get More Info</button>
+      <p class="expview-body fs-1">
+        <slot />
+      </p>
+
+      <div class="expview-controls fs-1">
+        <button class="btn hover-glow">Demos</button>
+        <button class="btn hover-glow">My Work</button>
+        <button
+          @click="() => navigateTo('/contact')"
+          class="btn hover-glow">Get More Info</button>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 .expview {
-  max-width: min(60rem, 100%);
+  margin-inline: auto;
+  /* max-width: min(60rem, 100%); */
 }
 .expview-heading,
 .expview-body,
