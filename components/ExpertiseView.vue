@@ -30,7 +30,6 @@ defineProps({
 <style scoped>
 .expview {
   margin-inline: auto;
-  /* max-width: min(60rem, 100%); */
 }
 .expview-heading,
 .expview-body,
@@ -46,6 +45,7 @@ defineProps({
   position: relative;
 }
 .expview-body {
+  backdrop-filter: blur(1rem);
   margin-block: 1rem;
 }
 .expview-controls {
@@ -65,9 +65,18 @@ defineProps({
 .expview-heading::before {
   background-color: var(--c-accent);
   content: '';
+  inset: 0;
   filter: blur(3rem);
   inset: 50% 0 -3rem 0;
+  opacity: 0.3;
   position: absolute;
   z-index: -1;
+  animation: breathe 10s linear infinite;
+}
+
+@keyframes breathe {
+  0% { opacity: 0.3 }
+  50% { opacity: 1.0 }
+  100% { opacity: 0.3 }
 }
 </style>

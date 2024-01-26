@@ -86,15 +86,13 @@ strong {
   --clr-text: var(--c-text);
   background-color: var(--clr-fill);
   border: 0.125em solid var(--clr-fill);
+  border-radius: 0.5em;
   color: var(--clr-text);
   cursor: pointer;
   display: inline-block;
-  user-select: none;
-}
-.btn:not(.btn-logical) {
-  border-radius: 0.5em;
   font-weight: 700;
   padding: 0.25em 0.5em;
+  user-select: none;
 }
 .btn[disabled] {
   background-color: #404040;
@@ -120,14 +118,21 @@ strong {
   --clr-fill: var(--c-accent);
   --clr-text: var(--c-text);
 }
+.btn-link { /* i.e., with nested NuxtLink */
+  display: flex;
+  padding: 0;
+}
+.btn-link > a {
+  color: var(--clr-text, var(--c-text));
+  flex: 1;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+}
 
 /* Cards */
 .card {
-  /* --hs-card: 0 0%; */
   background-color: hsl(var(--hs-card) 8% / .8);
   border: 1px solid hsl(var(--hs-card) 26%);
-}
-.card {
   box-shadow: var(--bs);
   padding: clamp(1rem, 2vw + 0.125rem, 2rem);
 }

@@ -4,9 +4,7 @@ const expertiseDir   = ref(-1); // whether to flip in negative or positive dir
 
 function setExpertiseIndex(newIndex) {
   const curIndex = expertiseIndex.value;
-  expertiseDir.value = newIndex > curIndex || (newIndex === 0 && curIndex === 2)
-    ?  1
-    : -1;
+  expertiseDir.value = newIndex > curIndex ? 1 : -1;
   expertiseIndex.value = newIndex;
 }
 </script>
@@ -35,10 +33,9 @@ function setExpertiseIndex(newIndex) {
           and let's build something neat!
         </p>
 
-        <button
-          class="btn btn-accent hover-fill"
-          @click="() => navigateTo('#My_Expertise')"
-        >Learn More</button>
+        <button class="btn btn-accent btn-link hover-fill">
+          <NuxtLink to="#My_Expertise">Learn More</NuxtLink>
+        </button>
       </div>
 
       <img
@@ -104,50 +101,23 @@ function setExpertiseIndex(newIndex) {
       <div class="services relative">
         <h4 class="services-heading">FEATURED SERVICES</h4>
         <div class="services-cards">
-          <div class="card">
-            <h5 class="card-heading">Responsive Websites</h5>
-            <p class="card-body">
-              Modern, responsive, and accessible interfaces for any use case. I can
-              deliver an implementation of your existing designs or help you realize
-              your vision from scratch.
-            </p>
-            <div class="card-c2a">
-              <p>
-                From <span class="card-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent hover-fill">Get a Free Quote</button>
-            </div>
-          </div>
-  
-          <div class="card">
-            <h5 class="card-heading">Web Hosting</h5>
-            <p class="card-body">
-              Get your content on the open internet without relying on proprietary
-              tech or outsourced customer service. Plus, no recurring payments for
-              time-limited deployments.
-            </p>
-            <div class="card-c2a">
-              <p>
-                From <span class="card-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent hover-fill">Get a Free Quote</button>
-            </div>
-          </div>
-  
-          <div class="card">
-            <h5 class="card-heading">Custom Databases</h5>
-            <p class="card-body">
-              Extensible, reliable, and inexpensive databases for any organizational
-              purpose. Migrate your existing data or build a bespoke data model.
-              Integrate with your existing portal or backend for no extra fee.
-            </p>
-            <div class="card-c2a">
-              <p>
-                From <span class="card-c2a__price">$00.01</span>
-              </p>
-              <button class="btn btn-accent hover-fill">Get a Free Quote</button>
-            </div>
-          </div>
+          <DataCard title="Bespoke Websites" price="1,500">
+            Modern, responsive, and accessible interfaces for any use case. I'll
+            deliver an implementation of your existing designs or help you realize
+            your vision from scratch.
+          </DataCard>
+          
+          <DataCard title="Web Hosting" price="100">
+            Get your content on the open internet without relying on proprietary
+            tech or outsourced customer service. Plus, pay no recurring fees below
+            100,000 monthly visitors.
+          </DataCard>
+
+          <DataCard title="Site Modernization" price="700">
+            Bring your existing website to parity with modern standards of
+            accessibility and design within weeks. Includes 100% responsive layouts
+            for all devices with a screen.
+          </DataCard>
         </div>
       </div>
     </section> 
@@ -276,13 +246,18 @@ function setExpertiseIndex(newIndex) {
   grid-area: nav;
 }
 .expertise-nav > .btn {
-  border: 0.125rem solid hsl(var(--hs-card) 8%);
+  backdrop-filter: blur(1rem);
+  background-color: hsl(var(--hs-card) 8% / 0.8);
+  border: 0.125rem solid hsl(var(--hs-card) 26%);
   border-radius: 0;
   flex: 1 0 max-content;
   font-size: var(--step-1);
+  font-weight: 200;
+  z-index: 2;
 }
 .expertise-nav > .btn.active {
   border-color: var(--c-accent);
+  color: var(--c-accent);
   flex-grow: 3;
 }
 .expertise-views {
@@ -295,8 +270,8 @@ function setExpertiseIndex(newIndex) {
    *   so, if >= 72rem width, views is _always_ 60rem wide!
   */
   .expertise {
-    grid-template-areas: "main nav";
-    grid-template-columns: 1fr 9rem;
+    grid-template-areas: "nav main";
+    grid-template-columns: 9rem 1fr;
     min-width: 70rem;
   }
   .expertise-nav {
@@ -327,27 +302,6 @@ function setExpertiseIndex(newIndex) {
   gap: 3rem;
   justify-content: center;
   position: relative;
-}
-.services-cards > .card {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.25rem;
-  width: min(27rem, 100%);
-}
-.card-heading {
-  color: var(--c-accent);
-  font-size: 2rem;
-  font-weight: 200;
-  text-transform: uppercase;
-}
-.card-body {
-  padding-block: 2rem 3rem;
-}
-.card-c2a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
 }
 .section-outro { max-width: var(--dw-content) }
 .outro-main { margin-block: 1rem }
