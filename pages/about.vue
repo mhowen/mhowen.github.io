@@ -1,4 +1,14 @@
 <script setup>
+const expertiseIndex = ref(0); // which ExpertiseView to render
+const expertiseDir   = ref(-1); // whether to flip in negative or positive dir
+
+function setExpertiseIndex(newIndex) {
+  const curIndex = expertiseIndex.value;
+  expertiseDir.value = newIndex > curIndex || (newIndex === 0 && curIndex === 2)
+    ?  1
+    : -1;
+  expertiseIndex.value = newIndex;
+}
 </script>
 
 <template>
@@ -39,13 +49,57 @@
     </section>
 
     <section class="section section-services" id="My_Expertise">
-      <ExpertiseView title="Web Development" class="mi-auto">
-        Contemporary Web Technology turns fanciful ideas into standard practice
-        almost every week. Keeping apprised of and reactive to it all can be overwhelming,
-        but anyone who's ever tried to pay their taxes online can tell you why it mustn't
-        be neglected. I can help you modernize your project and ensure that it stays ready 
-        for the next big thing.
-      </ExpertiseView>
+      <div class="expertise">
+        <div class="expertise-nav">
+          <button
+            class="btn" :class="{ active: expertiseIndex === 0}"
+            @click="setExpertiseIndex(0)"> WEB </button>
+          <button
+            class="btn" :class="{ active: expertiseIndex === 1}"
+            @click="setExpertiseIndex(1)"> UI/UX </button>
+          <button
+            class="btn" :class="{ active: expertiseIndex === 2}"
+            @click="setExpertiseIndex(2)"> DATA </button>
+        </div>
+        
+        <div class="expertise-views">
+          <TransitionFlip :direction="expertiseDir">
+            <ExpertiseView
+              v-if="expertiseIndex === 0"
+              title="Web Development">
+              <p>
+                Contemporary Web Technology turns fanciful ideas into standard practice
+                almost every week. Keeping apprised of and reactive to it all can be
+                overwhelming, but anyone who's ever tried to pay their taxes online can 
+                tell you why it mustn't be neglected. I can help you modernize your project
+                and ensure that it stays ready for the next big thing.
+              </p>
+            </ExpertiseView>
+            <ExpertiseView
+              v-else-if="expertiseIndex === 1"
+              title="User Experience">
+              <p>
+                Contemporary Web Technology turns fanciful ideas into standard practice
+                almost every week. Keeping apprised of and reactive to it all can be
+                overwhelming, but anyone who's ever tried to pay their taxes online can 
+                tell you why it mustn't be neglected. I can help you modernize your project
+                and ensure that it stays ready for the next big thing.
+              </p>
+            </ExpertiseView>
+            <ExpertiseView
+              v-else-if="expertiseIndex === 2"
+              title="Data Science">
+              <p>
+                Contemporary Web Technology turns fanciful ideas into standard practice
+                almost every week. Keeping apprised of and reactive to it all can be
+                overwhelming, but anyone who's ever tried to pay their taxes online can 
+                tell you why it mustn't be neglected. I can help you modernize your project
+                and ensure that it stays ready for the next big thing.
+              </p>
+            </ExpertiseView>
+          </TransitionFlip>
+        </div>
+      </div> 
 
       <div class="services relative">
         <h4 class="services-heading">FEATURED SERVICES</h4>
@@ -208,6 +262,46 @@
   object-position: top;
   position: relative;
   right: -20vw;
+}
+.expertise {
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-areas: "nav" "main";
+  margin-inline: auto;
+  width: min(60rem, 100% - 2rem);
+}
+.expertise-nav {
+  display: flex;
+  gap: 0.5rem;
+  grid-area: nav;
+}
+.expertise-nav > .btn {
+  border: 0.125rem solid hsl(var(--hs-card) 8%);
+  border-radius: 0;
+  flex: 1 0 max-content;
+  font-size: var(--step-1);
+}
+.expertise-nav > .btn.active {
+  border-color: var(--c-accent);
+  flex-grow: 3;
+}
+.expertise-views {
+  perspective: 60rem;
+}
+
+@media (min-width: 72rem) {
+  /* The idea: 
+   * 72rem = 60rem (views) + 9rem (nav) + 1rem (gutter) + 2rem (padding)
+   *   so, if >= 72rem width, views is _always_ 60rem wide!
+  */
+  .expertise {
+    grid-template-areas: "main nav";
+    grid-template-columns: 1fr 9rem;
+    min-width: 70rem;
+  }
+  .expertise-nav {
+    flex-direction: column;
+  }
 }
 .section-services {
   padding-inline: 0;
