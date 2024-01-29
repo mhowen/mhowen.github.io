@@ -7,6 +7,8 @@ function setExpertiseIndex(newIndex) {
   expertiseDir.value = newIndex > curIndex ? 1 : -1;
   expertiseIndex.value = newIndex;
 }
+
+const fields = useFormData();
 </script>
 
 <template>
@@ -101,19 +103,37 @@ function setExpertiseIndex(newIndex) {
       <div class="services relative">
         <h4 class="services-heading">FEATURED SERVICES</h4>
         <div class="services-cards">
-          <DataCard title="Bespoke Websites" price="1,500">
+          <DataCard
+            :action="() => {
+              fields.intent = 'QUOTE';
+              fields.category = 'Custom Websites';
+              navigateTo('/contact');
+            }"
+            title="Bespoke Websites" price="1,500">
             Modern, responsive, and accessible interfaces for any use case. I'll
             deliver an implementation of your existing designs or help you realize
             your vision from scratch.
           </DataCard>
           
-          <DataCard title="Web Hosting" price="100">
+          <DataCard
+            :action="() => {
+              fields.intent = 'QUOTE';
+              fields.category = 'Web Hosting';
+              navigateTo('/contact');
+            }"
+            title="Web Hosting" price="100">
             Get your content on the open internet without relying on proprietary
             tech or outsourced customer service. Plus, pay no recurring fees below
             100,000 monthly visitors.
           </DataCard>
 
-          <DataCard title="Site Modernization" price="700">
+          <DataCard
+            :action="() => {
+              fields.intent = 'QUOTE';
+              fields.category = 'Modernization';
+              navigateTo('/contact');
+            }"
+            title="Site Modernization" price="700">
             Bring your existing website to parity with modern standards of
             accessibility and design within weeks. Includes 100% responsive layouts
             for all devices with a screen.

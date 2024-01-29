@@ -4,22 +4,23 @@ const sb_url = env.public.supabase_url;
 const sb_anon_key = env.public.supabase_anon_key;
 const parser_url = sb_url + '/functions/v1/contact-form';
 
+const fields = useFormData();
+
 // service fieldset is populated by this Array
 const svc_options = [
-  "Web Design",
-  "Hosting",
-  "CMS Design",
+  "Custom Websites",
+  "Web Hosting",
+  "Modernization",
   "Data Management",
   "UI/UX Design",
   "Consultation",
 ];
 
-const form_name = ref('');
-const form_mail = ref('');
-const form_tel  = ref('');
+// since it's tricky to v-model boolean from fieldset, watch for changes here
 const form_pref = ref('email');
-const form_svc  = ref('uncategorized');
-const form_msg  = ref('');
+watch(form_pref, (newPref) => {
+  fields.value.prefer_phone = newPref === 'phone' ? true : false;
+})
 
 const res_waiting = ref(false);
 const res_status = ref(0);
@@ -27,9 +28,9 @@ const res_error = ref('');
 
 // allow submission if required fields are filled
 const submit_allowed = computed(() => {
-  return form_name.value?.length > 0
-    && form_mail.value?.length > 0
-    && form_msg.value?.length > 0
+  return fields.value.name.length > 0
+    && fields.value.email.length > 0
+    && fields.value.message.length > 0
     && res_status.value !== 201 // no submits after a successful attempt
 })
 
@@ -45,12 +46,12 @@ async function submitForm() {
   res_error.value = '';
 
   const rawInputs = {
-    name: form_name.value,
-    email: form_mail.value,
-    tel:  form_tel.value,
-    pref: form_pref.value,
-    category:  form_svc.value,
-    message:  form_msg.value,
+    name: fields.value.name,
+    email: fields.value.email,
+    tel:  fields.value.phone,
+    pref: fields.value.prefer_phone,
+    category:  fields.value.intent + '/' + fields.value.category,
+    message:  fields.value.message,
   } // real-deal sanitizing and validation take place in server code
   const { data } = validateContactForm(rawInputs)
 
@@ -91,70 +92,77 @@ async function submitForm() {
         I'm so glad to hear you're interested in learning more! Just fill out and submit this form,
         and I'll get back to you inside 24–48 hours. I look forward to hearing from you!
       </p>
+      <p class="no-worries fs-0">
+        Not to worry&#151;I'll never give out your info or send you unsolicited communications.
+      </p>
+
+      <div class="form-select">
+        <button
+          class="btn"
+          style="border-right: 0.125rem solid #808080"
+          :class="{ selected: fields.intent === 'INFO' }"
+          @click="fields.intent = 'INFO'"
+        >Get Information</button>
+        <button
+          class="btn"
+          style="border-left: none;"
+          :class="{ selected: fields.intent === 'QUOTE' }"
+          @click="fields.intent = 'QUOTE'"
+        >Request a Quote</button>
+      </div>
 
       <form class="form" @submit.prevent="submitForm">
-        <p class="no-worries">
-          Not to worry&#151;I'll never give out your info or send you unsolicited communications.
-        </p>
-
         <InputLine
           label="Your Name"
           placeholder="What should I call you?"
-          v-model="form_name"
+          v-model="fields.name"
           class="input-inline"
           required
-          :disabled="!control_allowed"
-        />
+          :disabled="!control_allowed" />
         <InputLine
           input-type="email"
           label="Your Email"
           placeholder="you@site.com"
-          v-model.trim="form_mail"
+          v-model.trim="fields.email"
           class="input-inline"
           required
-          :disabled="!control_allowed"
-        />
+          :disabled="!control_allowed" />
         <InputLine
           input-type="tel"
           label="Daytime Phone (optional)"
           placeholder="e.g., (123) 555-5555"
-          v-model="form_tel"
+          v-model="fields.phone"
           class="input-inline"
-          :disabled="!control_allowed"
-        />
+          :disabled="!control_allowed" />
         <InlineFieldset
           :options="['email', 'phone']"
           :disabled="!control_allowed"
           legend="Contact Preference"
           class="input-inline"
-          v-model="form_pref"
-        />
+          v-model="form_pref" />
         <DynamicFieldset
           :options="svc_options"
           :disabled="!control_allowed"
-          legend="Which of these can I help you with?"
+          :legend="fields.intent === 'info'
+            ? 'Which of these categories are you interested in?'
+            : 'For which service can I get you a quote?'
+          "
           default_option="Not sure&#151;I'll tell you more below!"
-          v-model="form_svc"
-        />
-        <div class="form-textarea" :class="{ disabled: !control_allowed }">
-          <label for="details" class="label-long">
-            Tell me more about
-            <span class="c-accent fw-bold">the vision you want to achieve.</span>
-            Feel free to include any links or resources you'd like for me to look at!
-          </label>
-          <textarea
-            id="details"
-            name="details"
-            maxlength="5200"
-            class="input"
-            rows="6"
-            placeholder="Your remit here..."
-            v-model.trim="form_msg"
-            required
-            :disabled="!control_allowed"
-          >
-          </textarea>
-        </div>
+          v-model="fields.category" />
+        <DynamicTextarea v-model="fields.message">
+          Tell me more about
+          <span
+            class="c-accent fw-bold"
+            v-if="fields.intent === 'QUOTE'">the vision you want to achieve.</span>
+          <span class="c-accent fw-bold" v-else>what I can clear up for you.
+          </span>
+          Don't hesitate to include any links or resources you'd like for me to look at!
+
+          <p v-if="fields.intent === 'QUOTE'" class="mt-4">
+            At your discretion, feel free to also include your budget and/or timeframe if
+            you have them in mind.
+          </p>
+        </DynamicTextarea>
 
         <p v-if="res_waiting" class="msg msg-waiting">Awaiting response from server...</p>
         <p v-else-if="res_status === 201" class="msg">
@@ -187,6 +195,7 @@ async function submitForm() {
 .no-worries {
   color: #808080;
   font-style: italic;
+  margin-block: 2rem;
   min-width: 100%;
   text-align: center;
 }
@@ -201,25 +210,33 @@ async function submitForm() {
 .contact {
   display: grid;
   font-size: var(--step-1);
-  gap: 2rem;
   margin-block: 2rem;
   max-width: var(--form-max-inline);
 }
+.form-select {
+  background-color: var(--c-secondary);
+  display: flex;
+}
+.form-select > .btn {
+  border: 0.125rem solid var(--c-white);
+  border-bottom: 1px solid #808080;
+  border-radius: 0;
+  color: #808080;
+  font-weight: 200;
+}
+.form-select > .btn.selected {
+  color: var(--c-accent);
+  flex: 1 0 auto;
+  font-weight: 400;
+}
 .form {
+  border: 0.125rem solid var(--c-white);
+  border-top: none;
   display: flex;
   flex-wrap: wrap;
   font-size: var(--step-0);
   gap: 2rem 1rem;
-}
-.form-textarea {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-align: center;
-}
-.form-textarea.disabled {
-  filter: grayscale();
-  opacity: 0.25;
+  padding: 1rem;
 }
 .input-inline {
   display: flex;
@@ -228,17 +245,10 @@ async function submitForm() {
   gap: 0.5rem;
 }
 .label { color: var(--c-accent) }
-.label-long { text-align: start }
-.input {
-  appearance: none;
-  background-color: var(--c-secondary);
-  color: var(--c-text);
-  padding: 0.5rem 1rem;
-}
-.input::placeholder { font-style: italic }
 .form > .btn {
   flex-grow: 1;
   font-weight: 700;
   padding-block: 0.5em;
 }
 </style>
+

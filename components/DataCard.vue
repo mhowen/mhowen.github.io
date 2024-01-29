@@ -10,6 +10,10 @@ defineProps({
   price: {
     type: String,
   },
+  action: {
+    type: Function,
+    default: () => navigateTo('/contact')
+  },
 })
 </script>
 
@@ -26,7 +30,10 @@ defineProps({
       <p v-if="price">
         From <span class="datacard-ctrl__price"> ${{ price }} </span>
       </p>
-      <button class="btn btn-accent hover-fill"> {{ btnLabel }} </button>
+      <button
+        class="btn btn-accent hover-fill"
+        @click="action"
+      > {{ btnLabel }} </button>
     </div>
   </div>
 </template>
