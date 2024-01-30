@@ -31,6 +31,7 @@ const inputValue = defineModel();
       v-model="inputValue"
       :placeholder="placeholder"
       :rows="rows"
+      :disabled="disabled"
     >
     </textarea>
   </div>
