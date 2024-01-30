@@ -101,12 +101,14 @@ async function submitForm() {
           class="btn"
           style="border-right: 0.125rem solid #808080"
           :class="{ selected: fields.intent === 'INFO' }"
+          :disabled="!control_allowed"
           @click="fields.intent = 'INFO'"
         >Get Information</button>
         <button
           class="btn"
           style="border-left: none;"
           :class="{ selected: fields.intent === 'QUOTE' }"
+          :disabled="!control_allowed"
           @click="fields.intent = 'QUOTE'"
         >Request a Quote</button>
       </div>
@@ -143,13 +145,15 @@ async function submitForm() {
         <DynamicFieldset
           :options="svc_options"
           :disabled="!control_allowed"
-          :legend="fields.intent === 'info'
-            ? 'Which of these categories are you interested in?'
+          :legend="fields.intent === 'INFO'
+            ? 'Which of these can I tell you more about?'
             : 'For which service can I get you a quote?'
           "
-          default_option="Not sure&#151;I'll tell you more below!"
+          :default_option="fields.intent === 'INFO'
+            ? 'Not sure&#151;I\'ll tell you more below!'
+            : 'Something else&#151; I\'ll tell you more below!'"
           v-model="fields.category" />
-        <DynamicTextarea v-model="fields.message">
+        <DynamicTextarea :disabled="!control_allowed" v-model="fields.message">
           Tell me more about
           <span
             class="c-accent fw-bold"
@@ -163,13 +167,18 @@ async function submitForm() {
             you have them in mind.
           </p>
         </DynamicTextarea>
-
-        <p v-if="res_waiting" class="msg msg-waiting">Awaiting response from server...</p>
-        <p v-else-if="res_status === 201" class="msg">
-          <span class="msg-success">Success!</span>
-          Thanks again for your interest&#151;I've got your info and will be in touch soon.
-        </p>
-        <p v-if="res_error" class="msg msg-error"> {{ res_error }} </p>
+        
+        <div
+          class="form-feedback card"
+          :class="{ active: res_status === 201 || res_waiting || res_error }"
+        >
+          <p v-if="res_waiting" class="msg msg-waiting">Awaiting response from server...</p>
+          <p v-else-if="res_status === 201" class="msg">
+            <span class="msg-success">Success!</span>
+            Thanks again for your interest&#151;I've got your info and will be in touch soon.
+          </p>
+          <p v-if="res_error" class="msg msg-error"> {{ res_error }} </p>
+        </div>
 
         <input
           v-if="res_status !== 201"
@@ -237,6 +246,7 @@ async function submitForm() {
   font-size: var(--step-0);
   gap: 2rem 1rem;
   padding: 1rem;
+  position: relative;
 }
 .input-inline {
   display: flex;
@@ -246,9 +256,26 @@ async function submitForm() {
 }
 .label { color: var(--c-accent) }
 .form > .btn {
-  flex-grow: 1;
+  flex: 1 0 100%;
   font-weight: 700;
   padding-block: 0.5em;
+}
+.form-feedback {
+  opacity: 0;
+  padding: 0.5rem 1rem;
+  transition: opacity 250ms ease-in;
+}
+.form-feedback.active { opacity: 1 }
+@media (min-width: 80rem) {
+  .form-feedback {
+    /* positions 1rem to the right of form, then grows up to 40rem */
+    --start: calc(2rem + var(--form-max-inline));
+    position: absolute;
+    bottom: 0;
+    right: -1rem;
+    transform: translateX(100%);
+    width: min(calc(100vw - 1rem - var(--start)), 40rem);
+  }
 }
 </style>
 
