@@ -4,6 +4,10 @@ defineProps({
     type: String,
     required: true,
   },
+  infoAction: {
+    type: Function,
+    default: () => navigateTo('/contact'),
+  },
 });
 </script>
 
@@ -20,7 +24,7 @@ defineProps({
         <button class="btn hover-glow">Demos</button>
         <button class="btn hover-glow">My Work</button>
         <button
-          @click="() => navigateTo('/contact')"
+          @click="infoAction"
           class="btn hover-glow">Get More Info</button>
       </div>
     </div>

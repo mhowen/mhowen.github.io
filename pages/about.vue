@@ -65,7 +65,12 @@ const fields = useFormData();
           <TransitionFlip :direction="expertiseDir">
             <ExpertiseView
               v-if="expertiseIndex === 0"
-              title="Web Development">
+              title="Web Development"
+              :info-action="() => {
+                fields.intent = 'INFO';
+                fields.category = 'Custom Websites';
+                navigateTo('/contact');
+              }">
               <p>
                 Contemporary Web Technology turns fanciful ideas into standard practice
                 almost every week. Keeping apprised of and reactive to it all can be
@@ -76,7 +81,12 @@ const fields = useFormData();
             </ExpertiseView>
             <ExpertiseView
               v-else-if="expertiseIndex === 1"
-              title="User Experience">
+              title="User Experience"
+              :info-action="() => {
+                fields.intent = 'INFO';
+                fields.category = 'UI/UX Design';
+                navigateTo('/contact');
+              }">
               <p>
                 Contemporary Web Technology turns fanciful ideas into standard practice
                 almost every week. Keeping apprised of and reactive to it all can be
@@ -87,7 +97,12 @@ const fields = useFormData();
             </ExpertiseView>
             <ExpertiseView
               v-else-if="expertiseIndex === 2"
-              title="Data Science">
+              title="Data Science"
+              :info-action="() => {
+                fields.intent = 'INFO';
+                fields.category = 'Data Management';
+                navigateTo('/contact');
+              }">
               <p>
                 Contemporary Web Technology turns fanciful ideas into standard practice
                 almost every week. Keeping apprised of and reactive to it all can be
