@@ -69,6 +69,33 @@ strong {
 .rad-grad-tl { --g-pos: 0% 0% }
 .rad-grad-br { --g-pos: 100% 100% }
 
+.grad-textclip {
+  --grad: var(--gradient-2);
+  background-clip: text;
+  background-image: var(--grad);
+  background-size: 400%;
+  color: transparent;
+  font-weight: 900;
+  line-height: 1;
+  animation: slide 2s infinite alternate; 
+}
+@keyframes slide {
+  0% { background-position: left }
+  100% { background-position: right }
+}
+
+/* Hover Effects */
+.hover-radgrad { position: relative }
+.hover-radgrad::before {
+  content: '';
+  background-image: radial-gradient(circle at center, var(--c-accent), transparent);
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  transition: opacity 250ms ease-in;
+}
+.hover-radgrad:hover::before { opacity: 1 }
 
 /* Links and Anchors */
 .inline-link {

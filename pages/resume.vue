@@ -28,7 +28,7 @@
       </p>
 
       <div class="contacts">
-        <h2 class="contacts-heading fs-3">Where To Find Me</h2>
+        <h2 class="resume-heading fs-3">Where To Find Me</h2>
 
         <ul class="contacts-list list-none">
           <li class="contact inline-svg hoverable">
@@ -62,7 +62,7 @@
     </section>
 
     <section class="section">
-      <h2 class="section-heading">Professional History</h2>
+      <h2 class="resume-heading">Professional History</h2>
 
       <div class="resumegrid">
         <div class="resume-container">
@@ -81,7 +81,7 @@
               <p>Sep 2022&#150;Apr 2023</p>
             </li>
           </ul>
-          <ul class="job-summary list-none"> 
+          <ul class="summary-list list-none"> 
             <li>Designed and operationalized automation strategies for user data validation</li>
             <li>Designed and implemented bespoke web scraping software that eliminated need for manual data entry</li>
             <li>Undertook enterprise-scale data governance projects to eliminate anomalies</li>
@@ -104,7 +104,7 @@
               <p>May 2020&#150;Dec 2021</p>
             </li>
           </ul>
-          <ul class="job-summary list-none"> 
+          <ul class="summary-list list-none"> 
             <li>Sole administrator of SharePoint Site Collection and Access Databases for several hundred users</li>
             <li>Remediated systemic issues in collection of structured user data by redesigning InfoPath forms</li>
             <li>Principal representative of data team during liasons with government and military personnel</li>
@@ -127,7 +127,7 @@
               <p>Jun 2019&#150;Aug 2019</p>
             </li>
           </ul>
-          <ul class="job-summary list-none"> 
+          <ul class="summary-list list-none"> 
             <li>Developed responsive single-page applications for granular data visualization at enterprise scale</li>
             <li>Designed robust and reusable UI components leveraging Angular and the D3.js library</li>
             <li>Mentored in user experience design and practical concerns of UI implementation</li>
@@ -150,7 +150,7 @@
               <p>Jun 2018&#150;Dec 2019</p>
             </li>
           </ul>
-          <ul class="job-summary list-none"> 
+          <ul class="summary-list list-none"> 
             <li>Managed inventory database and performed audits and maintenance of hardware</li>
             <li>Provided administrative support for permissions management, imaging, and data security</li>
             <li>Assisted college faculty in the prevention and resolution of technical issues</li>
@@ -160,7 +160,7 @@
     </section>
 
     <section class="section">
-      <h2 class="section-heading">Higher Education</h2>
+      <h2 class="resume-heading">Higher Education</h2>
 
       <div class="resumegrid">
         <div class="resume-container">
@@ -228,53 +228,78 @@
           </div>
         </div>
       </div>
-     </section>
+    </section>
 
-    <section class="section section-wide section-skills">
-      <h2 class="section-heading">Skills and Proficiencies</h2>
-     
-      <h3 class="skill-heading">The Short Version</h3>
+    <section class="section">
+      <h2 class="resume-heading">Skills and Proficiencies</h2>
 
-      <div class="subskills-wrapper">
-        <div class="summary">
-          <h4 class="skill-subheading inline-card">Software Development</h4>
-          <ul class="summary-list">
-            <li class="summary-experience">
-              <p class="summary-experience__figure">10+ Years</p>
-              <p>Professional Experience</p>
-            </li>
+      <div class="summaries">
+        <div class="summary-intro">
+          <h3 class="summary-heading">The Short Version</h3>
+          <p class="summary-msg font-italic">
+            Use these high-level overviews to guide your browsing. Click or tap on
+            a card to jump to its corresponding section below.
+
+            <span class="c-accent"><br>maybe i oughta make this bg a radgrad or something</span>
+          </p>
+        </div>
+
+        <div class="summary hover-radgrad">
+          <div class="summary-data">
+            <h4 class="fw-light">Software Dev</h4>
+            <p class="font-italic fs-3 grad-textclip">10+ Years</p>
+            <p class="summary-label">Professional Experience</p>
+          </div>
+          <ul class="summary-highlights list-none">
             <li>Focus on Full-Stack Web Development</li>
             <li>Past work in public and private sectors</li>
             <li>Highly skilled with major web frameworks</li>
           </ul>
         </div>
-        <div class="summary">
-          <h4 class="skill-subheading inline-card">UI/UX Design</h4>
-          <ul class="summary-list">
-            <li class="summary-experience">
-              <p class="summary-experience__figure">5+ Years</p>
-              <p>Professional Experience</p>
-            </li>
-            <li>Expansive, interdisciplinary skillset</li>
-            <li>Skilled with digital art and animation</li>
-            <li>Professionally mentored in modern standards</li>
+
+        <div class="summary hover-radgrad">
+          <div class="summary-data">
+            <h4 class="fw-light">UI/UX Design</h4>
+            <p class="font-italic fs-3 grad-textclip">5+ Years</p>
+            <p class="summary-label">Professional Experience</p>
+          </div>
+          <ul class="summary-highlights list-none">
+            <li>Focus on Full-Stack Web Development</li>
+            <li>Past work in public and private sectors</li>
+            <li>Highly skilled with major web frameworks</li>
           </ul>
         </div>
-        <div class="summary">
-          <h4 class="skill-subheading inline-card">Data Science</h4>
-          <ul class="summary-list">
-            <li class="summary-experience">
-              <p class="summary-experience__figure">3+ Years</p>
-              <p>Professional Experience</p>
-            </li>
-            <li>Highly skilled with SQL and query-writing</li>
-            <li>Trained in business intelligence practices</li>
-            <li>Experienced with SQL and NoSQL databases</li>
+
+        <div class="summary hover-radgrad">
+          <div class="summary-data">
+            <h4 class="fw-light">Data Science</h4>
+            <p class="font-italic fs-3 grad-textclip">3+ Years</p>
+            <p class="summary-label">Professional Experience</p>
+          </div>
+          <ul class="summary-highlights list-none">
+            <li>Focus on Full-Stack Web Development</li>
+            <li>Past work in public and private sectors</li>
+            <li>Highly skilled with major web frameworks</li>
+          </ul>
+        </div>
+
+        <div class="summary hover-radgrad">
+          <div class="summary-data">
+            <h4 class="fw-light">Other Skills</h4>
+            <p class="font-italic fs-3 grad-textclip">28+ Years</p>
+            <p class="summary-label">Lived Experience</p>
+          </div>
+          <ul class="summary-highlights list-none">
+            <li>Focus on Full-Stack Web Development</li>
+            <li>Past work in public and private sectors</li>
+            <li>Highly skilled with major web frameworks</li>
           </ul>
         </div>
       </div>
-
-      <h3 class="skill-heading">Software Development</h3>
+    </section>
+    
+    <section class="section section-wide section-skills">
+      <h3 class="skill-heading123">Software Development</h3>
       <div class="subskills-wrapper">
 
         <div class="subskill">
@@ -448,10 +473,37 @@
   --card-bg: hsl(var(--hs-card) 8% / .8);
   --card-border: 1px solid hsl(var(--hs-card) 26%);
 }
+.resume-heading {
+  margin-bottom: 0.5em;
+}
+.rc-heading,
+.rc-subheading {
+  padding: 1rem;
+  text-transform: uppercase;
+}
+.resume-heading,
+.rc-heading,
+.rc-subheading {
+  font-weight: 200;
+}
+.rc-subheading {
+  margin-bottom: 0.5rem;
+  padding-block: 0.5rem;
+}
+.rc-heading {
+  color: var(--c-accent);
+  font-size: clamp(1.5rem, 7cqw + 0.125rem, 3rem);
+  margin-bottom: 1rem;
+}
+
+/* stuff to color like cards */
 .contacts-list > .contact,
 .rc-heading,
 .rc-subheading,
-.resume-container li {
+.resume-container li,
+.summary-intro,
+.summary,
+.summary-list li {
   background-color: var(--card-bg);
   border: var(--card-border);
 }
@@ -502,10 +554,6 @@
   --li-basis: 20rem;
   max-width: calc(5rem + (3 * var(--li-basis)));
 }
-.contacts-heading {
-  font-weight: 200;
-  margin-bottom: 1rem;
-}
 .contacts-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(var(--li-basis), 100%), 1fr));
@@ -520,27 +568,13 @@
   gap: 2rem;
 }
 .resume-container { container: cnt-resume / inline-size }
-.rc-heading,
-.rc-subheading {
-  font-weight: 200;
-  text-transform: uppercase;
-  padding: 1rem;
-}
-.rc-heading {
-  color: var(--c-accent);
-  font-size: clamp(1.5rem, 7cqw + 0.125rem, 3rem);
-}
-.rc-subheading {
-  margin-bottom: 0.5rem;
-  padding-block: 0.5rem;
-}
 .rc-datalist {
   display: grid;
   gap: 0.5rem;
-  padding-block: 1rem;
+  padding-bottom: 1rem;
 }
 .resume-container > .school-list:first-of-type { margin-bottom: 1rem }
-.job-summary > li,
+.summary-list > li,
 .school-list li {
   border-inline-start: 0.25rem solid var(--c-accent);
   margin-bottom: 0.5rem;
@@ -553,91 +587,57 @@
 @media (min-width: 45rem) {
   .resumegrid { grid-template-columns: 1fr 1fr }
 }
-
-.resumecards {
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(32rem, 100%), 1fr));
-}
-.resumecard {
-  border-radius: 1em;
-  container: cnt-resumecard / inline-size;
-  display: grid;
-  position: relative;
-}
-.resumecard::before {
-  background-image: linear-gradient(
-    to top left,
-    transparent 5%,
-    var(--c-secondary) 20%,
-    var(--c-accent),
-    var(--c-secondary) 80%,
-    transparent 95%
-  );
-  content: '';
-  filter: blur(1.5rem);
-  inset: 2rem;
-  opacity: 0.2;
-  position: absolute;
-  z-index: -1;
-}
-
 .section-skills {
   margin-bottom: clamp(2em, 10vh - 2em, 6em);
 }
-.subskills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 4rem;
-}
-.summary {
-  flex-grow: 1;
-  max-width: 36rem;
-}
 .skill-heading {
   margin-bottom: 2rem;
-  text-transform: uppercase;
 }
-.skill-subheading {
-  /* background-color: var(--card-bg); */
-  /* padding: 0.25em 0.5em; */
-  border-radius: 0;
+
+.summaries {
+  display: grid;
+  gap: 2rem;
+}
+.summaries > * {
+  padding: 1rem;
+}
+.summary-intro {
+  display: grid;
+  gap: 2rem;
+  padding-inline: min(15%, 20rem);
+  place-content: center;
   text-align: center;
 }
-.summary-list {
-  list-style: none;
-  padding-inline-start: 0;
+
+@media (min-width: 60rem) {
+  .summaries {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .summary-intro {
+    grid-column: span 2;
+  }
 }
-.summary-list > li {
-  background-color: var(--card-bg);
-  border-left: 0.25rem solid var(--c-accent);
-  padding: 0.5rem 1rem;
-  margin-top: 0.5em;
+
+.summary {
+  padding: 1rem;
+  user-select: none;
 }
-.summary-list > .summary-experience {
-  align-items: center;
-  border-left: none;
-  display: flex;
-  flex-direction: column;
-  font-style: italic;
-  padding-block: 1em;
+.summary:hover { cursor: pointer }
+.summary-data > * {
+  margin-block: 1rem;
+  text-align: center;
 }
-.summary-experience__figure {
-  background-clip: text;
-  background-image: var(--gradient-2);
-  background-size: 400%;
-  color: transparent;
-  font-size: var(--step-3);
-  font-weight: 900;
-  line-height: 1;
-  padding-inline: 0.25em;
-  animation: gradient-slide 2s infinite alternate;
+.summary-figure,
+.summary-label { font-style: italic }
+.summary-highlights > li {
+  border-inline-start: 0.25rem solid var(--c-accent);
+  padding: 0.25rem 0.5rem;
 }
-@keyframes gradient-slide {
-  0% { background-position: left }
-  100% { background-position: right }
-}
+.summary-highlights > li:not(:last-of-type) { margin-bottom: 1rem }
+
+
+
+.skill-heading123 { margin-top: 20rem }
 .subskill {
   display: flex;
   flex-direction: column;
