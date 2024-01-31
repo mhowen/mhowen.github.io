@@ -3,7 +3,7 @@
 
 <template>
   <div class="page-resume">
-    <section class="section section-intro">
+    <section class="section section-wide">
       <h1 class="intro-heading fs-6">Harry Owen</h1>
 
       <div class="intro-graphic">
@@ -173,7 +173,7 @@
       </div>
     </section>
 
-    <section class="section section-skills">
+    <section class="section section-wide section-skills">
       <h2 class="section-heading">Skills and Proficiencies</h2>
      
       <h3 class="skill-heading">The Short Version</h3>
@@ -398,16 +398,15 @@
   padding: 0.5rem 1rem;
 }
 .section {
-  margin-top: clamp(2em, 10vh - 2em, 6em);
-  margin-inline: auto;
-  padding-inline: 1em;
-  max-width: var(--dw-content);
+  --padding-min: 1rem;
+  --leftover: calc((100vw - var(--dw-content-wide)) / 2);
+  margin-top: clamp(1em, 4vh + 0.125em, 4em);
+  max-width: calc(var(--dw-content) + var(--leftover));
+  padding-inline: max(calc(var(--leftover) + 1rem), 1rem) 1rem;
 }
-.section-heading { margin-bottom: 4rem }
-.section-intro {
-  margin-top: 2rem;
-  max-width: var(--dw-content-wide);
-}
+.section-wide { max-width: calc(var(--dw-content-wide) + var(--leftover)) }
+
+.section-heading { margin-bottom: 2rem }
 .intro-heading { text-shadow: 0.25rem 0 var(--c-accent) }
 .intro-graphic {
   border-bottom: 0.125rem solid var(--c-accent);
@@ -569,7 +568,6 @@
   }
 }
 .section-skills {
-  max-width: var(--dw-content-wide);
   margin-bottom: clamp(2em, 10vh - 2em, 6em);
 }
 .subskills-wrapper {
