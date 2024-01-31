@@ -129,25 +129,36 @@ strong {
   text-decoration: none;
 }
 
-/* Cards */
+/* Logical Layouts */
 .card {
   background-color: hsl(var(--hs-card) 8% / .8);
   border: 1px solid hsl(var(--hs-card) 26%);
   box-shadow: var(--bs);
   padding: clamp(1rem, 2vw + 0.125rem, 2rem);
 }
-p,
-.card ul {
-  max-width: 70ch;
+.inline-svg {
+  --gap: 1rem;
+  --pad-block: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding-inline: 1rem;
 }
-.dynamic-ul::after {
-  background-color: currentColor;
-  content: '';
-  display: block;
-  width: 20%;
-  margin: 0.5rem auto 1rem;
-  height: 2px;
-  opacity: 0.75;
+.inline-svg > svg {
+  color: var(--c-accent);
+  transition: all 250ms ease-in;
+}
+.inline-svg > :not(svg) {
+  flex-grow: 1;
+  padding-block: var(--pad-block);
+  transition: all 250ms ease-in;
+}
+.inline-svg.hoverable:hover svg {
+  transform: scale(1.25);
+}
+.inline-svg.hoverable:hover > :not(svg) {
+  color: var(--c-accent);
+  transform: translateX(0.5rem);
 }
 
 /* Inputs */

@@ -30,30 +30,30 @@
       <div class="contacts">
         <h2 class="contacts-heading fs-3">Where To Find Me</h2>
 
-        <ul class="contacts-list">
-          <li class="contact">
+        <ul class="contacts-list list-none">
+          <li class="contact inline-svg hoverable">
             <Icon name="mdi:web" height="2rem" width="2rem" />
             <NuxtLink to="/" target="_blank">mharryowen.com</NuxtLink>
           </li>
-          <li class="contact">
+          <li class="contact inline-svg hoverable">
             <Icon name="teenyicons:npm-solid" height="2rem" width="2rem" />
             <NuxtLink to="https://www.npmjs.com/~mhowen" target="_blank">/~mhowen</NuxtLink>
           </li>
-          <li class="contact">
+          <li class="contact inline-svg hoverable">
             <Icon name="mdi:github" height="2rem" width="2rem" />
             <NuxtLink to="https://github.com/mhowen" target="_blank">/mhowen</NuxtLink>
           </li>
-          <li class="contact">
+          <li class="contact inline-svg hoverable">
             <Icon name="mdi:linkedin" height="2rem" width="2rem" />
             <NuxtLink to="https://www.linkedin.com/in/mharryowen"
               target="_blank">/mharryowen</NuxtLink>
           </li>
-          <li class="contact">
+          <li class="contact inline-svg hoverable">
             <Icon name="ic:twotone-location-on" height="2rem" width="2rem" />
             <NuxtLink to="https://google.com/maps/place/Landmark,+Alexandria,+VA"
               target="_blank">Alexandria, VA</NuxtLink>
           </li>
-          <li class="contact">
+          <li class="contact inline-svg hoverable">
             <Icon name="ic:outline-alternate-email" height="2rem" width="2rem" />
             <NuxtLink to="mailto:mho@mharryowen.com" target="_blank">mho@mharryowen.com</NuxtLink>
           </li>
@@ -61,117 +61,174 @@
       </div>
     </section>
 
-    <section class="section section-jobs">
+    <section class="section">
       <h2 class="section-heading">Professional History</h2>
 
-      <div class="resumecards jobs-wrapper">
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">Database Admin</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:company"><p>govmates LLC</p></WithIcon>
-            <WithIcon icon="mdi:map-marker-outline"><p>Reston, VA</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>Sep 2022–Apr 2023</p></WithIcon>
-          </div>
-          <ul class="resumecard-list inline-cards">
+      <div class="resumegrid">
+        <div class="resume-container">
+          <h3 class="rc-heading">Database Admin</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:company" height="2rem" width="2rem" />
+              <p>govmates LLC</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Reston, VA</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>Sep 2022&#150;Apr 2023</p>
+            </li>
+          </ul>
+          <ul class="job-summary list-none"> 
             <li>Designed and operationalized automation strategies for user data validation</li>
             <li>Designed and implemented bespoke web scraping software that eliminated need for manual data entry</li>
             <li>Undertook enterprise-scale data governance projects to eliminate anomalies</li>
           </ul>
         </div>
 
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">SharePoint Admin</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:company"><p>DELTA Resources, Inc.</p></WithIcon>
-            <WithIcon icon="mdi:map-marker-outline"><p>Washington, D.C.</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>May 2020–Dec 2021</p></WithIcon>
-          </div>
-          <ul class="resumecard-list inline-cards">
+        <div class="resume-container">
+          <h3 class="rc-heading">SharePoint Admin</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:company" height="2rem" width="2rem" />
+              <p>DELTA Resources, Inc.</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Washington, D.C.</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>May 2020&#150;Dec 2021</p>
+            </li>
+          </ul>
+          <ul class="job-summary list-none"> 
             <li>Sole administrator of SharePoint Site Collection and Access Databases for several hundred users</li>
             <li>Remediated systemic issues in collection of structured user data by redesigning InfoPath forms</li>
             <li>Principal representative of data team during liasons with government and military personnel</li>
           </ul>
         </div>
 
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">UI/UX Intern</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:company"><p>Decisive Analytics Corporation</p></WithIcon>
-            <WithIcon icon="mdi:map-marker-outline"><p>Arlington, VA</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>Jun 2019–Aug 2019</p></WithIcon>
-          </div>
-          <ul class="resumecard-list inline-cards">
+        <div class="resume-container">
+          <h3 class="rc-heading">UI/UX Intern</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:company" height="2rem" width="2rem" />
+              <p>Decisive Analytics Corp.</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Arlington, VA</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>Jun 2019&#150;Aug 2019</p>
+            </li>
+          </ul>
+          <ul class="job-summary list-none"> 
             <li>Developed responsive single-page applications for granular data visualization at enterprise scale</li>
             <li>Designed robust and reusable UI components leveraging Angular and the D3.js library</li>
             <li>Mentored in user experience design and practical concerns of UI implementation</li>
           </ul>
         </div>
 
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">Desktop Agent</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:company"><p>Tippie College of Business</p></WithIcon>
-            <WithIcon icon="mdi:map-marker-outline"><p>Iowa City, IA</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>Jun 2018–Dec 2019</p></WithIcon>
-          </div>
-          <ul class="resumecard-list inline-cards">
-            <li>Managed inventory database and performed regular audits and maintenance of hardware</li>
+        <div class="resume-container">
+          <h3 class="rc-heading">Desktop IT Agent</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:company" height="2rem" width="2rem" />
+              <p>Tippie College of Business</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Iowa City, IA</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>Jun 2018&#150;Dec 2019</p>
+            </li>
+          </ul>
+          <ul class="job-summary list-none"> 
+            <li>Managed inventory database and performed audits and maintenance of hardware</li>
             <li>Provided administrative support for permissions management, imaging, and data security</li>
-            <li>Assisted college faculty in the prevention and resolution of technical concerns</li>
+            <li>Assisted college faculty in the prevention and resolution of technical issues</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-edu">
-      <h2 class="section-heading">Education</h2>
+    <section class="section">
+      <h2 class="section-heading">Higher Education</h2>
 
-      <div class="resumecards edu-wrapper">
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">Franklin University</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:map-marker-outline"><p>Columbus, OH</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>A.S. Expected May 2024</p></WithIcon>
-            <WithIcon icon="bi:mortarboard"><p>Computer Science, GPA 4.00</p></WithIcon>
-          </div>
-          <div class="edu-listgroup">
-            <h4 class="resumecard-subheading">HONORS</h4>
-            <ul class="resumecard-list inline-cards">
-              <li>President's List—Summer 2023</li>
-              <li>President's List—Fall 2023</li>
+      <div class="resumegrid">
+        <div class="resume-container">
+          <h3 class="rc-heading">Franklin University</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Columbus, OH</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>A.S. Expected May 2024</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="bi:mortarboard" height="2rem" width="2rem" />
+              <p>Computer Science, GPA 4.00</p>
+            </li>
+          </ul>
+          <div class="school-list">
+            <h4 class="rc-subheading">Honors</h4>
+            <ul class="font-italic list-none">
+              <li>President's List&#151;Summer 2023</li>
+              <li>President's List&#151;Fall 2023</li>
             </ul>
-            <h4 class="resumecard-subheading">COURSE HIGHLIGHTS</h4>
-            <ul class="resumecard-list inline-cards">
+          </div>
+          <div class="school-list">
+            <h4 class="rc-subheading">Course Highlights</h4>
+            <ul class="list-none">
               <li>Database Management Systems</li>
-              <li>Networking and Network Design</li>
+              <li>Computer Network Design</li>
               <li>Programming Language Architecture</li>
             </ul>
           </div>
         </div>
-
-        <div class="resumecard">
-          <h3 class="inline-card resumecard-heading">University of Iowa</h3>
-          <div class="resumecard-data inline-cards">
-            <WithIcon icon="mdi:map-marker-outline"><p>Iowa City, IA</p></WithIcon>
-            <WithIcon icon="mdi:calendar-clock"><p>Part-Time, 2014–2019</p></WithIcon>
-            <WithIcon icon="bi:mortarboard"><p>Computer Science (transferred)</p></WithIcon>
-          </div>
-          <div class="edu-listgroup">
-            <h4 class="resumecard-subheading">HONORS</h4>
-            <ul class="resumecard-list inline-cards">
-              <li>University Honors Scholarship</li>
+        <div class="resume-container">
+          <h3 class="rc-heading">University of Iowa</h3>
+          <ul class="rc-datalist list-none">
+            <li class="inline-svg">
+              <Icon name="mdi:map-marker-outline" height="2rem" width="2rem" />
+              <p>Iowa City, IA</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="mdi:calendar-clock" height="2rem" width="2rem" />
+              <p>Part-Time, 2014&#150;2019</p>
+            </li>
+            <li class="inline-svg">
+              <Icon name="bi:mortarboard" height="2rem" width="2rem" />
+              <p>Computer Science <span class="font-italic">(Transferred)</span></p>
+            </li>
+          </ul>
+          <div class="school-list">
+            <h4 class="rc-subheading">Honors</h4>
+            <ul class="font-italic list-none">
+              <li>National Scholars Award</li>
               <li>Old Gold Scholarship</li>
             </ul>
-            <h4 class="resumecard-subheading">COURSE HIGHLIGHTS</h4>
-            <ul class="resumecard-list inline-cards">
-              <li>Computer Architecture</li>
-              <li>Discrete Structures and Set Theory</li>
-              <li>Linear Algebra</li>
+          </div>
+          <div class="school-list">
+            <h4 class="rc-subheading">Course Highlights</h4>
+            <ul class="list-none">
+              <li>Database Management Systems</li>
+              <li>Computer Network Design</li>
+              <li>Programming Language Architecture</li>
             </ul>
           </div>
         </div>
       </div>
-    </section>
+     </section>
 
     <section class="section section-wide section-skills">
       <h2 class="section-heading">Skills and Proficiencies</h2>
@@ -388,25 +445,27 @@
 
 <style scoped>
 .page-resume {
-  --card-bg: color-mix(in srgb, var(--c-secondary), transparent 20%);
-  --card-br: 1rem;
+  --card-bg: hsl(var(--hs-card) 8% / .8);
+  --card-border: 1px solid hsl(var(--hs-card) 26%);
 }
-.inline-card,
-.inline-cards > * {
+.contacts-list > .contact,
+.rc-heading,
+.rc-subheading,
+.resume-container li {
   background-color: var(--card-bg);
-  border-radius: var(--card-br);
-  padding: 0.5rem 1rem;
+  border: var(--card-border);
 }
+
 .section {
-  --padding-min: 1rem;
+  --pad-min: 1rem;
   --leftover: calc((100vw - var(--dw-content-wide)) / 2);
   margin-top: clamp(1em, 4vh + 0.125em, 4em);
   max-width: calc(var(--dw-content) + var(--leftover));
-  padding-inline: max(calc(var(--leftover) + 1rem), 1rem) 1rem;
+  padding-inline: max(calc(var(--leftover) + var(--pad-min)), var(--pad-min)) var(--pad-min);
 }
 .section-wide { max-width: calc(var(--dw-content-wide) + var(--leftover)) }
-
 .section-heading { margin-bottom: 2rem }
+
 .intro-heading { text-shadow: 0.25rem 0 var(--c-accent) }
 .intro-graphic {
   border-bottom: 0.125rem solid var(--c-accent);
@@ -451,35 +510,50 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(var(--li-basis), 100%), 1fr));
   gap: 0.5rem;
-  list-style: none;
-  padding-inline-start: 0;
 }
 .contact {
-  background-color: hsl(var(--hs-card) 8% / .8);
-  border: 1px solid hsl(var(--hs-card) 26%);
   border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   max-width: 30rem;
 }
-.contact svg {
-  color: var(--c-accent);
-  margin-inline-start: 1rem;
-  transition: all 250ms ease-in;
+.resumegrid {
+  display: grid;
+  gap: 2rem;
 }
-.contact a {
-  flex-grow: 1;
+.resume-container { container: cnt-resume / inline-size }
+.rc-heading,
+.rc-subheading {
+  font-weight: 200;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+.rc-heading {
+  color: var(--c-accent);
+  font-size: clamp(1.5rem, 7cqw + 0.125rem, 3rem);
+}
+.rc-subheading {
+  margin-bottom: 0.5rem;
   padding-block: 0.5rem;
-  transition: color 250ms ease-in;
 }
-.contact:hover a {
-  color: var(--c-accent);
+.rc-datalist {
+  display: grid;
+  gap: 0.5rem;
+  padding-block: 1rem;
 }
-.contact:hover svg {
-  height: 2.5rem;
-  width: 2.5rem;
+.resume-container > .school-list:first-of-type { margin-bottom: 1rem }
+.job-summary > li,
+.school-list li {
+  border-inline-start: 0.25rem solid var(--c-accent);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
 }
+@container cnt-resume (min-width: 35rem) {
+  .rc-datalist { grid-template-areas: "li0 li2" "li1 li2" }
+  .rc-datalist > :last-child { grid-area: li2 }
+}
+@media (min-width: 45rem) {
+  .resumegrid { grid-template-columns: 1fr 1fr }
+}
+
 .resumecards {
   display: grid;
   gap: 3rem;
@@ -508,65 +582,6 @@
   z-index: -1;
 }
 
-.resumecard-heading {
-  align-self: flex-end;
-  color: var(--c-accent);
-  font-weight: 200;
-  margin-bottom: 1rem;
-  position: relative;
-  text-transform: uppercase;
-}
-.resumecard-data {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  margin-bottom: 1em;
-}
-.resumecard-data > * {
-  flex-basis: calc(50% - 1em);
-  flex-grow: 1;
-  min-width: max-content;
-}
-.resumecard-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  font-style: italic;
-  list-style: none;
-  padding-inline-start: 0;
-}
-.resumecard-list > li {
-  border-left: 0.25rem solid var(--c-accent);
-  border-radius: 0;
-  border-top-right-radius: var(--card-br);
-  border-bottom-right-radius: var(--card-br);
-  flex-grow: 1;
-}
-.resumecard-list > li:first-of-type { border-bottom-right-radius: 0 }
-.resumecard-list > li:last-of-type { border-top-right-radius: 0 }
-.resumecard-list > li:nth-of-type(2):not(:last-of-type) { border-radius: 0 }
-.edu-listgroup {
-  display: grid;
-  gap: 1em;
-}
-@container cnt-resumecard (width > 30rem) {
-  .edu-listgroup {
-    column-gap: 0;
-    grid-template-columns: min-content auto;
-  }
-  .edu-listgroup > .resumecard-subheading {
-    --g-color: color-mix(in srgb, var(--c-accent), transparent 90%);
-    background-color: var(--card-bg);
-    border-bottom-left-radius: 0.5em;
-    border-top-left-radius: 0.5em;
-    display: grid;
-    font-size: 4cqw;
-    line-height: 1.4;
-    padding: 0.5em;
-    place-content: center;
-    text-align: center;
-  }
-}
 .section-skills {
   margin-bottom: clamp(2em, 10vh - 2em, 6em);
 }
