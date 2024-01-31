@@ -136,26 +136,6 @@ strong {
   box-shadow: var(--bs);
   padding: clamp(1rem, 2vw + 0.125rem, 2rem);
 }
-.card-list,
-.card-grid {
-  list-style: none;
-  padding-inline-start: 0;
-}
-.card-list > li,
-.card-grid > * {
-  background-color: color-mix(in srgb, var(--c-secondary), var(--c-white) 10%);
-  box-shadow: var(--bs);
-  border-left: 0.25rem solid color-mix(in srgb, var(--c-white), var(--c-black) 25%);
-  padding: 0.5em 1em;
-}
-.card-grid { align-self: center }
-.card-list > li:not(:last-child) { margin-bottom: 0.5em }
-/* .dark-mode .card { */
-/*   box-shadow: none; */
-/* } */
-/* .card > .card-heading { */
-/*   margin-bottom: 0.5em; */
-/* } */
 p,
 .card ul {
   max-width: 70ch;

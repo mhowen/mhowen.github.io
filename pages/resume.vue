@@ -18,38 +18,46 @@
           src="~/assets/img/resume_0.png">
       </div>
 
-      <p class="intro-summary fs-1">Analytical, detail-oriented, and multidisciplinary developer and designer with over ten years of scholastic and professional experience in software development, web design, and data science. Intrinsically motivated computer scientist with continuously broadening expertise in major frameworks, design patterns, and analysis techniques inherent to modern practices. Available for competitively priced contract work for suitable clients.</p>
+      <p class="intro-summary fs-1">
+        Analytical, detail-oriented, and multidisciplinary developer and designer
+        with over ten years of scholastic and professional experience in software
+        development, web design, and data science. Intrinsically motivated computer
+        scientist with continuously broadening expertise in major frameworks, design
+        patterns, and analysis techniques inherent to modern practices. Available
+        for competitively priced contract work for suitable clients.
+      </p>
 
+      <div class="contacts">
+        <h2 class="contacts-heading fs-3">Where To Find Me</h2>
 
-      <div class="intro-links">
-        <h2 class="section-heading">Where To Find Me</h2>
-
-        <div class="links-wrapper">
-          <WithIcon class="inline-card link" icon="mdi:web">
+        <ul class="contacts-list">
+          <li class="contact">
+            <Icon name="mdi:web" height="2rem" width="2rem" />
             <NuxtLink to="/" target="_blank">mharryowen.com</NuxtLink>
-          </WithIcon>
-  
-          <WithIcon class="inline-card link" icon="teenyicons:npm-solid">
+          </li>
+          <li class="contact">
+            <Icon name="teenyicons:npm-solid" height="2rem" width="2rem" />
             <NuxtLink to="https://www.npmjs.com/~mhowen" target="_blank">/~mhowen</NuxtLink>
-          </WithIcon>
-  
-          <WithIcon class="inline-card link" icon="mdi:github">
+          </li>
+          <li class="contact">
+            <Icon name="mdi:github" height="2rem" width="2rem" />
             <NuxtLink to="https://github.com/mhowen" target="_blank">/mhowen</NuxtLink>
-          </WithIcon>
-          
-          <WithIcon class="inline-card link" icon="mdi:linkedin">
-            <NuxtLink to="https://www.linkedin.com/in/mharryowen" target="_blank">/mharryowen</NuxtLink>
-          </WithIcon>
-  
-          <WithIcon class="inline-card link" icon="ic:twotone-location-on">
-            <NuxtLink to="https://www.google.com/maps/place/Landmark,+Alexandria,+VA/" target="_blank">
-              Alexandria, VA</NuxtLink>
-          </WithIcon>
-  
-          <WithIcon class="inline-card link" icon="ic:outline-alternate-email">
-            <NuxtLink to="mailto:mho@mharryowen.com">mho@mharryowen.com</NuxtLink>
-          </WithIcon>
-        </div>
+          </li>
+          <li class="contact">
+            <Icon name="mdi:linkedin" height="2rem" width="2rem" />
+            <NuxtLink to="https://www.linkedin.com/in/mharryowen"
+              target="_blank">/mharryowen</NuxtLink>
+          </li>
+          <li class="contact">
+            <Icon name="ic:twotone-location-on" height="2rem" width="2rem" />
+            <NuxtLink to="https://google.com/maps/place/Landmark,+Alexandria,+VA"
+              target="_blank">Alexandria, VA</NuxtLink>
+          </li>
+          <li class="contact">
+            <Icon name="ic:outline-alternate-email" height="2rem" width="2rem" />
+            <NuxtLink to="mailto:mho@mharryowen.com" target="_blank">mho@mharryowen.com</NuxtLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -429,18 +437,49 @@
   padding-top: 8cqw;
 }
 .intro-summary {
-  margin-block: 2rem 4rem;
+  margin-block: 2rem;
   max-width: 60ch;
 }
-.links-wrapper {
-  --links-gap: 0.5em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--links-gap);
+.contacts {
+  --li-basis: 20rem;
+  max-width: calc(5rem + (3 * var(--li-basis)));
 }
-.links-wrapper > .link {
-  flex: 1 0 calc(50% - var(--links-gap));
-  min-width: max-content;
+.contacts-heading {
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+.contacts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(var(--li-basis), 100%), 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+.contact {
+  background-color: hsl(var(--hs-card) 8% / .8);
+  border: 1px solid hsl(var(--hs-card) 26%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 30rem;
+}
+.contact svg {
+  color: var(--c-accent);
+  margin-inline-start: 1rem;
+  transition: all 250ms ease-in;
+}
+.contact a {
+  flex-grow: 1;
+  padding-block: 0.5rem;
+  transition: color 250ms ease-in;
+}
+.contact:hover a {
+  color: var(--c-accent);
+}
+.contact:hover svg {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 .resumecards {
   display: grid;
@@ -635,7 +674,6 @@
 @media (min-width: 90rem) {
   .intro-graphic__text { min-height: 100% }
   .intro-graphic__img { padding-top: 0 }
-  .links-wrapper > .link { flex-basis: 30% }
 }
 
 </style>
