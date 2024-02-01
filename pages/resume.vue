@@ -28,7 +28,7 @@
       </p>
 
       <div class="contacts">
-        <h2 class="resume-heading fs-3">Where To Find Me</h2>
+        <h2 class="resume-heading fs-3 mb-2">Where To Find Me</h2>
 
         <ul class="contacts-list list-none">
           <li class="contact inline-svg hoverable">
@@ -65,7 +65,7 @@
       <h2 class="resume-heading">Professional History</h2>
 
       <div class="resumegrid">
-        <div class="resume-container">
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">Database Admin</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -81,14 +81,14 @@
               <p>Sep 2022&#150;Apr 2023</p>
             </li>
           </ul>
-          <ul class="summary-list list-none"> 
+          <ul class="summary-list"> 
             <li>Designed and operationalized automation strategies for user data validation</li>
             <li>Designed and implemented bespoke web scraping software that eliminated need for manual data entry</li>
             <li>Undertook enterprise-scale data governance projects to eliminate anomalies</li>
           </ul>
         </div>
 
-        <div class="resume-container">
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">SharePoint Admin</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -104,14 +104,14 @@
               <p>May 2020&#150;Dec 2021</p>
             </li>
           </ul>
-          <ul class="summary-list list-none"> 
+          <ul class="summary-list"> 
             <li>Sole administrator of SharePoint Site Collection and Access Databases for several hundred users</li>
             <li>Remediated systemic issues in collection of structured user data by redesigning InfoPath forms</li>
             <li>Principal representative of data team during liasons with government and military personnel</li>
           </ul>
         </div>
 
-        <div class="resume-container">
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">UI/UX Intern</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -127,14 +127,14 @@
               <p>Jun 2019&#150;Aug 2019</p>
             </li>
           </ul>
-          <ul class="summary-list list-none"> 
+          <ul class="summary-list"> 
             <li>Developed responsive single-page applications for granular data visualization at enterprise scale</li>
             <li>Designed robust and reusable UI components leveraging Angular and the D3.js library</li>
             <li>Mentored in user experience design and practical concerns of UI implementation</li>
           </ul>
         </div>
 
-        <div class="resume-container">
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">Desktop IT Agent</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -150,7 +150,7 @@
               <p>Jun 2018&#150;Dec 2019</p>
             </li>
           </ul>
-          <ul class="summary-list list-none"> 
+          <ul class="summary-list"> 
             <li>Managed inventory database and performed audits and maintenance of hardware</li>
             <li>Provided administrative support for permissions management, imaging, and data security</li>
             <li>Assisted college faculty in the prevention and resolution of technical issues</li>
@@ -163,7 +163,7 @@
       <h2 class="resume-heading">Higher Education</h2>
 
       <div class="resumegrid">
-        <div class="resume-container">
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">Franklin University</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -179,23 +179,25 @@
               <p>Computer Science, GPA 4.00</p>
             </li>
           </ul>
+
           <div class="school-list">
-            <h4 class="rc-subheading">Honors</h4>
-            <ul class="font-italic list-none">
+            <h4 class="rc-heading">Honors</h4>
+            <ul>
               <li>President's List&#151;Summer 2023</li>
               <li>President's List&#151;Fall 2023</li>
             </ul>
           </div>
           <div class="school-list">
-            <h4 class="rc-subheading">Course Highlights</h4>
-            <ul class="list-none">
+            <h4 class="rc-heading">Course Highlights</h4>
+            <ul>
               <li>Database Management Systems</li>
               <li>Computer Network Design</li>
               <li>Programming Language Architecture</li>
             </ul>
           </div>
         </div>
-        <div class="resume-container">
+
+        <div class="resume-card resume-container">
           <h3 class="rc-heading">University of Iowa</h3>
           <ul class="rc-datalist list-none">
             <li class="inline-svg">
@@ -212,15 +214,15 @@
             </li>
           </ul>
           <div class="school-list">
-            <h4 class="rc-subheading">Honors</h4>
-            <ul class="font-italic list-none">
+            <h4 class="rc-heading">Honors</h4>
+            <ul>
               <li>National Scholars Award</li>
               <li>Old Gold Scholarship</li>
             </ul>
           </div>
           <div class="school-list">
-            <h4 class="rc-subheading">Course Highlights</h4>
-            <ul class="list-none">
+            <h4 class="rc-heading">Course Highlights</h4>
+            <ul>
               <li>Database Management Systems</li>
               <li>Computer Network Design</li>
               <li>Programming Language Architecture</li>
@@ -231,80 +233,83 @@
     </section>
 
     <section class="section">
-      <h2 class="resume-heading">Skills and Proficiencies</h2>
+      <h2 id="skills" class="resume-heading">Skills and Proficiencies</h2>
 
       <div class="summaries">
-        <div class="summary-intro">
-          <h3 class="summary-heading">The Short Version</h3>
-          <p class="summary-msg font-italic">
+        <div class="resume-card summary-intro">
+          <h3 class="c-accent fw-light">The Short Version</h3>
+          <p class="font-italic">
             Use these high-level overviews to guide your browsing. Click or tap on
             a card to jump to its corresponding section below.
-
-            <span class="c-accent"><br>maybe i oughta make this bg a radgrad or something</span>
           </p>
         </div>
 
-        <div class="summary hover-radgrad">
-          <div class="summary-data">
-            <h4 class="fw-light">Software Dev</h4>
-            <p class="font-italic fs-3 grad-textclip">10+ Years</p>
-            <p class="summary-label">Professional Experience</p>
+        <NuxtLink to="/resume/#skills-software" class="anchor-overlay">
+          <div class="resume-card summary hover-radgrad">
+            <div class="summary-data">
+              <h4 class="fw-light">Software Dev</h4>
+              <p class="font-italic fs-3 grad-textclip">10+ Years</p>
+              <p class="summary-label">Professional Experience</p>
+            </div>
+            <ul class="summary-highlights list-none">
+              <li>Focus on Full-Stack Web Development</li>
+              <li>Past work in public and private sectors</li>
+              <li>Highly skilled with major web frameworks</li>
+            </ul>
           </div>
-          <ul class="summary-highlights list-none">
-            <li>Focus on Full-Stack Web Development</li>
-            <li>Past work in public and private sectors</li>
-            <li>Highly skilled with major web frameworks</li>
-          </ul>
-        </div>
+        </NuxtLink>
 
-        <div class="summary hover-radgrad">
-          <div class="summary-data">
-            <h4 class="fw-light">UI/UX Design</h4>
-            <p class="font-italic fs-3 grad-textclip">5+ Years</p>
-            <p class="summary-label">Professional Experience</p>
+        <NuxtLink to="/resume/#skills-design" class="anchor-overlay">
+          <div class="resume-card summary hover-radgrad">
+            <div class="summary-data">
+              <h4 class="fw-light">UI/UX Design</h4>
+              <p class="font-italic fs-3 grad-textclip">5+ Years</p>
+              <p class="summary-label">Professional Experience</p>
+            </div>
+            <ul class="summary-highlights list-none">
+              <li>Broad conceptual & practical skillset</li>
+              <li>Professionally mentored in modern UX</li>
+              <li>Experienced with digital art & animation</li>
+            </ul>
           </div>
-          <ul class="summary-highlights list-none">
-            <li>Focus on Full-Stack Web Development</li>
-            <li>Past work in public and private sectors</li>
-            <li>Highly skilled with major web frameworks</li>
-          </ul>
-        </div>
+        </NuxtLink>
 
-        <div class="summary hover-radgrad">
-          <div class="summary-data">
-            <h4 class="fw-light">Data Science</h4>
-            <p class="font-italic fs-3 grad-textclip">3+ Years</p>
-            <p class="summary-label">Professional Experience</p>
+        <NuxtLink to="/resume/#skills-data" class="anchor-overlay">
+          <div class="resume-card summary hover-radgrad">
+            <div class="summary-data">
+              <h4 class="fw-light">Data Science</h4>
+              <p class="font-italic fs-3 grad-textclip">3+ Years</p>
+              <p class="summary-label">Professional Experience</p>
+            </div>
+            <ul class="summary-highlights list-none">
+              <li>Experienced with SQL and NoSQL DBMS</li>
+              <li>Past work as both Analyst and Admin</li>
+              <li>Highly skilled at query construction</li>
+            </ul>
           </div>
-          <ul class="summary-highlights list-none">
-            <li>Focus on Full-Stack Web Development</li>
-            <li>Past work in public and private sectors</li>
-            <li>Highly skilled with major web frameworks</li>
-          </ul>
-        </div>
+        </NuxtLink>
 
-        <div class="summary hover-radgrad">
-          <div class="summary-data">
-            <h4 class="fw-light">Other Skills</h4>
-            <p class="font-italic fs-3 grad-textclip">28+ Years</p>
-            <p class="summary-label">Lived Experience</p>
+        <NuxtLink to="/resume/#skills" class="anchor-overlay">
+          <div class="resume-card summary hover-radgrad">
+            <div class="summary-data">
+              <h4 class="fw-light">Other Skills</h4>
+              <p class="font-italic fs-3 grad-textclip">28+ Years</p>
+              <p class="summary-label">Lived Experience</p>
+            </div>
+            <ul class="summary-highlights list-none">
+              <li>Nationally recognized public speaker</li>
+              <li>Fluent in English and Standard German</li>
+              <li>Expert in UNIX & Linux Architectures</li>
+            </ul>
           </div>
-          <ul class="summary-highlights list-none">
-            <li>Focus on Full-Stack Web Development</li>
-            <li>Past work in public and private sectors</li>
-            <li>Highly skilled with major web frameworks</li>
-          </ul>
-        </div>
+        </NuxtLink>
       </div>
-    </section>
-    
-    <section class="section section-wide section-skills">
-      <h3 class="skill-heading123">Software Development</h3>
-      <div class="subskills-wrapper">
 
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Theory</h4>
-          <ul class="subskill-list flexgrid">
+      <div class="category">
+        <h3 id="skills-software" class="category-heading">Software Development</h3>
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Theory</h4>
+          <ul class="skill-list">
             <li>Algorithm Design</li>
             <li>Cryptography</li>
             <li>State Management</li>
@@ -318,9 +323,9 @@
             <li>Set Theory</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Modern Standards</h4>
-          <ul class="subskill-list flexgrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Modern Standards</h4>
+          <ul class="skill-list">
             <li>Accessibility</li>
             <li>API Design & Consumption</li>
             <li>CMS Scripting</li>
@@ -333,9 +338,9 @@
             <li>User Authentication</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">DevOps and Tooling</h4>
-          <ul class="subskill-list flexgrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">DevOps & Tooling</h4>
+          <ul class="skill-list">
             <li>Build Automation</li>
             <li>Type Safety</li>
             <li>Database Connectivity</li>
@@ -346,9 +351,9 @@
             <li>Version Control</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Web Frameworks</h4>
-          <ul class="subskill-list autogrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Web Frameworks</h4>
+          <ul class="skill-list tiled auto-fit">
             <li>Angular</li>
             <li>ASP.NET</li>
             <li>Django</li>
@@ -359,37 +364,36 @@
             <li>Vue</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Languages</h4>
-          <ul class="subskill-list autogrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Languages</h4>
+          <ul class="skill-list tiled auto-fit">
             <li>C</li>
             <li>C#</li>
             <li>C++</li>
-            <li>CSS</li>
-            <li>SCSS</li>
+            <li>CSS / SCSS</li>
             <li>Haskell</li>
             <li>HTML</li>
             <li>Java</li>
             <li>JavaScript</li>
             <li>JSX</li>
             <li>Kotlin</li>
-            <li>TypeScript</li>
-            <li>TSX</li>
-            <li>SQL</li>
             <li>PHP</li>
             <li>Python</li>
             <li>Ruby</li>
             <li>Rust</li>
+            <li>SQL</li>
+            <li>TSX</li>
+            <li>TypeScript</li>
             <li>Zig</li>
           </ul>
         </div>
       </div>
 
-      <h3 class="skill-heading">UI/UX Design</h3>
-      <div class="subskills-wrapper">
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Standards and Theory</h4>
-          <ul class="subskill-list flexgrid">
+      <div class="category">
+        <h3 id="skills-design" class="category-heading">UI/UX Design</h3>
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Standards & Theory</h4>
+          <ul class="skill-list">
             <li>Animation</li>
             <li>Behavior-Driven Development</li>
             <li>End-to-End Testing</li>
@@ -401,9 +405,10 @@
             <li>Video Editing</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Libraries and Software</h4>
-          <ul class="subskill-list flexgrid">
+
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Libraries & Software</h4>
+          <ul class="skill-list tiled auto-fit">
             <li>Figma</li>
             <li>Inkscape</li>
             <li>Tailwind</li>
@@ -421,11 +426,11 @@
         </div>
       </div>
 
-      <h3 class="skill-heading">Data Science</h3>
-      <div class="subskills-wrapper">
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Database Design</h4>
-          <ul class="subskill-list flexgrid">
+      <div class="category">
+        <h3 id="skills-data" class="category-heading">Data Science</h3>
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Database Design</h4>
+          <ul class="skill-list">
             <li>Business Rules</li>
             <li>Web Middleware</li>
             <li>Entity-Relationship Modeling</li>
@@ -437,9 +442,9 @@
             <li>Load Balancing</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Data Analysis</h4>
-          <ul class="subskill-list flexgrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Data Analysis</h4>
+          <ul class="skill-list">
             <li>Dashboards & Portals</li>
             <li>Visualization Design</li>
             <li>Data Marts & Warehouses</li>
@@ -450,9 +455,9 @@
             <li>OLAP, ROLAP, & MOLAP</li>
           </ul>
         </div>
-        <div class="subskill">
-          <h4 class="skill-subheading inline-card subskill-heading">Databases</h4>
-          <ul class="subskill-list flexgrid">
+        <div class="subcategory">
+          <h4 class="subcategory-heading">Databases</h4>
+          <ul class="skill-list tiled auto-fit">
             <li>PostgreSQL</li>
             <li>Oracle</li>
             <li>MS Access</li>
@@ -472,38 +477,14 @@
 .page-resume {
   --card-bg: hsl(var(--hs-card) 8% / .8);
   --card-border: 1px solid hsl(var(--hs-card) 26%);
-}
-.resume-heading {
-  margin-bottom: 0.5em;
-}
-.rc-heading,
-.rc-subheading {
-  padding: 1rem;
-  text-transform: uppercase;
+  padding-bottom: 8rem;
 }
 .resume-heading,
-.rc-heading,
-.rc-subheading {
+.rc-heading {
   font-weight: 200;
 }
-.rc-subheading {
-  margin-bottom: 0.5rem;
-  padding-block: 0.5rem;
-}
-.rc-heading {
-  color: var(--c-accent);
-  font-size: clamp(1.5rem, 7cqw + 0.125rem, 3rem);
-  margin-bottom: 1rem;
-}
-
-/* stuff to color like cards */
-.contacts-list > .contact,
-.rc-heading,
-.rc-subheading,
-.resume-container li,
-.summary-intro,
-.summary,
-.summary-list li {
+.contacts-list > li,
+.resume-card {
   background-color: var(--card-bg);
   border: var(--card-border);
 }
@@ -516,7 +497,7 @@
   padding-inline: max(calc(var(--leftover) + var(--pad-min)), var(--pad-min)) var(--pad-min);
 }
 .section-wide { max-width: calc(var(--dw-content-wide) + var(--leftover)) }
-.section-heading { margin-bottom: 2rem }
+.section > .resume-heading { margin-bottom: 2rem }
 
 .intro-heading { text-shadow: 0.25rem 0 var(--c-accent) }
 .intro-graphic {
@@ -538,8 +519,6 @@
 .intro-graphic__text > * {
   --bg-color: color-mix(in srgb, var(--c-secondary), transparent 25%);
   background-image: linear-gradient(90deg, var(--bg-color), transparent);
-  
-  border-radius: 0.125em;
   padding-inline: 0.25em;
 }
 .intro-graphic__img {
@@ -567,57 +546,76 @@
   display: grid;
   gap: 2rem;
 }
-.resume-container { container: cnt-resume / inline-size }
+.resume-container {
+  container: cnt-resume / inline-size;
+  padding: 1rem;
+}
+.resume-container > .rc-heading {
+  color: var(--c-accent);
+  padding-bottom: 1rem;
+}
 .rc-datalist {
   display: grid;
+  padding-block: 1rem;
+}
+.rc-datalist > * {
+  padding-block: 0.5rem;
+}
+.rc-datalist > :nth-child(2) {
+  border-bottom: 1px solid hsl(var(--hs-card) 26%);
+  border-top: 1px solid hsl(var(--hs-card) 26%);
+}
+.school-list {
+  display: grid;
+  align-items: center;
   gap: 0.5rem;
   padding-bottom: 1rem;
 }
-.resume-container > .school-list:first-of-type { margin-bottom: 1rem }
-.summary-list > li,
-.school-list li {
-  border-inline-start: 0.25rem solid var(--c-accent);
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-}
+
 @container cnt-resume (min-width: 35rem) {
-  .rc-datalist { grid-template-areas: "li0 li2" "li1 li2" }
-  .rc-datalist > :last-child { grid-area: li2 }
+  .rc-datalist {
+    grid-template-areas: "li0 li2" "li1 li2";
+    text-align: center;
+  }
+  .rc-datalist > :nth-child(2) {
+    border-bottom: none;
+  }
+  .rc-datalist > :last-child {
+    border-inline-start: 1px solid hsl(var(--hs-card) 26%);
+    grid-area: li2;
+  }
+  .school-list {
+    gap: 2rem;
+    grid-template-columns: 1fr 60cqw;
+  }
+  .school-list__heading {
+    align-self: center;
+  }
 }
 @media (min-width: 45rem) {
   .resumegrid { grid-template-columns: 1fr 1fr }
 }
-.section-skills {
-  margin-bottom: clamp(2em, 10vh - 2em, 6em);
-}
-.skill-heading {
-  margin-bottom: 2rem;
-}
 
 .summaries {
   display: grid;
+  grid-template-columns: minmax(auto, 28rem);
   gap: 2rem;
-}
-.summaries > * {
-  padding: 1rem;
+  place-content: center;
 }
 .summary-intro {
   display: grid;
   gap: 2rem;
-  padding-inline: min(15%, 20rem);
+  padding: 1rem min(15%, 20rem);
   place-content: center;
   text-align: center;
 }
-
-@media (min-width: 60rem) {
-  .summaries {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .summary-intro {
-    grid-column: span 2;
-  }
+@media (min-width: 40rem) {
+  .summaries { grid-template-columns: 1fr 1fr }
+  .summary-intro { grid-column: span 2 }
 }
-
+@media (min-width: 60rem) {
+  .summaries { grid-template-columns: 1fr 1fr 1fr }
+}
 .summary {
   padding: 1rem;
   user-select: none;
@@ -632,55 +630,64 @@
 .summary-highlights > li {
   border-inline-start: 0.25rem solid var(--c-accent);
   padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
 }
-.summary-highlights > li:not(:last-of-type) { margin-bottom: 1rem }
 
-
-
-.skill-heading123 { margin-top: 20rem }
-.subskill {
+.category {
   display: flex;
-  flex-direction: column;
-  flex: 1 0 max(30%, 20rem);
-  max-width: 36rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
-.subskill > .skill-subheading {
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-  color: var(--c-accent);
-  max-width: max-content;
+.category-heading {
+  flex-basis: 100%;
+  font-weight: 200;
+  padding-top: 4rem;
 }
-.subskill-list {
+.subcategory {
   background-color: var(--card-bg);
-  flex: 1;
-  padding: 1rem;
+  border: var(--card-border);
+  flex: 1 0 min(25rem, 100%);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 1em;
 }
-.subskill-list > * {
-  background-color: color-mix(in srgb, var(--c-secondary), #E3E3F0cc 10%);
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
+.subcategory-heading {
+  color: var(--c-accent);
+  font-size: clamp(1.5rem, var(--step-2), 2.25rem);
+  font-weight: 200;
+  text-transform: uppercase;
 }
-.subskill-list.autogrid > * {
+.skill-list {
+  align-content: start;
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  padding-top: 1rem;
+  padding-inline-start: 0.5rem;
+}
+.skill-list.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+.skill-list:not(.tiled) > li {
+  border-inline-start: 0.125rem solid var(--c-text);
+  padding-inline-start: 0.5rem;
+}
+.skill-list:not(.tiled) > li:nth-child(even) {
+  border-color: #808080;
+  color: #808080;
+}
+.skill-list.tiled {
+  align-content: normal;
+  padding-inline-start: 0;
+}
+.skill-list.tiled > li {
+  border: 1px solid hsl(var(--hs-card) 26%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.subskill-list.autogrid {
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-}
-.subskill-list.flexgrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.subskill-list.flexgrid > * {
-  flex: 1 0 calc(50% - 0.5em);
-  min-width: max-content;
-  display: flex;
-  align-items: center;
-}
+
 @media(min-width: 900px) {
   .intro-graphic__text { min-height: 70% }
 }
