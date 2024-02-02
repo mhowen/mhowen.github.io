@@ -478,6 +478,8 @@
   --card-bg: hsl(var(--hs-card) 8% / .8);
   --card-border: 1px solid hsl(var(--hs-card) 26%);
   padding-bottom: 8rem;
+
+  
 }
 .resume-heading,
 .rc-heading {
@@ -490,14 +492,59 @@
 }
 
 .section {
-  --pad-min: 1rem;
-  --leftover: calc((100vw - var(--dw-content-wide)) / 2);
-  margin-top: clamp(1em, 4vh + 0.125em, 4em);
-  max-width: calc(var(--dw-content) + var(--leftover));
-  padding-inline: max(calc(var(--leftover) + var(--pad-min)), var(--pad-min)) var(--pad-min);
+  padding-block: clamp(2rem, 6vh, 5rem);
+  position: relative;
+
+  --inline-free: calc(100vw - var(--dw-content-wide));
+
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, calc(1rem + var(--inline-free) / 2))
+    min(100% - 2rem, var(--dw-content))
+    minmax(0, 1fr)
+    minmax(1rem, calc(var(--inline-free) / 2))
 }
-.section-wide { max-width: calc(var(--dw-content-wide) + var(--leftover)) }
+.section > * {
+  grid-column: 2;
+}
+.section-wide > * {
+  grid-column: 2 / 4;
+}
+
+.section:not(:last-of-type)::after,
+.category:not(:last-of-type)::after {
+  content: '';
+  border-bottom: 1px solid #80808060;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.category:not(:last-of-type)::after {
+  width: 80%;
+}
 .section > .resume-heading { margin-bottom: 2rem }
+
+.section:nth-of-type(2)::before,
+.section:nth-of-type(3)::before {
+  content: '';
+  inset: 2rem 0;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+  background-size: 200%;
+  background-position-x: 100%;
+  filter: blur(1rem);
+  opacity: 0.1;
+  animation: section-grad 45s infinite alternate;
+}
+.section:nth-of-type(3)::before {
+  background-position-x: 0%;
+  animation-direction: alternate-reverse;
+}
+@keyframes section-grad {
+0% { background-position: 100% }
+100% { background-position: 0% }
+}
 
 .intro-heading { text-shadow: 0.25rem 0 var(--c-accent) }
 .intro-graphic {
@@ -528,6 +575,7 @@
 .intro-summary {
   margin-block: 2rem;
   max-width: 60ch;
+  font-weight: 200;
 }
 .contacts {
   --li-basis: 20rem;
@@ -553,6 +601,7 @@
 .resume-container > .rc-heading {
   color: var(--c-accent);
   padding-bottom: 1rem;
+  text-transform: uppercase;
 }
 .rc-datalist {
   display: grid;
@@ -638,6 +687,8 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  position: relative;
+  padding-bottom: 4rem;
 }
 .category-heading {
   flex-basis: 100%;
