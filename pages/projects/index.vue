@@ -7,9 +7,16 @@
     <h1>My Work</h1>
 
     <div class="projects">
+      <p>Thanks for stopping by!</p>
+
       <p>
-        Thanks for stopping by! This page is under construction.
+        This page is still under construction, but you're welcome to have a look
+        at some of my works-in-progress.
       </p>
+
+      <NuxtLink class="projectlink" to="/projects/responsive_design">
+        Demo: Responsive Design
+      </NuxtLink>
     </div>
   </section>
 </template>
@@ -23,5 +30,15 @@
 .projects {
   font-size: var(--step-1);
   margin-top: 5rem;
+}
+.projects > p {
+  max-width: 60rem;
+  margin-bottom: 2rem;
+}
+.projectlink {
+  transition: 250ms ease-in;
+}
+.projectlink:hover {
+  color: var(--c-accent);
 }
 </style>
