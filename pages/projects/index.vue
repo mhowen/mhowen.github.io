@@ -11,12 +11,17 @@
 
       <p>
         This page is still under construction, but you're welcome to have a look
-        at some of my works-in-progress.
+        at some of my works-in-progress below.
       </p>
 
-      <NuxtLink class="projectlink" to="/projects/responsive_design">
-        Demo: Responsive Design
-      </NuxtLink>
+      <div class="projects-list">
+        <NuxtLink class="project" to="/projects/responsive_design">
+          Demo: Responsive Design
+        </NuxtLink>
+        <span class="project forthcoming">Coming soon!</span>
+        <span class="project forthcoming">Coming soon!</span>
+      </div>
+
     </div>
   </section>
 </template>
@@ -35,10 +40,42 @@
   max-width: 60rem;
   margin-bottom: 2rem;
 }
-.projectlink {
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.project {
+  flex-basis: 25rem;
+  flex-grow: 1;
+  aspect-ratio: 1;
+  max-width: 25rem;
+
+  display: grid;
+  place-content: center;
+
+  background-color: hsl(var(--hs-card) 8% / .8);
+  border: 0.125rem solid hsl(var(--hs-card) 26%);
+  position: relative;
+  text-decoration: none;
   transition: 250ms ease-in;
 }
-.projectlink:hover {
-  color: var(--c-accent);
+.project::before {
+  content: '';
+  background-image: radial-gradient(circle at center, var(--c-accent), transparent);
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 250ms ease-in;
 }
+.project:not(.forthcoming):hover::before {
+  opacity: 1;
+}
+.project.forthcoming {
+  font-style: italic;
+  opacity: 0.5;
+}
+
 </style>
