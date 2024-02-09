@@ -4,6 +4,14 @@ defineProps({
     type: String,
     required: true,
   },
+  myworkAction: {
+    type: Function,
+    default: () => navigateTo('/projects'),
+  },
+  demosAction: {
+    type: Function,
+    default: () => navigateTo('/projects'),
+  },
   infoAction: {
     type: Function,
     default: () => navigateTo('/contact'),
@@ -21,8 +29,12 @@ defineProps({
       </p>
 
       <div class="expview-controls fs-1">
-        <button class="btn hover-glow">Demos</button>
-        <button class="btn hover-glow">My Work</button>
+        <button
+          @click="demosAction"
+          class="btn hover-glow">Demos</button>
+        <button
+          @click="myworkAction"
+          class="btn hover-glow">My Work</button>
         <button
           @click="infoAction"
           class="btn hover-glow">Get More Info</button>
