@@ -10,17 +10,19 @@
 }
 
 /* COLORS */
-.bg-accent { background: var(--c-accent); }
-.bg-accent2 { background: var(--c-accent2); }
-.bg-primary { background: var(--c-primary); }
-.bg-secondary { background: var(--c-secondary); }
-.c-white { color: var(--c-white); }
-.c-black { color: var(--c-black); }
-.c-contrast { color: var(--c-contrast); }
-.c-accent { color: var(--c-accent); }
-.c-accent2 { color: var(--c-accent2); }
-.c-primary { color: var(--c-primary); }
-.c-secondary { color: var(--c-secondary); }
+.bg-accent { background: var(--c-accent) }
+.bg-accent2 { background: var(--c-accent2) }
+.bg-primary { background: var(--c-primary) }
+.bg-secondary { background: var(--c-secondary) }
+.c-white { color: var(--c-white) }
+.c-black { color: var(--c-black) }
+.c-contrast { color: var(--c-contrast) }
+.c-accent { color: var(--c-accent) }
+.c-accent2 { color: var(--c-accent2) }
+.c-primary { color: var(--c-primary) }
+.c-secondary { color: var(--c-secondary) }
+.c-text { color: var(--c-text) }
+.c-antitext { color: var(--c-antitext) }
 
 /* SIZING */
 .max-w-app { max-width: var(--d-app-width-max); }
@@ -110,6 +112,7 @@
 .pl-6 { padding-left: 1.5em; }
 .pt-2 { padding-top: 0.5em; }
 .px-4 { padding-inline: 1em; }
+.py-2 { padding-block: 0.5em; }
 .py-4 { padding-block: 1em; }
 .my-2 {
   margin-top: 0.5em;

@@ -19,13 +19,13 @@ const fields = useFormData();
         <strong class="no-wrap ts-accent">Harry Owen</strong>
       </h1>
 
-      <Vue3Marquee class="intro-banner" :clone="true">
-        <span class="intro-banner__span">WEB DEVELOPMENT</span>
-        <span class="intro-banner__span">UI/UX DESIGN</span>
-        <span class="intro-banner__span">DATA SCIENCE</span>
+      <Vue3Marquee class="intro-banner bg-accent c-antitext fs-3 fw-thin py-2" :clone="true">
+        <span class="px-4">WEB DEVELOPMENT</span>
+        <span class="px-4">UI/UX DESIGN</span>
+        <span class="px-4">DATA SCIENCE</span>
       </Vue3Marquee>
 
-      <div class="intro-text">
+      <div class="intro-text fs-1">
         <p>
           I'm an independent developer and designer with a broad, multidisciplinary
           skillset honed over many years of study and work in just about every sector
@@ -35,13 +35,12 @@ const fields = useFormData();
           and let's build something neat!
         </p>
 
-        <button class="btn btn-accent btn-link hover-fill">
+        <button class="btn btn-accent btn-link hover-fill uppercase">
           <NuxtLink to="#My_Expertise">Learn More</NuxtLink>
         </button>
       </div>
 
-      <img
-        class="intro-img"
+      <img class="intro-img"
         src="~/assets/img/about_0.png"
         alt="A smiling man in a fitted, charcoal-grey suit"
       />
@@ -192,81 +191,54 @@ const fields = useFormData();
 </template>
 
 <style scoped>
-.page-about {
-  --card-bg: color-mix(in srgb, var(--c-secondary), transparent 20%);
-  --card-br: 1rem;
-  --padding-inline: 1rem;
-}
 .section {
   margin-inline: auto;
   margin-bottom: clamp(2em, 20vh - 2em, 6em);
-  padding-inline: var(--padding-inline);
 }
 .section-intro {
-  max-width: initial;
-  padding-inline: initial;
-  
-  --content-narrow: calc(100% - (var(--padding-inline) * 2));
-  --content-width: min(var(--content-narrow), var(--dw-content-wide));
-  --column-number: 4;
-  --column-width: calc(var(--content-width) / var(--column-number));
-  
-  border-bottom: 0.125rem solid var(--c-accent);
   display: grid;
-  gap: var(--padding-inline) 0;
-  grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr)
-    [content-start] repeat(var(--column-number), var(--column-width)) [content-end]
-    minmax(var(--padding-inline), 1fr) [full-width-end];
   grid-template-rows:
     [heading-start] auto
-    [image-start] 1em 
-    [heading-end banner-start] auto [banner-end]
-    1fr [image-end];
-  margin-top: clamp(2em, 10vh - 2em, 6em);
+    [heading-end image-start banner-start] auto
+    [banner-end text-start] auto [image-end text-end];
+  grid-template-columns:
+    [banner-start] calc((100% - var(--dw-content-wide)) / 2)
+    [heading-start text-start image-start] 1fr
+    [heading-end text-end image-end] calc((100% - var(--dw-content)) / 2) [banner-end];
+  
+  border-bottom: 0.125rem solid var(--c-accent);
   position: relative;
   overflow: hidden;
 }
-.section-intro__heading { grid-column: content }
-.intro-banner {
-  background-color: var(--c-accent);
-  color: var(--c-primary);
-  font-size: var(--step-3);
-  font-weight: 200;
-  grid-column: full-width;
-  grid-row: banner;
-  min-height: min(4em, 10rem);
-  user-select: none;
-  z-index: 0;
+.section-intro__heading {
+  grid-area: heading;
+  margin-inline: 1rem;
 }
-.intro-banner__span {
-  padding-inline: 1em;
+.intro-banner {
+  align-self: center;
+  grid-area: banner;
+  user-select: none;
+  z-index: -1;
 }
 .intro-text {
-  align-self: flex-start;
+  grid-area: text;
+  align-self: start;
+  border-radius: 1rem;
   box-shadow: var(--bs);
   backdrop-filter: blur(0.25em);
-  background-color: color-mix(in srgb, var(--c-antitext), transparent 15%);
-  display: flex;
-  flex-direction: column;
-  font-size: var(--step-1);
-  gap: 2em;
-  grid-column: 2 / 5;
-  grid-row: banner-end / image-end;
-  margin-bottom: var(--padding-inline);
-  padding: 0.5em;
+  background-color: hsl(var(--hs-card) 8% / .8);
+  margin-inline: 1rem;
+  max-width: 50ch;
+  padding: 1em;
   z-index: 1;
 }
+.intro-text > .btn {
+  margin-top: 2rem;
+  min-width: 100%;
+}
 .intro-img {
-  align-self: flex-end;
-  aspect-ratio: 1 / 2;
-  grid-column: 3 / full-width-end;
-  grid-row: image;
-  justify-self: flex-end;
-  object-fit: cover;
-  object-position: top;
-  position: relative;
-  right: -20vw;
+  grid-area: image;
+  justify-self: end;
 }
 .expertise {
   display: grid;
@@ -345,17 +317,17 @@ const fields = useFormData();
   max-width: fit-content;
 }
 @media (min-width: 600px) {
-  .intro-text {
-    background-color: initial;
-    box-shadow: none;
-    grid-column: 2 / 4;
-    padding-top: 2em;
-  }
-  .intro-img {
-    grid-column: 4 / 6;
-    justify-self: center;
-    right: initial;
-  }
+  /* .intro-text { */
+    /* background-color: initial; */
+    /* box-shadow: none; */
+    /* grid-column: 2 / 4; */
+    /* padding-top: 2em; */
+  /* } */
+  /* .intro-img { */
+    /* grid-column: 4 / 6; */
+    /* justify-self: center; */
+    /* right: initial; */
+  /* } */
   .outro-img {
     align-self: center;
     object-fit: cover;
