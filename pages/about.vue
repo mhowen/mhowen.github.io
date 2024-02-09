@@ -81,6 +81,7 @@ const fields = useFormData();
             <ExpertiseView
               v-else-if="expertiseIndex === 1"
               title="User Experience"
+              class="coming-soon"
               :info-action="() => {
                 fields.intent = 'INFO';
                 fields.category = 'UI/UX Design';
@@ -97,6 +98,7 @@ const fields = useFormData();
             <ExpertiseView
               v-else-if="expertiseIndex === 2"
               title="Data Science"
+              class="coming-soon"
               :info-action="() => {
                 fields.intent = 'INFO';
                 fields.category = 'Data Management';

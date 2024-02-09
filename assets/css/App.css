@@ -29,6 +29,27 @@ strong {
   font-weight: bold;
 }
 
+/* For unfinished stuff */
+.coming-soon {
+  position: relative;
+}
+.coming-soon::after {
+  content: 'Coming Soon';
+  backdrop-filter: blur(0.5rem);
+  color: #d2711099;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2em, 10vw, 3.5em);
+  font-weight: 900;
+  inset: -0.5rem;
+  letter-spacing: 0.25rem;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 4px var(--c-secondary);
+}
+
+
 /* Nuxt */
 .anchor-overlay {
   text-decoration: none;
