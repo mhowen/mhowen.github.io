@@ -68,6 +68,8 @@ ul, ol {
   /* Dimensions */
   --d-header-height: 6rem;
   --d-content-max: 1376px;
+  --dh-footer: 4rem;
+  --dh-header: 6rem;
   --dw-content: 90rem; /* 1440px */
   --dw-content-wide: 100rem; /* 1600px */
 
@@ -85,6 +87,8 @@ ul, ol {
   --c-secondary: var(--c-black);
   --c-accent: #00C9AE;
   --c-accent-alt: #F28210;
+  --hs-accent: 172 100%; /* 39% L */
+  --hs-accent-alt: 30 90%; /* 51% L */
 
   --gradient-2: linear-gradient(
     to right top,

@@ -116,65 +116,56 @@ const showMessage = ref(true);
     </div>
     <div class="dframe-ctrl">
       <div class="ctrlgroup" v-if="allowSmall">
-        <p class="fw-bold text-center">Simulate Device</p>
-        <div class="ctrlgroup-buttons">
-          <button
-            class="btn"
-            :class="{ selected: device === 'none' }"
-            @click="device = 'none'">None</button>
-          <button
-            class="btn"
-            :class="{ selected: device === 'notebook', hidden: !allowAll }"
-            @click="device = 'notebook'">Notebook</button>
-          <button
-            class="btn"
-            :class="{ selected: device === 'tablet', hidden: !allowMedium }"
-            @click="device = 'tablet'">Tablet</button>
-          <button
-            class="btn"
-            :class="{ selected: device === 'smartphone', hidden: !allowSmall }"
-            @click="device = 'smartphone'">Smartphone</button>
-          <button
-            class="btn"
-            :class="{ selected: device === 'flip phone', hidden: !allowSmall }"
-            @click="device = 'flip phone'">Flip Phone</button>
-        </div>
+        <p class="ctrlgroup-label fw-bold text-center">Simulate Device</p>
+        <button
+          class="btn"
+          :class="{ selected: device === 'none' }"
+          @click="device = 'none'">None</button>
+        <button
+          class="btn"
+          :class="{ selected: device === 'notebook', hidden: !allowAll }"
+          @click="device = 'notebook'">Notebook</button>
+        <button
+          class="btn"
+          :class="{ selected: device === 'tablet', hidden: !allowMedium }"
+          @click="device = 'tablet'">Tablet</button>
+        <button
+          class="btn"
+          :class="{ selected: device === 'smartphone', hidden: !allowSmall }"
+          @click="device = 'smartphone'">Smartphone</button>
+        <button
+          class="btn"
+          :class="{ selected: device === 'flip phone', hidden: !allowSmall }"
+          @click="device = 'flip phone'">Flip Phone</button>
       </div>
       <div class="ctrlgroup">
-        <p class="fw-bold text-center">Select Layout</p>
-        <div class="ctrlgroup-buttons">
-          <button
-            class="btn"
-            :class="{ selected: layout === 'home' }"
-            @click="layout = 'home'">Homepage</button>
-          <button
-            class="btn"
-            :class="{ selected: layout === 'store' }"
-            @click="layout = 'store'">Storefront</button>
-          <button
-            class="btn"
-            :class="{ selected: layout === 'blog' }"
-            @click="layout = 'blog'">Blog</button>
-        </div>
+        <p class="ctrlgroup-label fw-bold text-center">Select Layout</p>
+        <button
+          class="btn"
+          :class="{ selected: layout === 'home' }"
+          @click="layout = 'home'">Homepage</button>
+        <button
+          class="btn"
+          :class="{ selected: layout === 'store' }"
+          @click="layout = 'store'">Storefront</button>
+        <button
+          class="btn"
+          :class="{ selected: layout === 'blog' }"
+          @click="layout = 'blog'">Blog</button>
       </div>
       <button class="btn btn-reopen" v-if="!showMessage" @click="showMessage = true">
         Reopen Manual</button>
     </div>
-    <div
-      class="dframe-grid"
-      :style="{
-        '--device-width': deviceXY[0],
-        '--device-height': deviceXY[1],
-      }">
-      <DemoLayout :layout="layout" />
-    </div>
+    <DemoLayoutHome v-if="layout === 'home'" :deviceXY="deviceXY" />
+    <DemoLayoutStore v-else-if="layout === 'store'" :deviceXY="deviceXY" />
+    <DemoLayoutBlog v-else :deviceXY="deviceXY" />
   </div>
 </template>
 
 <style scoped>
 .dframe {
   display: grid;
-  grid-template-rows: 1fr;
+  max-height: min(1100px, 100%);
   position: relative;
 }
 .dframe-message {
@@ -236,12 +227,41 @@ const showMessage = ref(true);
   display: flex;
   gap: 2rem;
   justify-content: center;
+  opacity: .25;
+  transition: opacity 250ms ease-in;
 }
+.dframe-ctrl:hover { opacity: 1 }
 .dframe-ctrl > .btn-reopen {
   border: 0.125rem solid var(--c-text);
   background-color: hsl(var(--hs-card) 8% / .8);
   max-height: max-content;
 }
+.ctrlgroup {
+  backdrop-filter: blur(0.5rem);
+  background-color: hsl(var(--hs-card) 8% / .8);
+  border: 0.125rem solid var(--c-white);
+  border-radius: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ctrlgroup-label {
+  border-bottom: 1px solid var(--c-white);
+  flex-basis: 100%;
+  font-weight: 400;
+  padding-block: 0.125rem;
+}
+.ctrlgroup > .btn {
+  border-radius: 0;
+  flex: 1 0 max-content;
+}
+.ctrlgroup > .btn:not(:last-of-type) {
+  border-inline-end: 1px solid var(--c-white);
+}
+.ctrlgroup > .btn.selected {
+  color: var(--c-accent);
+}
+.ctrlgroup > .btn.hidden { display: none }
+
 .ctrlgroup-buttons {
   border: 0.125rem solid var(--c-text);
   display: flex;
@@ -257,24 +277,6 @@ const showMessage = ref(true);
 }
 .ctrlgroup-buttons > .btn.hidden {
   display: none;
-}
-.dframe-grid {
-  --device-width: 100%;
-  --device-height: 100%;
-  --inline-negative: calc((100% - var(--device-width)) / 2);
-  --block-negative: calc((100% - var(--device-height)) / 2);
-
-  display: grid;
-  grid-template-columns: var(--inline-negative) 1fr var(--inline-negative);
-  grid-template-rows: var(--block-negative) 1fr var(--block-negative);
-
-  transition: all 500ms;
-}
-.dframe-grid > * {
-  grid-column: 2;
-  grid-row: 2;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 </style>
 

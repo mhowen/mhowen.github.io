@@ -9,7 +9,7 @@
   .app-footer {
     position: absolute;
     bottom: 0;
-    height: 4rem;
+    height: var(--dh-footer);
     min-width: 100%;
     padding-inline: 1rem;
     border-top: 0.125rem solid var(--c-accent);

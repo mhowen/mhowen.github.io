@@ -61,7 +61,7 @@ router.beforeEach(() => {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  max-height: var(--d-header-height);
+  max-height: var(--dh-header);
   max-width: var(--dw-content-wide);
   padding-inline: 0.5rem;
   position: relative;
@@ -78,7 +78,7 @@ router.beforeEach(() => {
   justify-content: center;
   gap: 2em;
   inset: 0 0 0 30%;
-  padding-block: calc(var(--d-header-height) + 0.5em); /* plus half the parent's block padding on either side */
+  padding-block: calc(var(--dh-header) + 0.5em); /* plus half the parent's block padding on either side */
   position: fixed;
   transform: translateX(100%);
   transition: transform 500ms ease-in-out;
@@ -93,7 +93,7 @@ router.beforeEach(() => {
   flex-direction: row;
   font-size: var(--step-1);
   padding-block: 0;
-  min-height: var(--d-header-height);
+  min-height: var(--dh-header);
   margin: 0 auto;
 
   position: relative;
