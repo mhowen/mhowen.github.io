@@ -45,7 +45,8 @@
 .ts-secondary { text-shadow: 0.125rem 0.125rem var(--c-secondary); }
 .ts-accent { text-shadow: 0.125rem 0.125rem var(--c-accent); }
 .ts-dark { text-shadow: 0.125rem 0.125rem var(--c-dark); }
-.uppercase { text-transform: uppercase; }
+.underline { text-decoration: underline }
+.uppercase { text-transform: uppercase }
 
 /* LAYOUT */
 .align-center { align-items: center; }
