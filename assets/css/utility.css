@@ -112,6 +112,7 @@
 .my-auto { margin: auto 0; }
 .pl-6 { padding-left: 1.5em; }
 .pt-2 { padding-top: 0.5em; }
+.px-2 { padding-inline: 0.5em; }
 .px-4 { padding-inline: 1em; }
 .py-2 { padding-block: 0.5em; }
 .py-4 { padding-block: 1em; }

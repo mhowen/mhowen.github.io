@@ -21,12 +21,12 @@ function pickFakeImg() {
     }"
   >
     <div class="store">
-      <div class="store-heading">
-        <h1 class="fw-light italic">Store.biz</h1>
+      <div class="store-heading bg-muted">
+        <h1 class="c-white">Store.biz</h1>
         <p class="c-mutest">Search trillions of items...</p>
       </div>
       <div class="category-readout">
-        <p class="fw-bold">Machinery & Tools</p>
+        <p class="c-muted fw-bold uppercase">Machinery & Tools</p>
         <p class="c-mutest fs-sm italic">Merchandise satisfying Unicode Object specifications</p>
       </div>
       <div class="store-main">
@@ -65,7 +65,7 @@ function pickFakeImg() {
             >
               <p>
                 <span class="fs-md fw-bold">Item Name </span>
-                <span class="c-muted fs-sm italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur impedit saepe ipsa molestiae corrupti officia magni...</span>
+                <span class="c-mutest fs-sm italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur impedit saepe ipsa molestiae corrupti officia magni...</span>
               </p>
               <p class="fs-md" style="color: hsl(var(--hs-accent-alt) 51%);">
                 &#9733;&#9733;&#9733;&#9733;{{ Math.random() > 0.5 ? '\u2605' : '\u2606' }}
@@ -94,10 +94,11 @@ function pickFakeImg() {
   transition: all 500ms ease-in;
 } .layout > * { grid-column: 2; grid-row: 2; }
 .c-muted { color: var(--clr-muted) }
+.bg-muted { background-color: var(--clr-muted) }
 .c-mutest { color: var(--clr-mutest) }
 .c-white { color: var(--clr-white) }
 .fs-sm { font-size: 1rem }
-.fs-md { font-size: 1.5rem }
+.fs-md { font-size: clamp(1rem, 6cqw, 1.5rem) }
 
 .store {
   --clr-primary: hsl(214 100% 56%);
@@ -110,6 +111,7 @@ function pickFakeImg() {
   max-height: var(--dy);
   overflow: hidden auto;
   transition: max-height 500ms ease-in;
+  user-select: none;
 
   background-color: var(--clr-white);
   color: var(--clr-black);
@@ -117,22 +119,17 @@ function pickFakeImg() {
   grid-template-rows: auto auto 1fr;
 }
 .store-heading {
-  background-color: hsl(215 75% 70%);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 2rem;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 .store-heading > h1 {
-  color: var(--clr-white);
-  font-family: var(--ff-mono);
   font-size: clamp(3rem, 15cqw + 0.125rem, 4rem);
-  text-shadow: 2px 2px 1px var(--clr-alt);
-  text-transform: uppercase;
+  text-shadow: 2px 2px 1px var(--clr-black);
 }
 .store-heading > p {
-  user-select: none;
   flex: 1 1 max-content;
   background-color: var(--clr-white);
   border: 1px solid var(--clr-mutest);
@@ -158,9 +155,10 @@ function pickFakeImg() {
   width: 3rem;
 }
 .category-readout {
-  background-image: linear-gradient(180deg, hsl(215 75% 70%), hsl(215 55% 85%), transparent);
-  padding-inline: 1rem;
+  padding-inline: 2rem;
   padding-block: 2rem 1rem;
+  text-indent: 1rem hanging;
+  text-wrap: pretty;
 }
 .store-main {
   display: flex;
@@ -184,7 +182,12 @@ function pickFakeImg() {
   backdrop-filter: blur(1rem);
 }
 .sidebar-content h2 {
-  padding: 1rem;
+  background-color: hsl(214 50% 56% / 0.75);
+  border-radius: 100vw;
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
 }
 .sidebar-content ul {
   display: none;
@@ -198,7 +201,7 @@ function pickFakeImg() {
   padding-inline: 1rem;
 }
 .items > ul {
-  color: var(--clr-primary);
+  color: var(--clr-muted);
   display: grid;
   gap: 2rem 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
@@ -235,9 +238,12 @@ function pickFakeImg() {
   .category-readout > :last-child {
     padding-inline-start: 1.6rem;
   }
-  .sidebar-content {
-    justify-content: start;
+  .sidebar-content h2 {
+    background-color: initial;
+    color: var(--clr-muted);
+    margin: 0;
   }
+  .cart > h2 { text-align: end }
   .sidebar-content ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -254,6 +260,7 @@ function pickFakeImg() {
   .sidebar-content {
     flex-direction: column;
   }
+  .cart > h2 { text-align: start }
   .sidebar-content ul {
     display: block;
     padding-inline-start: 1.6rem;

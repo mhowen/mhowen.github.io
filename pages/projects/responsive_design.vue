@@ -5,7 +5,8 @@ const layout = ref('home');
 // map out simulated xy in advance, then retrieve values as we need them
 const dimensions = new Map([
   ['notebook', [1440, 900]],
-  ['tablet', [1080, 810]],
+  // ['tablet', [1080, 810]],
+  ['tablet', [810, 1080]],
   ['smartphone', [428, 720]],
   ['flip phone', [320, 640]],
 ]);
@@ -153,8 +154,8 @@ const showMessage = ref(true);
           :class="{ selected: layout === 'blog' }"
           @click="layout = 'blog'">Blog</button>
       </div>
-      <button class="btn btn-reopen" v-if="!showMessage" @click="showMessage = true">
-        Reopen Manual</button>
+      <button class="btn btn-reopen" @click="showMessage = true">
+        Open Manual</button>
     </div>
     <DemoLayoutHome v-if="layout === 'home'" :deviceXY="deviceXY" />
     <DemoLayoutStore v-else-if="layout === 'store'" :deviceXY="deviceXY" />
