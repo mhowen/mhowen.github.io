@@ -1,7 +1,10 @@
 :root {
   /* Bounds */
   font-size: 16px;
-  --header-height: 6rem;
+  /* --header-height: 6rem; */
+  /* --header-height: 15vh; */
+  /* --header-height: 4rem; */
+  --header-height: clamp(4rem, 15vh, 6rem);
   --app-max-inline: 80rem;
   --padding-inline: clamp(1rem, 5vw, 2rem);
   --inline-extra: max(

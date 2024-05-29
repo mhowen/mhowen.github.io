@@ -15,10 +15,12 @@ router.beforeEach(() => {
 
 <template>
   <header class="header pi-view">
-    <RouterLink to="/">
-      <TheLogo id="thelogo" class="header__logo" />
-      <span class="visually-hidden">Landing Page</span>
-    </RouterLink>
+    <button class="header__return-btn"
+      @click="$router.push({ path: '/' })"
+    >
+      <TheLogo id="thelogo" />
+      <span class="visually-hidden">Back to Landing Page</span>
+    </button>
 
     <nav class="header__nav uppercase" 
       :class="{ 'tray-open': is_tray_open }"
@@ -30,13 +32,28 @@ router.beforeEach(() => {
     </nav>
 
     <button class="header__hamburger" @click="is_tray_open = !is_tray_open">
+      <span class="visually-hidden">Expand Navigation Menu</span>
       <IconHamburger />
     </button>
   </header>
 </template>
 
 <style scoped>
+.header__return-btn {
+  --side-length: calc(var(--header-height) - var(--gap-xs));
+
+  cursor: pointer;
+  height: var(--side-length);
+  width: var(--side-length);
+  border: 0;
+}
+.header__return-btn:hover {
+  background: transparent;
+}
 #thelogo {
+  height: 100%;
+  width: 100%;
+
   fill: var(--clr-text);
   stroke: var(--clr-background);
   stroke-width: 0.125em;
@@ -44,8 +61,8 @@ router.beforeEach(() => {
 }
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding-block: 0.125em;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -60,7 +77,7 @@ router.beforeEach(() => {
   inset: var(--header-height) 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: clamp(0.5rem, 5vh, var(--gap-xl));
   align-items: center;
   justify-content: center;
   transform: translateX(100%);
