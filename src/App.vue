@@ -41,10 +41,11 @@ const route_name = computed(() => route.name);
   width: 100vw;
 }
 #app-main {
-  flex-grow: 1;
+  flex-grow: 999;
   margin-top: var(--header-height);
 }
 #app-main:not(.landing) {
+  flex-grow: 1;
   padding-top: var(--padding-inline);
 }
 #app-header,
