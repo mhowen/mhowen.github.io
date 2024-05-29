@@ -15,7 +15,7 @@ function enter() {
     <div class="controls">
       <button class="controls__enterbtn" @click="enter">
         <TheLogo class="logo" />
-        <p class="mb-s">Enter</p>
+        <p class="label mb-s">Enter</p>
       </button>
     </div>
   </main>
@@ -28,27 +28,25 @@ function enter() {
 }
 .controls {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .controls__enterbtn {
   background: transparent;
   border: 0;
   color: inherit;
   cursor: pointer;
-  transition: color 500ms ease-in;
-}
-.controls__enterbtn:hover {
-  color: var(--clr-accent);
 }
 .logo {
   --sidelength: min(35vh, 100vw - 2 * var(--padding-inline));
   height: var(--sidelength);
   width: var(--sidelength);
 }
-.controls__enterbtn > p {
+.label {
   font-family: Oswald, Inter;
   font-size: var(--step-4);
   font-weight: 200;
-  line-height: 0.9;
   text-align: center;
   text-transform: uppercase;
 }
