@@ -287,7 +287,6 @@ import IconWeb from "../components/icons/IconWeb.vue";
 .grid {
   display: grid;
   gap: var(--gap-l);
-  grid-auto-rows: 1fr;
 }
 .grid-2col {
   grid-template-columns: repeat(auto-fit, minmax(min(28rem, 100%), 1fr));
