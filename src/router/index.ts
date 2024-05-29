@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LandingView from '../views/LandingView.vue'
-import HomeView from '../views/HomeView.vue'
-import ResumeView from '../views/ResumeView.vue'
+import LandingView from '@/views/LandingView.vue'
+import HomeView from '@/views/HomeView.vue'
+import ResumeView from '@/views/ResumeView.vue'
 import ProjectsView from '@/views/ProjectsView.vue'
 import ContactView from '@/views/ContactView.vue'
 
@@ -38,7 +38,18 @@ const router = createRouter({
       name: 'contact',
       component: ContactView,
     }
-  ]
+  ],
+  scrollBehavior() {
+    // should equal the view transition delay
+    const transition_delay_ms = 500;
+
+    // scrolls to top of page at the instant before new DOM is rendered
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ top: 0 })
+      }, transition_delay_ms);
+    })
+  }
 })
 
 export default router
