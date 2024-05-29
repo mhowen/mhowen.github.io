@@ -42,10 +42,11 @@ router.beforeEach(() => {
 .header__return-btn {
   --side-length: calc(var(--header-height) - var(--gap-xs));
 
+  background-color: transparent;
+  border: 0;
   cursor: pointer;
   height: var(--side-length);
   width: var(--side-length);
-  border: 0;
 }
 .header__return-btn:hover {
   background: transparent;
