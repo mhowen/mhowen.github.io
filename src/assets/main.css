@@ -1,0 +1,106 @@
+@import './base.css';
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.visually-hidden {
+  color: black;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+a {
+  color: var(--clr-text);
+  font-weight: 700;
+  transition: color 250ms ease-in;
+}
+a:hover,
+a:focus-visible {
+  color: var(--clr-accent-soft);
+}
+
+/* Reusable Pseudoelements */
+.backdrop-bg {
+  --backdrop-border-radius: 0;
+  --backdrop-gradient-stop:
+    var(--padding-inline)
+    calc(100% - var(--padding-inline));
+  --backdrop-inset: -0.25em -1.00em;
+  position: relative;
+}
+.backdrop-bg::before {
+  content: "";
+  inset: var(--backdrop-inset);
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(
+    transparent,
+    var(--clr-background-75) var(--backdrop-gradient-stop),
+    transparent
+  );
+  border-radius: var(--backdrop-border-radius);
+  filter: blur(0.25rem);
+}
+
+/* Utility / Layout */
+.border-bottom-soft {
+  border-bottom: 0.125rem solid var(--clr-text-soft);
+}
+.border-block-soft {
+  border-block: 0.125rem solid var(--clr-text-soft);
+}
+.fw-grid {
+  display: grid;
+  align-content: start;
+  grid-template-columns:
+    minmax(var(--padding-inline), 1fr)
+    min(100% - (var(--padding-inline) * 2), var(--app-max-inline))
+    minmax(var(--padding-inline), 1fr);
+  grid-template-rows: auto;
+}
+.fw-grid > * { grid-column: 2 }
+.fw-grid > .full-width { grid-column: 1 / 4 }
+
+/* Utility / Sizing */
+.fs-0-50 { font-size: calc(var(--step-0) * var(--halfstep)) }
+.fs-2 { font-size: var(--step-2) }
+.fs-3 { font-size: var(--step-3) }
+.fs-4 { font-size: var(--step-4) }
+
+/* Utility / Spacing */
+.mb-xs { margin-bottom: var(--gap-xs) }
+.mb-s  { margin-bottom: var(--gap-s) }
+.mb-m  { margin-bottom: var(--gap-m) }
+.mb-l  { margin-bottom: var(--gap-l) }
+.mb-xl { margin-bottom: var(--gap-xl) }
+.mb-xxl { margin-bottom: var(--gap-xxl) }
+.mb-step-2 { margin-bottom: var(--step-2) }
+.mb-step-3 { margin-bottom: var(--step-3) }
+.mb-step-4 { margin-bottom: var(--step-4) }
+.ml-auto { margin-inline-start: auto }
+.pi-view { padding-inline: var(--padding-inline-view) }
+
+/* Utility / Text */
+.ff-main { font-family: Inter, system-ui, 'Segoe UI', Ubuntu, sans-serif }
+.ff-oswald { font-family: Oswald, Inter }
+.fw-200 { font-weight: 200 }
+.fw-300 { font-weight: 300 }
+.text-center { text-align: center }
+.uppercase { text-transform: uppercase }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms;
+  }
+}
+

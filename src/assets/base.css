@@ -1,0 +1,155 @@
+:root {
+  /* Bounds */
+  font-size: 16px;
+  --header-height: 6rem;
+  --app-max-inline: 80rem;
+  --padding-inline: clamp(1rem, 5vw, 2rem);
+  --inline-extra: max(
+    calc(100vw - var(--app-max-inline)),
+    calc(2 * var(--padding-inline))
+  );
+  --padding-inline-view: calc(0.5 * var(--inline-extra));
+  --view-transition-duration: 500ms;
+  --view-transition-ease: ease-in;
+
+  /* Colors */
+  --clr-white: #e3e3f0;
+  --clr-white-50: #e3e3f080;
+  --clr-white-soft: #ababab;
+  --clr-white-soft-50: #ababab80;
+  --clr-black: #141414;
+  --clr-black-75: #141414d0;
+  --clr-black-soft: #0a0a14;
+  --clr-pink: #be1399;
+  --clr-pink-mute: #c289af;
+
+  /* Semantic Color Variables */
+  --clr-accent: var(--clr-pink);
+  --clr-accent-soft: var(--clr-pink-mute);
+  --clr-background: var(--clr-black);
+  --clr-background-75: var(--clr-black-75);
+  --clr-background-soft: var(--clr-black-soft);
+  --clr-border-contrast: var(--clr-white);
+  --clr-focus-outline: var(--clr-pink-mute);
+  --clr-text: var(--clr-white);
+  --clr-text-soft: var(--clr-white-soft);
+  --clr-text-soft-50: var(--clr-white-soft-50);
+
+  /* Sizing */
+  --step--2: clamp(0.4775rem, 0.5066rem + -0.0324vi, 0.5002rem);
+  --step--1: clamp(0.7072rem, 0.6885rem + 0.0934vi, 0.7726rem);
+  --step-0: clamp(1rem, 0.9286rem + 0.3571vi, 1.25rem);
+  --step-1: clamp(1.414rem, 1.2401rem + 0.8693vi, 2.0225rem);
+  --step-2: clamp(1.9994rem, 1.6357rem + 1.8186vi, 3.2724rem);
+  --step-3: clamp(2.8271rem, 2.1221rem + 3.5252vi, 5.2948rem);
+  --step-4: clamp(3.9976rem, 2.6921rem + 6.5276vi, 8.5669rem);
+  --step-5: clamp(5.6526rem, 3.3072rem + 11.7267vi, 13.8613rem);
+  --halfstep: 1.272; /* scalar to nudge by half a step */
+
+  /* Spacing */
+  --gap-xs: 0.128em;
+  --gap-s: 0.272em;
+  --gap-m: 0.618em;
+  --gap-l: 1.000em;
+  --gap-xl: 1.618em;
+  --gap-xxl: 2.618em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 320px;
+  font-size: var(--step-0);
+  
+  color: var(--clr-text);
+  background: var(--clr-background);
+  line-height: 1.5;
+  font-family: Inter, system-ui, 'Segoe UI', Ubuntu, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+textarea {
+  display: block;
+  overflow: auto;
+  padding: var(--gap-m);
+}
+.btn {
+  font-weight: 700;
+  border-radius: 0;
+  padding: var(--gap-s) var(--gap-m);
+}
+.btn[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+h1, h2 {
+  margin-bottom: var(--gap-m);
+}
+h1, h2, h3, h4 {
+  font-family: Oswald, Inter, system-ui;
+  font-weight: normal;
+  line-height: 0.9;
+}
+h1 {
+  font-size: var(--step-4);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-2);
+}
+h4 {
+  font-size: var(--step-1);
+}
+img {
+  object-fit: cover;
+}
+ul {
+  padding-inline-start: var(--gap-l);
+}
+
+/* stuff i may want to reference later */
+  /* --color-background: var(--vt-c-black); */
+  /* --color-background-soft: var(--vt-c-black-soft); */
+  /* --color-background-mute: var(--vt-c-black-mute); */
+  /* --color-border: var(--vt-c-divider-dark-2); */
+  /* --color-border-hover: var(--vt-c-divider-dark-1); */
+  /* --color-heading: var(--vt-c-text-dark-1); */
+  /* --color-text: var(--vt-c-text-dark-2); */
+  /* --vt-c-white: #ffffff; */
+  /* --vt-c-white-soft: #f8f8f8; */
+  /* --vt-c-white-mute: #f2f2f2; */
+  /* --vt-c-black: #181818; */
+  /* --vt-c-black-soft: #222222; */
+  /* --vt-c-black-mute: #282828; */
+  /* --vt-c-indigo: #2c3e50; */
+  /* --vt-c-divider-light-1: rgba(60, 60, 60, 0.29); */
+  /* --vt-c-divider-light-2: rgba(60, 60, 60, 0.12); */
+  /* --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65); */
+  /* --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48); */
+  /* --vt-c-text-light-1: var(--vt-c-indigo); */
+  /* --vt-c-text-light-2: rgba(60, 60, 60, 0.66); */
+  /* --vt-c-text-dark-1: var(--vt-c-white); */
+  /* --vt-c-text-dark-2: rgba(235, 235, 235, 0.64); */
+  /* --color-background: var(--vt-c-white); */
+  /* --color-background-soft: var(--vt-c-white-soft); */
+  /* --color-background-mute: var(--vt-c-white-mute); */
+  /* --color-border: var(--vt-c-divider-light-2); */
+  /* --color-border-hover: var(--vt-c-divider-light-1); */
+  /* --color-heading: var(--vt-c-text-light-1); */
+  /* --color-text: var(--vt-c-text-light-1); */
+  /* @media (prefers-color-scheme: dark) {} */
