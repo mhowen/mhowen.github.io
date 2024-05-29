@@ -39,6 +39,7 @@ const route_name = computed(() => route.name);
 #app-header {
   height: var(--header-height);
   width: 100vw;
+  width: 100dvw;
 }
 #app-main {
   flex-grow: 999;
