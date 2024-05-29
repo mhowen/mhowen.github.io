@@ -1,12 +1,6 @@
-# Nuxt dev/build outputs
-.output
-.nuxt
-.nitro
-.cache
 dist
-
-# Node dependencies
 node_modules
+.DS_Store
 
 # Supabase backend logic
 supabase
@@ -16,7 +10,6 @@ logs
 *.log
 
 # Misc
-.DS_Store
 .fleet
 .idea
 .eslintrc.cjs
@@ -26,5 +19,14 @@ logs
 .env.*
 !.env.example
 
-# Local test files
-*.sh
+# Editor boilerplate
+.vscode
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.tsbuildinfo
+
