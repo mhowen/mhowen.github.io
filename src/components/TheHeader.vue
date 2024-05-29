@@ -92,6 +92,7 @@ router.beforeEach(() => {
   align-self: center;
   background-color: transparent;
   border: 0;
+  color: var(--clr-background);
   transition: color 250ms ease-in;
 }
 .header__hamburger > svg {
