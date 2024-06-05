@@ -35,7 +35,6 @@
   --clr-text: var(--clr-white);
   --clr-text-soft: var(--clr-white-soft);
   --clr-text-soft-50: var(--clr-white-soft-50);
-  background: var(--clr-background);
 
   /* Sizing */
   --step--2: clamp(0.4775rem, 0.5066rem + -0.0324vi, 0.5002rem);
@@ -89,6 +88,7 @@ textarea {
   padding: var(--gap-m);
 }
 .btn {
+  cursor: pointer;
   font-weight: 700;
   border-radius: 0;
   padding: var(--gap-s) var(--gap-m);
