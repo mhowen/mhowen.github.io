@@ -50,6 +50,9 @@ a:focus-visible {
   filter: blur(0.25rem);
 }
 
+/* Utility / Color */
+.clr-accent-soft { color: var(--clr-accent-soft) }
+
 /* Utility / Layout */
 .border-bottom-soft {
   border-bottom: 0.125rem solid var(--clr-text-soft);
@@ -93,6 +96,7 @@ a:focus-visible {
 .ff-oswald { font-family: Oswald, Inter }
 .fw-200 { font-weight: 200 }
 .fw-300 { font-weight: 300 }
+.fw-700 { font-weight: 700 }
 .text-center { text-align: center }
 .uppercase { text-transform: uppercase }
 
