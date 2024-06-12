@@ -110,7 +110,7 @@ function rotate_device() {
             modern RWD. Getting a page to look its best for 80% of users is now easier than ever, but pushing that
             figure
             over 99% still requires extraordinary knowledge of the Web specification, the different browsers and their
-            limitatations, and much more—this is why it's still worth hiring a professional designer for all but the
+            limitations, and much more—this is why it's still worth hiring a professional designer for all but the
             most
             trivial presentations.
           </p>

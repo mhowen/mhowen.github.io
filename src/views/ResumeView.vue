@@ -42,11 +42,11 @@ import IconWeb from "../components/icons/IconWeb.vue";
           href="https://github.com/mhowen"
           label="/mhowen"><IconGithub /></BadgeLink>
         <BadgeLink class="circled"
-          href="https://www.upwork.com/freelancers/~017901b0355f7b7d99"
-          label="/mhowen"><IconUpwork /></BadgeLink>
-        <BadgeLink class="circled"
           href="https://www.npmjs.com/~mhowen"
-          label="/mhowen"><IconNpm /></BadgeLink>
+          label="/~mhowen"><IconNpm /></BadgeLink>
+        <BadgeLink class="circled"
+          href="https://www.upwork.com/freelancers/~017901b0355f7b7d99"
+          label="Public Profile"><IconUpwork /></BadgeLink>
       </div>
     </section>
     <section class="border-bottom-soft full-width pi-view mb-step-3">
