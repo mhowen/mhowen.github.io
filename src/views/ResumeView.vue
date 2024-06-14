@@ -209,7 +209,7 @@ import IconWeb from "../components/icons/IconWeb.vue";
               redesigning obsolete InfoPath forms
             </li>
             <li>
-              Principal representative of data team in liasons with government and
+              Principal representative of data team in liaisons with government and
               military personnel
             </li>
           </ul>
