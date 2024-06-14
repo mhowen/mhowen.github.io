@@ -11,7 +11,7 @@ import RouterButton from '@/components/RouterButton.vue';
       </h1>
       <p class="mb-l">
         This page was last updated on
-        <span class="clr-accent-soft fw-700">5 June 2024</span>.
+        <span class="clr-accent-soft fw-700">14 June 2024</span>.
       </p>
       <p class="mb-l">
         Welcome! Below is a rotating selection of projects and demonstrations
@@ -47,7 +47,7 @@ import RouterButton from '@/components/RouterButton.vue';
       <div class="project">
         <h3 class="project__title">
           <span class="project__title__type">Project:</span>
-          Hacking with Stingy APIs
+          Hacking on the Free Tier
         </h3>
         <p class="project__desc">
           A theory-forward introduction to a novel strategy for testing and
@@ -89,12 +89,16 @@ import RouterButton from '@/components/RouterButton.vue';
   margin-bottom: var(--step-4);
 }
 .project {
+  margin-inline-start: var(--gap-m);
+  margin-bottom: var(--step-3);
   max-width: 50rem;
-  margin-bottom: var(--gap-xxl);
 }
 .project__title,
 .project__desc {
   margin-bottom: var(--gap-s);
+}
+.project__title__type {
+  text-transform: uppercase;
 }
 .project__links {
   display: flex;
