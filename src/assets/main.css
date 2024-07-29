@@ -51,6 +51,7 @@ a:focus-visible {
 }
 
 /* Utility / Color */
+.clr-accent { color: var(--clr-accent) }
 .clr-accent-soft { color: var(--clr-accent-soft) }
 
 /* Utility / Layout */
