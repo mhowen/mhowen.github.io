@@ -34,6 +34,11 @@ const router = createRouter({
       component: () => import('../views/ResponsiveDesignSandboxView.vue'),
     },
     {
+      path: '/projects/web_design_what_to_expect',
+      name: 'Web Design: What to Expect',
+      component: () => import('../views/WebDesignW2EView.vue'),
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: ContactView,
