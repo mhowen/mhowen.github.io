@@ -11,7 +11,7 @@ import RouterButton from '@/components/RouterButton.vue';
       </h1>
       <p class="mb-l">
         This page was last updated on
-        <span class="clr-accent-soft fw-700">14 June 2024</span>.
+        <span class="clr-accent fw-700">29 July 2024</span>.
       </p>
       <p class="mb-l">
         Welcome! Below is a rotating selection of projects and demonstrations
@@ -24,6 +24,23 @@ import RouterButton from '@/components/RouterButton.vue';
     </section>
     <section class="project-category">
       <h2>Web Design</h2>
+      <div class="project">
+        <h3 class="project__title">
+          <span class="project__title__type">Demo:</span>
+          What to Expect
+        </h3>
+        <p class="project__desc">
+          A guided tour of the contemporary Web Design project life cycle.
+          Effectively a free and public adaptation of my onboarding material for
+          custom Web Design services.
+        </p>
+        <div class="project__links">
+          <RouterButton
+            href="/projects/web_design_what_to_expect"
+          >Project Page
+          </RouterButton>
+        </div>
+      </div>
       <div class="project">
         <h3 class="project__title">
           <span class="project__title__type">Demo:</span>
@@ -42,19 +59,6 @@ import RouterButton from '@/components/RouterButton.vue';
             href="https://github.com/mhowen/mhowen.github.io/blob/main/src/views/ResponsiveDesignSandboxView.vue"
           >Source Code
           </RouterButton>
-        </div>
-      </div>
-      <div class="project">
-        <h3 class="project__title">
-          <span class="project__title__type">Project:</span>
-          Hacking on the Free Tier
-        </h3>
-        <p class="project__desc">
-          A theory-forward introduction to a novel strategy for testing and
-          iterating on projects that depend on free-tier, request-limited APIs.
-        </p>
-        <div class="project__links">
-          <p class="project__links__coming-soon">Coming Soon</p>
         </div>
       </div>
     </section>
