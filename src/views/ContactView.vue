@@ -99,7 +99,7 @@ form.inactive::after {
   background-color: var(--clr-background-75);
   backdrop-filter: blur(0.25rem);
 
-  content: "COMING 31 MAY 2024";
+  content: "COMING SOON";
   font-size: var(--step-2);
   position: absolute;
   inset: 0;
