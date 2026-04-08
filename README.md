@@ -1,9 +1,9 @@
 # About
 Welcome! This public repository contains the source code for my personal website hosted at [mharryowen.com](https://www.mharryowen.com).
 
-The site's frontend is built in Vue 3; the old version, built in Nuxt 3, is now deprecated. I decided to forego Nuxt's incredible DX for this 1.0 version in favor of a source bundle that's overall lighter and more ergonomic.
+This straightforward, static version of the site called for a smaller footprint. Accordingly, I've used no JS framework for the 2026 edition.
 
-What does the future hold? I'm very encouraged by the forthcoming View Transitions meta, and I'm currently considering a future iteration of this site built without a JS framework.
+Previous versions of this site used Nuxt 3 and Vue 3, which I love dearly but simply didn't need for my most recent purposes.
 
 Feel free to get in touch with any questions! Cheers, and thanks for stopping by.
 
