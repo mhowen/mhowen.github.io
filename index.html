@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Harrison Owen | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Oswald:wght@200..700&family=Exo+2:wght@200&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M. Harry Owen</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+		<div class="logo"><a href="index.html"><strong>M. H. Owen</strong></a></div>
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="resume.html">Résumé</a></li>
+                    <li><a href="mailto:mho@mharryowen.com">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Michael H. Owen</h1>
+	    <p>Secure Infrastructure Specialist, Designer-Developer, and inveterate nerd.<br>Call me Harry.</p>
+            <a href="mailto:mho@mharryowen.com" class="btn">Get in touch</a>
+            <a href="resume.html" class="btn">My Résumé</a>
+        </section>
+
+        <section class="projects" id="work">
+	    <h2>My Work</h2>
+	    <div class="card-grid">
+		<a class="card-anchor" href="https://github.com/mhowen/bash-backup">
+		    <div class="card">
+			<h3>bash-backup</h3>
+			<p>A script I wrote for secure, automatable, log-aware backups to S3.</p>
+		    </div>
+		</a>
+		<a class="card-anchor" href="projects/network-tour.html">
+		    <div class="card">
+			<h3>Network Infrastructure</h3>
+			<p>How my home network overcomes the absolute state of the Internet</p>
+		    </div>
+		</a>
+		<a class="card-anchor" href="https://github.com/mhowen/mhowen.github.io">
+		    <div class="card">
+			<h3>This Website</h3>
+			<p>This site is written in HTML5/CSS3 and uses no JavaScript. Check out the source code here.</p>
+		    </div>
+		</a>
+		<div class="card coming-soon">
+		    <h3>Pi-Hole Monitor</h3>
+		    <p>A Python-based, Syslog-aware CLI tool for querying and generating alerts from Pi-Hole.</p>
+		</div>
+	    </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 M. H. Owen</p>
+        </div>
+    </footer>
+
+</body>
 </html>

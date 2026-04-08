@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Harrison Owen | Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+		<div class="logo"><a href="../index.html"><strong>M. H. Owen</strong></a></div>
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#resume">Résumé</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+	<section id="network-tour">
+	    <h1>How I do a Home Network</h1>
+	    <img src="assets/modem.png" alt="Hand-drawn representation of a SOHO modem" height="200px">
+	    <p>
+	    It starts by ditching the box our ISP gave us. A plug-and-play
+	    modem-router is well and good for general usability, but this
+	    comes at the cost of configurability and data sovereignty.
+	    Compared to jury-rigging a rented device to meet my household's
+	    particular needs, it made far more sense to install our own
+	    modem. An inexpensive DOCSIS 3.0 modem from the local
+	    electronics retailer takes full advantage of our data plan and
+	    paid for itself in a matter of months.
+	    </p>
+	    <img src="assets/router.png" alt="Hand-drawn representation of a SOHO router" height="200px">
+	    <p>
+	    Since our home is relatively small, it makes sense to consolidate
+	    routing and wireless access into one device. We've had great
+	    results with an affordable router and its built-in dipole antennae.
+	    WPA-3 security is easily configured, as are settings for DHCP
+	    reservation and DNS service that we need for the single-board
+	    computer below.
+	    </p>
+	    <img src="assets/pi.png" alt="Hand-drawn representation of a Raspberry Pi Zero 2 W" width="200px">
+	    <p>
+	    That is, a Raspberry Pi Zero 2 W that I use for auxilliary
+	    services. It runs an instance of
+	    <a href="https://github.com/pi-hole/pi-hole">Pi-Hole</a>
+	    that acts as the DNS resolver for internal clients, the principal
+	    effect of which is network-wide ad-blocking. I cannot overstate how
+	    much this improves our browsing experience at home, especially
+	    since we can trivially create exceptions for the very rare edge
+	    cases in which the DNS sinkhole effect is undesirable.
+	    </p>
+	    <p>
+	    Beyond ad-blocking, having a Linux machine with a reserved IP
+	    address has various other utilities. The Zero 2 W, while not
+	    especially powerful for a single-board computer, is more than
+	    capable of running WireGuard to give us remote access to the
+	    network while we're away. This necessitates a dynamic DNS service
+	    on the router, which, luckily, is supported out of the box. On top
+	    of that, enough resources are left over to run an rsyslog server to
+	    which I log automated backups and various other important metrics.
+	    </p>
+	</section>
+	<a class="btn" href="../index.html">Back Home</a>
+    </main>
+
+</body>
+</html>
