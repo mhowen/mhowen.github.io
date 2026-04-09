@@ -238,7 +238,8 @@ footer {
     }
     .hero h1, #resume h1, .projects h2 { font-size: 2rem; }
     .cert-logos { justify-content: center; }
-    .cert-logos > img { width: 7rem; }
+    .cert-logos > img { width: 6rem; }
+    .container, #resume { padding: 0 1rem; }
     #network-tour {
 	display: flex;
 	flex-direction: column;
