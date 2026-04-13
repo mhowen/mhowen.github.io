@@ -140,7 +140,8 @@ footer {
 .card-anchor {
     text-decoration: none;
 }
-.card-anchor:visited {
+.card-anchor:visited,
+p a:visited {
     color: currentColor;
 }
 .card {
